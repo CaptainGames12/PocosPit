@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyu2kntndjpck"]
+
+[ext_resource type="Script" uid="uid://dkm4f8eicns10" path="res://scripts/animatronics/RabAnimatronic.cs" id="1_ksgdc"]
+
+[node name="RabAnimatronic" type="CharacterBody2D"]
+script = ExtResource("1_ksgdc")
+metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"

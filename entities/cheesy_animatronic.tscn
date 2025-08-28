@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccibagb85vaae"]
+
+[ext_resource type="Script" uid="uid://ctdvgkuocevfg" path="res://scripts/animatronics/CheesyAnimatronic.cs" id="1_rx1cc"]
+
+[node name="CheesyAnimatronic" type="CharacterBody2D"]
+script = ExtResource("1_rx1cc")
+metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"

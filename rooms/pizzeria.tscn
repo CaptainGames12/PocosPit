@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx42ppxocjt0u"]
+
+[ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
+[ext_resource type="Texture2D" uid="uid://by7mlx3ocnt26" path="res://textures/player/goodman.png" id="2_yah6n"]
+[ext_resource type="PackedScene" uid="uid://cbqcu1kavglsj" path="res://entities/player.tscn" id="3_7sefv"]
+[ext_resource type="PackedScene" uid="uid://7agsflaafkw7" path="res://ui/ui.tscn" id="4_4ptq7"]
+
+[sub_resource type="Curve2D" id="Curve2D_gcwg4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 813, 325, 0, 0, 0, 0, 806, 204, 0, 0, 0, 0, 607, 144, 0, 0, 0, 0, 452, 205, 0, 0, 0, 0, 313, 283, 0, 0, 0, 0, 311, 382, 0, 0, 0, 0, 460, 430, 0, 0, 0, 0, 641, 466, 0, 0, 0, 0, 768, 502, 0, 0, 0, 0, 930, 413, 0, 0, 0, 0, 913, 251, 0, 0, 0, 0, 910, 181, 0, 0, 0, 0, 676, 27, 0, 0, 0, 0, 269, 70, 0, 0, 0, 0, 128, 289, 0, 0, 0, 0, 299, 554, 0, 0, 0, 0, 733, 582, 0, 0, 0, 0, 813, 325)
+}
+point_count = 18
+
+[sub_resource type="GDScript" id="GDScript_wne6k"]
+script/source = "extends Path2D
+func _process(delta: float) -> void:
+	%PathFollow2D.progress_ratio += 0.1 * delta
+"
+
+[node name="Pizzeria" type="Node2D"]
+
+[node name="DiningRoom" parent="." instance=ExtResource("1_j3ksj")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gcwg4")
+script = SubResource("GDScript_wne6k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(813, 325)
+rotates = false
+
+[node name="Goodman" type="Sprite2D" parent="Path2D/PathFollow2D"]
+texture = ExtResource("2_yah6n")
+
+[node name="Player" parent="." instance=ExtResource("3_7sefv")]
+position = Vector2(573, 318)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="UI" parent="." instance=ExtResource("4_4ptq7")]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwetc1prqf4o6"]
+
+[ext_resource type="Script" uid="uid://bvvgumrpjr6we" path="res://scripts/animatronics/PocoAnimatronic.cs" id="1_s6hxr"]
+
+[node name="PocoAnimatronic" type="CharacterBody2D"]
+script = ExtResource("1_s6hxr")
+metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"

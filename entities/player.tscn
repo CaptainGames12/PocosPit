@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbqcu1kavglsj"]
+
+[ext_resource type="Script" uid="uid://cgj0ikwfwl2kn" path="res://scripts/player/Player.cs" id="1_merdl"]
+[ext_resource type="Texture2D" uid="uid://3ursigqvmon7" path="res://textures/player/playert.png" id="3_qly61"]
+[ext_resource type="Script" uid="uid://0qspxlm4u5mc" path="res://scripts/player/LightController.cs" id="3_rfe5m"]
+[ext_resource type="Texture2D" uid="uid://do7uvi16sgqc7" path="res://textures/flashlight/flashlight.png" id="4_qly61"]
+[ext_resource type="AudioStream" uid="uid://ciqill5p1kqov" path="res://audio/flashlight/Flashlight_shake.mp3" id="4_qsoyl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u3f3p"]
+radius = 12.0
+height = 62.0
+
+[sub_resource type="Gradient" id="Gradient_rfe5m"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qly61"]
+gradient = SubResource("Gradient_rfe5m")
+fill = 1
+fill_from = Vector2(0.509434, 0.504717)
+fill_to = Vector2(0.8, 0.1)
+
+[sub_resource type="Animation" id="Animation_6nm46"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GoodmanSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_qsoyl"]
+resource_name = "right"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GoodmanSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i623q"]
+_data = {
+&"RESET": SubResource("Animation_6nm46"),
+&"right": SubResource("Animation_qsoyl")
+}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("lightController")]
+script = ExtResource("1_merdl")
+speed = 200.0
+speedMultiplier = 2.0
+lightController = NodePath("LightController")
+speedOfRest = 40
+speedOfTiredness = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_u3f3p")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 2
+position = Vector2(-5.96046e-08, -1.19209e-07)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+shadow_enabled = true
+texture = ExtResource("4_qly61")
+offset = Vector2(68, 10)
+texture_scale = 2.02
+
+[node name="PointLight2D2" type="PointLight2D" parent="PointLight2D"]
+position = Vector2(17, 7)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_qly61")
+texture_scale = 2.02
+
+[node name="GoodmanSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_qly61")
+hframes = 10
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="FlashlightCharging" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qsoyl")
+
+[node name="LightController" type="Node" parent="." node_paths=PackedStringArray("light", "lightTimer", "chargingSound")]
+script = ExtResource("3_rfe5m")
+light = NodePath("../PointLight2D")
+lightTimer = NodePath("Timer")
+chargingSound = NodePath("../FlashlightCharging")
+
+[node name="Timer" type="Timer" parent="LightController"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i623q")
+}
+autoplay = "right"
