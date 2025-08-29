@@ -1,42 +1,69 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=10 format=3 uid="uid://dx42ppxocjt0u"]
 
 [ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
-[ext_resource type="Texture2D" uid="uid://by7mlx3ocnt26" path="res://textures/player/goodman.png" id="2_yah6n"]
+[ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
 [ext_resource type="PackedScene" uid="uid://cbqcu1kavglsj" path="res://entities/player.tscn" id="3_7sefv"]
 [ext_resource type="PackedScene" uid="uid://7agsflaafkw7" path="res://ui/ui.tscn" id="4_4ptq7"]
+[ext_resource type="PackedScene" uid="uid://dbfxtxp2kw0r2" path="res://entities/rab_animatronic.tscn" id="4_gcwg4"]
+[ext_resource type="PackedScene" uid="uid://cwetc1prqf4o6" path="res://entities/poco_animatronic.tscn" id="5_7sefv"]
 
-[sub_resource type="Curve2D" id="Curve2D_gcwg4"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7sefv"]
+vertices = PackedVector2Array(905, 5.02344, 952.688, 4.00781, 952.688, 82, 905, 82, 339, 16.8828, 380.5, 16.0078, 380.5, 82, 339, 108, 986.133, 82, 986.133, 421, 856, 421, 856, 145.188, 854.367, 139.078, 848.922, 133.633, 827, 145.188, 827, 421, 18, 421, 18, 108, 828.633, 139.078, 841.5, 131.648, 834.078, 133.633)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(2, 8, 9, 10, 11), PackedInt32Array(3, 2, 11, 12), PackedInt32Array(3, 12, 13), PackedInt32Array(14, 15, 16, 17, 7), PackedInt32Array(14, 7, 6, 18), PackedInt32Array(3, 13, 19), PackedInt32Array(6, 3, 19, 20), PackedInt32Array(6, 20, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 14, 2, 431, 1001, 434, 1001, -7)])
+
+[sub_resource type="Curve2D" id="Curve2D_yah6n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 813, 325, 0, 0, 0, 0, 806, 204, 0, 0, 0, 0, 607, 144, 0, 0, 0, 0, 452, 205, 0, 0, 0, 0, 313, 283, 0, 0, 0, 0, 311, 382, 0, 0, 0, 0, 460, 430, 0, 0, 0, 0, 641, 466, 0, 0, 0, 0, 768, 502, 0, 0, 0, 0, 930, 413, 0, 0, 0, 0, 913, 251, 0, 0, 0, 0, 910, 181, 0, 0, 0, 0, 676, 27, 0, 0, 0, 0, 269, 70, 0, 0, 0, 0, 128, 289, 0, 0, 0, 0, 299, 554, 0, 0, 0, 0, 733, 582, 0, 0, 0, 0, 813, 325)
+"points": PackedVector2Array(0, 0, 0, 0, 682, 130, 0, 0, 0, 0, 308, 118, 0, 0, 0, 0, 208, 141, 0, 0, 0, 0, 167, 271, 0, 0, 0, 0, 127, 384, 0, 0, 0, 0, 438, 386, 0, 0, 0, 0, 533, 400, 0, 0, 0, 0, 723, 377, 0, 0, 0, 0, 707, 237, 0, 0, 0, 0, 266, 245, 0, 0, 0, 0, 228, 177, 0, 0, 0, 0, 406, 144, 0, 0, 0, 0, 543, 150, 0, 0, 0, 0, 611, 159, 0, 0, 0, 0, 772, 140, 0, 0, 0, 0, 826, 131, 0, 0, 0, 0, 872, 148, 0, 0, 0, 0, 878, 263, 0, 0, 0, 0, 903, 412, 0, 0, 0, 0, 933, 412, 0, 0, 0, 0, 912, 309, 0, 0, 0, 0, 906, 124, 0, 0, 0, 0, 787, 124, 0, 0, 0, 0, 738, 127, 0, 0, 0, 0, 678, 128)
 }
-point_count = 18
+point_count = 25
 
-[sub_resource type="GDScript" id="GDScript_wne6k"]
-script/source = "extends Path2D
-func _process(delta: float) -> void:
-	%PathFollow2D.progress_ratio += 0.1 * delta
-"
+[sub_resource type="Curve2D" id="Curve2D_4ptq7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 897, 380, 0, 0, 0, 0, 901, 196, 0, 0, 0, 0, 860, 123, 0, 0, 0, 0, 805, 124, 0, 0, 0, 0, 612, 142, 0, 0, 0, 0, 431, 174, 0, 0, 0, 0, 249, 233, 0, 0, 0, 0, 102, 279, 0, 0, 0, 0, 107, 335, 0, 0, 0, 0, 239, 386, 0, 0, 0, 0, 443, 370, 0, 0, 0, 0, 531, 372, 0, 0, 0, 0, 683, 345, 0, 0, 0, 0, 735, 358, 0, 0, 0, 0, 753, 271, 0, 0, 0, 0, 736, 213, 0, 0, 0, 0, 776, 173, 0, 0, 0, 0, 714, 144, 0, 0, 0, 0, 753, 129, 0, 0, 0, 0, 876, 115, 0, 0, 0, 0, 953, 148, 0, 0, 0, 0, 953, 391, 0, 0, 0, 0, 897, 379)
+}
+point_count = 23
 
 [node name="Pizzeria" type="Node2D"]
 
-[node name="DiningRoom" parent="." instance=ExtResource("1_j3ksj")]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_7sefv")
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_gcwg4")
-script = SubResource("GDScript_wne6k")
+[node name="DiningRoom" parent="NavigationRegion2D" instance=ExtResource("1_j3ksj")]
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-unique_name_in_owner = true
-position = Vector2(813, 325)
+[node name="PocoPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
+curve = SubResource("Curve2D_yah6n")
+script = ExtResource("2_7sefv")
+speed = 1
+pathFollow = NodePath("PathFollow2D")
+animatronic = NodePath("PathFollow2D/PocoAnimatronic")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PocoPath"]
+position = Vector2(907.468, 169.269)
+progress = 3185.1
 rotates = false
 
-[node name="Goodman" type="Sprite2D" parent="Path2D/PathFollow2D"]
-texture = ExtResource("2_yah6n")
+[node name="PocoAnimatronic" parent="PocoPath/PathFollow2D" node_paths=PackedStringArray("player") instance=ExtResource("5_7sefv")]
+player = NodePath("../../../Player")
+
+[node name="RabPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
+curve = SubResource("Curve2D_4ptq7")
+script = ExtResource("2_7sefv")
+speed = 1
+pathFollow = NodePath("PathFollow2D")
+animatronic = NodePath("PathFollow2D/RabAnimatronic")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="RabPath"]
+position = Vector2(897, 380)
+rotates = false
+
+[node name="RabAnimatronic" parent="RabPath/PathFollow2D" node_paths=PackedStringArray("player") instance=ExtResource("4_gcwg4")]
+player = NodePath("../../../Player")
 
 [node name="Player" parent="." instance=ExtResource("3_7sefv")]
 position = Vector2(573, 318)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [node name="UI" parent="." instance=ExtResource("4_4ptq7")]

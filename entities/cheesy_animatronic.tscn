@@ -1,7 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccibagb85vaae"]
+[gd_scene load_steps=5 format=3 uid="uid://cn4k7hho6g00s"]
 
 [ext_resource type="Script" uid="uid://ctdvgkuocevfg" path="res://scripts/animatronics/CheesyAnimatronic.cs" id="1_rx1cc"]
 
-[node name="CheesyAnimatronic" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
+radius = 145.031
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1stt"]
+radius = 12.0
+height = 48.0
+
+[node name="CheesyAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("attackArea", "angryTimer", "targetArea")]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_rx1cc")
+attackArea = NodePath("AttackArea")
+angryTimer = NodePath("AngryTimer")
+targetArea = NodePath("TargetingArea")
+speed = 200
+screamerScene = "freddy"
 metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"
+
+[node name="TargetingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetingArea"]
+shape = SubResource("CircleShape2D_y4bro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_i0sk7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AngryTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_b1stt")

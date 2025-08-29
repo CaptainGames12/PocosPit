@@ -1,7 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyu2kntndjpck"]
+[gd_scene load_steps=6 format=3 uid="uid://dbfxtxp2kw0r2"]
 
 [ext_resource type="Script" uid="uid://dkm4f8eicns10" path="res://scripts/animatronics/RabAnimatronic.cs" id="1_ksgdc"]
+[ext_resource type="Texture2D" uid="uid://qc07clobp6l8" path="res://textures/animatronics/rab.png" id="2_kkgba"]
 
-[node name="RabAnimatronic" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
+radius = 145.031
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1stt"]
+radius = 12.0
+height = 48.0
+
+[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "attackArea", "angryTimer", "targetArea", "navAgent")]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_ksgdc")
+deactivationTimer = NodePath("DeactivationTimer")
+attackArea = NodePath("AttackArea")
+angryTimer = NodePath("AngryTimer")
+targetArea = NodePath("TargetingArea")
+speed = 250
+navAgent = NodePath("NavigationAgent2D")
+screamerScene = "freddy"
 metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"
+
+[node name="TargetingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetingArea"]
+shape = SubResource("CircleShape2D_y4bro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_i0sk7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AngryTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_b1stt")
+
+[node name="Rab" type="Sprite2D" parent="."]
+position = Vector2(-1, -5)
+texture = ExtResource("2_kkgba")
+
+[node name="DeactivationTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true

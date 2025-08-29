@@ -3,7 +3,8 @@ using System;
 
 public partial class SignalBus : Node
 {
-    
+    [Signal]
+    public delegate void SceneChangedEventHandler(string newSceneName);
     public static SignalBus Instance;
     public override void _Ready()
     {

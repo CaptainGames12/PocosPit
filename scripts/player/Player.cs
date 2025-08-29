@@ -39,7 +39,7 @@ public partial class Player : CharacterBody2D
             }
         }
         lightController.directionOfPlayer = direction;
-        Velocity = direction * speed * newSpeedMultiplier * (float)delta;
-        MoveAndCollide(Velocity);
+        Velocity = direction * speed * newSpeedMultiplier;
+        MoveAndSlide();
     }
 }
