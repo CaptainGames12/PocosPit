@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwetc1prqf4o6"]
 
 [ext_resource type="Script" uid="uid://bvvgumrpjr6we" path="res://scripts/animatronics/PocoAnimatronic.cs" id="1_s6hxr"]
-[ext_resource type="Texture2D" uid="uid://cq1bxjrvbk0x5" path="res://textures/poco.png" id="2_b1stt"]
+[ext_resource type="Texture2D" path="res://textures/animatronics/poco.png" id="2_b1stt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
 radius = 145.031
