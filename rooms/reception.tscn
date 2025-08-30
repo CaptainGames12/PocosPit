@@ -1,3 +1,169 @@
-[gd_scene format=3 uid="uid://dd3oqsul42mo3"]
+[gd_scene load_steps=22 format=3 uid="uid://dd3oqsul42mo3"]
+
+[ext_resource type="Texture2D" uid="uid://ceerrrotc38hu" path="res://textures/rooms/reception/main.png" id="1_23kdh"]
+[ext_resource type="Texture2D" uid="uid://ypkpqdsobrhw" path="res://textures/rooms/reception/table.png" id="2_eue5r"]
+[ext_resource type="Texture2D" uid="uid://ov8srqeeb0r1" path="res://textures/rooms/reception/paints.png" id="3_63cxr"]
+[ext_resource type="Texture2D" uid="uid://dobhfh57d0bdo" path="res://textures/rooms/reception/plants.png" id="4_yoikn"]
+[ext_resource type="Texture2D" uid="uid://dey5grfkiq2hp" path="res://textures/rooms/reception/cardbox.png" id="5_6elnv"]
+[ext_resource type="Texture2D" uid="uid://ba2v6idikplup" path="res://textures/rooms/reception/bells.png" id="6_13fky"]
+[ext_resource type="Texture2D" uid="uid://y1f3dq5qclya" path="res://textures/rooms/reception/MenuStol.png" id="7_211mm"]
+[ext_resource type="Texture2D" uid="uid://btqciuebeera2" path="res://textures/rooms/reception/Menu.png" id="8_2o7lx"]
+[ext_resource type="Texture2D" uid="uid://qm0wb8anal5g" path="res://textures/rooms/reception/garlands.png" id="9_07f76"]
+[ext_resource type="Texture2D" uid="uid://dlc03b2kpyalj" path="res://textures/rooms/reception/PocoTheBear.png" id="10_x3g6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5rr3"]
+size = Vector2(169, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcwxc"]
+size = Vector2(31, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m56f3"]
+size = Vector2(500, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tlh"]
+size = Vector2(50, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsi33"]
+size = Vector2(10.125, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxpjk"]
+size = Vector2(10.125, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76sth"]
+size = Vector2(20, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnugx"]
+size = Vector2(520, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7sg6"]
+size = Vector2(20, 278)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1osau"]
+size = Vector2(79, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0hi4"]
+size = Vector2(18, 49)
 
 [node name="Reception" type="Node2D"]
+
+[node name="Texture" type="Node2D" parent="."]
+
+[node name="Main" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+texture = ExtResource("1_23kdh")
+metadata/_edit_lock_ = true
+
+[node name="Table" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(89.5, -15)
+texture = ExtResource("2_eue5r")
+metadata/_edit_lock_ = true
+
+[node name="Paints" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(213, -40)
+texture = ExtResource("3_63cxr")
+metadata/_edit_lock_ = true
+
+[node name="Plants" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(200, -8)
+texture = ExtResource("4_yoikn")
+metadata/_edit_lock_ = true
+
+[node name="Plants2" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(187, 8)
+texture = ExtResource("4_yoikn")
+metadata/_edit_lock_ = true
+
+[node name="Cardbox" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(159, -43)
+texture = ExtResource("5_6elnv")
+metadata/_edit_lock_ = true
+
+[node name="Bell" type="Sprite2D" parent="Texture"]
+position = Vector2(69, -26)
+texture = ExtResource("6_13fky")
+
+[node name="MenuStol" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(105, -25.5)
+texture = ExtResource("7_211mm")
+
+[node name="Menu" type="Sprite2D" parent="Texture"]
+texture_filter = 1
+position = Vector2(45, -83)
+texture = ExtResource("8_2o7lx")
+
+[node name="Garlands" type="Sprite2D" parent="Texture"]
+position = Vector2(0, -112)
+texture = ExtResource("9_07f76")
+
+[node name="PocoTheBear" type="Sprite2D" parent="Texture"]
+position = Vector2(-136, -41)
+texture = ExtResource("10_x3g6h")
+
+[node name="ColisionReception" type="StaticBody2D" parent="."]
+position = Vector2(15, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(74.5, -4.5)
+shape = SubResource("RectangleShape2D_f5rr3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(143.5, -21.5)
+shape = SubResource("RectangleShape2D_hcwxc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(-15, -90.5)
+shape = SubResource("RectangleShape2D_m56f3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(-149, -15.5)
+shape = SubResource("RectangleShape2D_w4tlh")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(170.938, 3)
+shape = SubResource("RectangleShape2D_lsi33")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(184, -13)
+shape = SubResource("RectangleShape2D_uxpjk")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(-275, -19)
+shape = SubResource("RectangleShape2D_76sth")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(-25, 120)
+shape = SubResource("RectangleShape2D_xnugx")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(245, -9)
+shape = SubResource("RectangleShape2D_x7sg6")
+
+[node name="StaffRoomInteraction" type="Area2D" parent="."]
+position = Vector2(-46, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaffRoomInteraction"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_1osau")
+debug_color = Color(0.979489, 0, 0.387617, 0.42)
+
+[node name="DiningRoomInteraction" type="Area2D" parent="."]
+position = Vector2(221, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DiningRoomInteraction"]
+position = Vector2(20, -0.5)
+shape = SubResource("RectangleShape2D_q0hi4")
+debug_color = Color(0.979489, 0, 0.387617, 0.42)
+
+[node name="ExitInteraction" type="Area2D" parent="."]
+position = Vector2(-261, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitInteraction"]
+position = Vector2(20, -0.5)
+shape = SubResource("RectangleShape2D_q0hi4")
+debug_color = Color(0.979489, 0, 0.387617, 0.42)
