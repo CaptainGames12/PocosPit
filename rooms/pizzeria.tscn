@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=11 format=3 uid="uid://dx42ppxocjt0u"]
 
 [ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
 [ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7agsflaafkw7" path="res://ui/ui.tscn" id="4_4ptq7"]
 [ext_resource type="PackedScene" uid="uid://dbfxtxp2kw0r2" path="res://entities/rab_animatronic.tscn" id="4_gcwg4"]
 [ext_resource type="PackedScene" uid="uid://cwetc1prqf4o6" path="res://entities/poco_animatronic.tscn" id="5_7sefv"]
+[ext_resource type="PackedScene" uid="uid://dd3oqsul42mo3" path="res://rooms/reception.tscn" id="7_gcwg4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7sefv"]
 vertices = PackedVector2Array(905, 5.02344, 952.688, 4.00781, 952.688, 82, 905, 82, 339, 16.8828, 380.5, 16.0078, 380.5, 82, 339, 108, 986.133, 82, 986.133, 421, 856, 421, 856, 145.188, 854.367, 139.078, 848.922, 133.633, 827, 145.188, 827, 421, 18, 421, 18, 108, 828.633, 139.078, 841.5, 131.648, 834.078, 133.633)
@@ -67,3 +68,6 @@ position = Vector2(573, 318)
 color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [node name="UI" parent="." instance=ExtResource("4_4ptq7")]
+
+[node name="Reception" parent="." instance=ExtResource("7_gcwg4")]
+position = Vector2(-279, 295)
