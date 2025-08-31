@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbfxtxp2kw0r2"]
+[gd_scene load_steps=7 format=3 uid="uid://dbfxtxp2kw0r2"]
 
 [ext_resource type="Script" uid="uid://dkm4f8eicns10" path="res://scripts/animatronics/RabAnimatronic.cs" id="1_ksgdc"]
 [ext_resource type="Texture2D" uid="uid://qc07clobp6l8" path="res://textures/animatronics/rab.png" id="2_kkgba"]
+[ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_gehp1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
 radius = 145.031
@@ -20,7 +21,6 @@ deactivationTimer = NodePath("DeactivationTimer")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
 targetArea = NodePath("TargetingArea")
-speed = 250
 navAgent = NodePath("NavigationAgent2D")
 screamerScene = "freddy"
 metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"
@@ -34,6 +34,7 @@ shape = SubResource("CircleShape2D_y4bro")
 shape = SubResource("CapsuleShape2D_i0sk7")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="AngryTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -52,3 +53,9 @@ texture = ExtResource("2_kkgba")
 [node name="DeactivationTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gehp1")
+autoplay = true
+max_distance = 1000.0
+attenuation = 3.03144

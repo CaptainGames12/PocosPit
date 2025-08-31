@@ -13,7 +13,7 @@ public partial class NotAngryAnimatronicMoving : Path2D
     {
         if (animatronic.isAngry == false)
         {
-            animatronic.Position = animatronic.Position.Lerp(Vector2.Zero, 0.5f * (float)delta);
+           
             pathFollow.ProgressRatio += speed * 0.01f * (float)delta;
         }
 

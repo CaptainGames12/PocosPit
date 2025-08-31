@@ -13,7 +13,11 @@ public partial class AnimatronicBase : CharacterBody2D
     [Export]
     private Player player;
     [Export]
-    private int speed;
+    private PathFollow2D pathFollow;
+    [Export]
+    private int angrySpeed;
+    [Export]
+    private int normalSpeed;
     [Export]
     private NavigationAgent2D navAgent;
     [Export]
@@ -30,14 +34,20 @@ public partial class AnimatronicBase : CharacterBody2D
     }
     public override void _PhysicsProcess(double delta)
     {
+        int chosenSpeed;
         if (this.isAngry)
         {
             navAgent.TargetPosition = player.GlobalPosition;
-            Vector2 dir = ToLocal(navAgent.GetNextPathPosition()).Normalized();
-            Velocity = dir * speed;
-            MoveAndSlide();
+            chosenSpeed = angrySpeed;
         }
-
+        else
+        {
+            navAgent.TargetPosition = pathFollow.GlobalPosition;
+            chosenSpeed = normalSpeed;
+        }
+        Vector2 dir = ToLocal(navAgent.GetNextPathPosition()).Normalized();
+        Velocity = dir * chosenSpeed;
+        MoveAndSlide();
     }
     public void OnTargetAreaEntered(Node2D body)
     {

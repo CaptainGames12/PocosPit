@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://h043obvnw2lu"]
+[gd_scene load_steps=11 format=3 uid="uid://h043obvnw2lu"]
 
 [ext_resource type="Texture2D" uid="uid://b1bmwv3wq5akx" path="res://textures/rooms/hall.png" id="1_63ene"]
+[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_imkyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63ene"]
 size = Vector2(21.75, 437)
@@ -8,8 +9,8 @@ size = Vector2(21.75, 437)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkyr"]
 size = Vector2(1026, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6787"]
-size = Vector2(20, 440)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imkyr"]
+height = 278.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo03h"]
 size = Vector2(339, 108)
@@ -23,6 +24,9 @@ size = Vector2(36.625, 79.5)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63ene"]
 radius = 4.5
 height = 290.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b2y7"]
+size = Vector2(7, 138)
 
 [node name="DiningRoom" type="Node2D"]
 
@@ -41,8 +45,8 @@ position = Vector2(509, 441)
 shape = SubResource("RectangleShape2D_imkyr")
 
 [node name="Left" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-2, 221)
-shape = SubResource("RectangleShape2D_r6787")
+position = Vector2(-2, 140)
+shape = SubResource("CapsuleShape2D_imkyr")
 
 [node name="Wall1" type="CollisionShape2D" parent="Walls"]
 position = Vector2(159.5, 44)
@@ -59,3 +63,14 @@ shape = SubResource("RectangleShape2D_mbyoa")
 [node name="Scene" type="CollisionShape2D" parent="Walls"]
 position = Vector2(841.5, 287)
 shape = SubResource("CapsuleShape2D_63ene")
+
+[node name="ReceptionCorridor" type="Area2D" parent="."]
+position = Vector2(-18, 3)
+script = ExtResource("2_imkyr")
+currentRoomName = "DiningRoom"
+newRoomName = "Reception"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReceptionCorridor"]
+position = Vector2(15.5, 353)
+shape = SubResource("RectangleShape2D_1b2y7")

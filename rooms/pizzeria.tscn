@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=13 format=3 uid="uid://dx42ppxocjt0u"]
 
 [ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
 [ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
@@ -7,11 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dbfxtxp2kw0r2" path="res://entities/rab_animatronic.tscn" id="4_gcwg4"]
 [ext_resource type="PackedScene" uid="uid://cwetc1prqf4o6" path="res://entities/poco_animatronic.tscn" id="5_7sefv"]
 [ext_resource type="PackedScene" uid="uid://dd3oqsul42mo3" path="res://rooms/reception.tscn" id="7_gcwg4"]
+[ext_resource type="Script" uid="uid://ch4fvmnj2i1qk" path="res://scripts/util/TransportingPlayerController.cs" id="8_wne6k"]
+[ext_resource type="AudioStream" uid="uid://c27t7w5p7idef" path="res://audio/poco_x3pro_main_theme.mp3" id="9_anepg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7sefv"]
-vertices = PackedVector2Array(905, 5.02344, 952.688, 4.00781, 952.688, 82, 905, 82, 339, 16.8828, 380.5, 16.0078, 380.5, 82, 339, 108, 986.133, 82, 986.133, 421, 856, 421, 856, 145.188, 854.367, 139.078, 848.922, 133.633, 827, 145.188, 827, 421, 18, 421, 18, 108, 828.633, 139.078, 841.5, 131.648, 834.078, 133.633)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(2, 8, 9, 10, 11), PackedInt32Array(3, 2, 11, 12), PackedInt32Array(3, 12, 13), PackedInt32Array(14, 15, 16, 17, 7), PackedInt32Array(14, 7, 6, 18), PackedInt32Array(3, 13, 19), PackedInt32Array(6, 3, 19, 20), PackedInt32Array(6, 20, 18)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(0, 14, 2, 431, 1001, 434, 1001, -7)])
+vertices = PackedVector2Array(-510.172, 406.109, -512.203, 291, -448, 291, -448, 313, 747.617, 421, -284, 325, 905, 4.6875, 952.688, 3.85156, 952.688, 82, 905, 82, 339, 14.6875, 380.5, 13.9609, 380.5, 82, 339, 108, 986.133, 82, 986.133, 421, 856, 421, 856, 145.188, 854.367, 139.078, 848.922, 133.633, 827, 145.188, 827, 421, -378, 291, -146, 291, -146, 294, -284, 294, -378, 313, -108.133, 325, -108.133, 331, -78, 331, -78, 315, -64.9375, 315, -64.9375, 291, -39, 291, -39, 294, 18, 270.32, 18, 108, 1, 294, 1, 288.539, 8.17969, 286.633, 841.5, 131.648, 834.078, 133.633, 828.633, 139.078, 15.6328, 279.18, -22, 156, -514.594, 156, -516.82, 29.8203, -22, 21.0781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(8, 14, 15, 16, 17), PackedInt32Array(9, 8, 17, 18), PackedInt32Array(9, 18, 19), PackedInt32Array(12, 20, 21, 4, 13), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 22, 25, 5), PackedInt32Array(5, 27, 28), PackedInt32Array(29, 30, 31), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 36, 13, 4), PackedInt32Array(37, 38, 39, 4), PackedInt32Array(9, 19, 40), PackedInt32Array(12, 9, 40, 41), PackedInt32Array(12, 41, 42), PackedInt32Array(12, 42, 20), PackedInt32Array(43, 35, 4), PackedInt32Array(39, 43, 4), PackedInt32Array(29, 31, 34, 37, 4), PackedInt32Array(3, 26, 5), PackedInt32Array(4, 5, 28), PackedInt32Array(29, 4, 28), PackedInt32Array(44, 45, 46, 47)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-527, 20, -520, 416, 1001, 434, 1001, -7)])
 
 [sub_resource type="Curve2D" id="Curve2D_yah6n"]
 _data = {
@@ -32,34 +34,54 @@ navigation_polygon = SubResource("NavigationPolygon_7sefv")
 
 [node name="DiningRoom" parent="NavigationRegion2D" instance=ExtResource("1_j3ksj")]
 
+[node name="Reception" parent="NavigationRegion2D" instance=ExtResource("7_gcwg4")]
+position = Vector2(-279, 295)
+
 [node name="PocoPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
 curve = SubResource("Curve2D_yah6n")
 script = ExtResource("2_7sefv")
-speed = 1
+speed = 5
 pathFollow = NodePath("PathFollow2D")
-animatronic = NodePath("PathFollow2D/PocoAnimatronic")
+animatronic = NodePath("PocoAnimatronic")
+
+[node name="PocoAnimatronic" parent="PocoPath" node_paths=PackedStringArray("player", "pathFollow") instance=ExtResource("5_7sefv")]
+position = Vector2(907.468, 169.269)
+player = NodePath("../../Player")
+pathFollow = NodePath("../PathFollow2D")
+angrySpeed = 180
+normalSpeed = 100
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PocoPath"]
-position = Vector2(907.468, 169.269)
+position = Vector2(907.469, 169.28)
 progress = 3185.1
 rotates = false
+cubic_interp = false
 
-[node name="PocoAnimatronic" parent="PocoPath/PathFollow2D" node_paths=PackedStringArray("player") instance=ExtResource("5_7sefv")]
-player = NodePath("../../../Player")
+[node name="ColorRect" type="ColorRect" parent="PocoPath/PathFollow2D"]
+offset_right = 21.0
+offset_bottom = 14.0
 
 [node name="RabPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
 curve = SubResource("Curve2D_4ptq7")
 script = ExtResource("2_7sefv")
-speed = 1
+speed = 5
 pathFollow = NodePath("PathFollow2D")
-animatronic = NodePath("PathFollow2D/RabAnimatronic")
+animatronic = NodePath("RabAnimatronic")
+
+[node name="RabAnimatronic" parent="RabPath" node_paths=PackedStringArray("player", "pathFollow") instance=ExtResource("4_gcwg4")]
+position = Vector2(897, 380)
+player = NodePath("../../Player")
+pathFollow = NodePath("../PathFollow2D")
+angrySpeed = 250
+normalSpeed = 100
 
 [node name="PathFollow2D" type="PathFollow2D" parent="RabPath"]
 position = Vector2(897, 380)
 rotates = false
 
-[node name="RabAnimatronic" parent="RabPath/PathFollow2D" node_paths=PackedStringArray("player") instance=ExtResource("4_gcwg4")]
-player = NodePath("../../../Player")
+[node name="ColorRect2" type="ColorRect" parent="RabPath/PathFollow2D"]
+offset_right = 21.0
+offset_bottom = 14.0
 
 [node name="Player" parent="." instance=ExtResource("3_7sefv")]
 position = Vector2(573, 318)
@@ -69,5 +91,17 @@ color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [node name="UI" parent="." instance=ExtResource("4_4ptq7")]
 
-[node name="Reception" parent="." instance=ExtResource("7_gcwg4")]
-position = Vector2(-279, 295)
+[node name="Markers" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("8_wne6k")
+player = NodePath("../Player")
+
+[node name="ReceptionFromDiningRoom" type="Marker2D" parent="Markers"]
+position = Vector2(-75, 367)
+
+[node name="DiningRoomFromReception" type="Marker2D" parent="Markers"]
+position = Vector2(116, 360)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_anepg")
+volume_db = -2.059
+autoplay = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwetc1prqf4o6"]
+[gd_scene load_steps=7 format=3 uid="uid://cwetc1prqf4o6"]
 
 [ext_resource type="Script" uid="uid://bvvgumrpjr6we" path="res://scripts/animatronics/PocoAnimatronic.cs" id="1_s6hxr"]
-[ext_resource type="Texture2D" path="res://textures/animatronics/poco.png" id="2_b1stt"]
+[ext_resource type="Texture2D" uid="uid://c0gofjls0vmy" path="res://textures/animatronics/poco.png" id="2_b1stt"]
+[ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_y4bro"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
 radius = 145.031
@@ -19,7 +20,6 @@ script = ExtResource("1_s6hxr")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
 targetArea = NodePath("TargetingArea")
-speed = 200
 navAgent = NodePath("NavigationAgent2D")
 screamerScene = "freddy"
 metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"
@@ -37,6 +37,7 @@ position = Vector2(9, -7)
 texture = ExtResource("2_b1stt")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [node name="AngryTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -47,3 +48,8 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_b1stt")
+
+[node name="Walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_y4bro")
+autoplay = true
+max_distance = 1000.0
