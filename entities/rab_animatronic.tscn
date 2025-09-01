@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_gehp1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
-radius = 145.031
+radius = 104.48
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
 
@@ -13,11 +13,12 @@ radius = 145.031
 radius = 12.0
 height = 48.0
 
-[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "attackArea", "angryTimer", "targetArea", "navAgent")]
+[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_ksgdc")
 deactivationTimer = NodePath("DeactivationTimer")
+stepsSound = NodePath("Walking")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
 targetArea = NodePath("TargetingArea")
@@ -34,7 +35,6 @@ shape = SubResource("CircleShape2D_y4bro")
 shape = SubResource("CapsuleShape2D_i0sk7")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="AngryTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -56,6 +56,5 @@ one_shot = true
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_gehp1")
-autoplay = true
 max_distance = 1000.0
 attenuation = 3.03144

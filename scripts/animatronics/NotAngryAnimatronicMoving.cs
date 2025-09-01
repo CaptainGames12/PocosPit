@@ -11,7 +11,7 @@ public partial class NotAngryAnimatronicMoving : Path2D
     private AnimatronicBase animatronic;
     public override void _PhysicsProcess(double delta)
     {
-        if (animatronic.isAngry == false)
+        if (animatronic.isAngry == false && !Globals.Instance.isCutSceneGoing)
         {
            
             pathFollow.ProgressRatio += speed * 0.01f * (float)delta;

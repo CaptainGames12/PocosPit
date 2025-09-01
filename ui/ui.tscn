@@ -10,9 +10,10 @@ light_mode = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl5ax"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("staminaBar")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("staminaBar", "loadingScreen")]
 script = ExtResource("1_nb4k0")
 staminaBar = NodePath("StaminaBar")
+loadingScreen = NodePath("LoadingScreen")
 
 [node name="StaminaBar" type="ProgressBar" parent="."]
 material = SubResource("CanvasItemMaterial_nb4k0")
@@ -24,3 +25,12 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_ks8t7")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wl5ax")
 value = 68.39
 show_percentage = false
+
+[node name="LoadingScreen" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

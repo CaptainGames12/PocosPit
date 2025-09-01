@@ -25,8 +25,8 @@ public partial class Player : CharacterBody2D
     }
     private void HandleMovement(double delta)
     {
-        float x = Input.GetActionStrength("player_right") - Input.GetActionStrength("player_left");
-        float y = Input.GetActionStrength("player_down") - Input.GetActionStrength("player_up");
+        float x = Globals.Instance.isCutSceneGoing? 0 : Input.GetActionStrength("player_right") - Input.GetActionStrength("player_left");
+        float y = Globals.Instance.isCutSceneGoing? 0 : Input.GetActionStrength("player_down") - Input.GetActionStrength("player_up");
         bool canPlayerRun = Input.IsActionPressed("player_run") && !fullyTired;
         float newSpeedMultiplier = canPlayerRun && Globals.Instance.stamina > 0 ? speedMultiplier : 1.0f;
 

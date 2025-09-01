@@ -3,6 +3,8 @@ using Godot;
 public partial class AnimatronicBase : CharacterBody2D
 {
     [Export]
+    private AudioStreamPlayer2D stepsSound;
+    [Export]
     public Area2D attackArea;
     [Export]
     private Timer angryTimer;
@@ -35,7 +37,20 @@ public partial class AnimatronicBase : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         int chosenSpeed;
-        if (this.isAngry)
+        if (Globals.Instance.isCutSceneGoing)
+        {
+            if (stepsSound.Playing)
+                stepsSound.Stop();
+            return;
+        }
+        else if (!stepsSound.Playing)
+        {
+            stepsSound.Play();
+        }
+        targetArea.Monitoring = !Globals.Instance.isCutSceneGoing;
+        attackArea.Monitoring = !Globals.Instance.isCutSceneGoing;
+        
+        if (isAngry)
         {
             navAgent.TargetPosition = player.GlobalPosition;
             chosenSpeed = angrySpeed;

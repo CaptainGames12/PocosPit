@@ -5,6 +5,31 @@ Goodman: Daad!
 [color=pink]Mom[/color]: Michael! What are you talking about?!
 [color=cyan]Dad[/color]: What? He is a man. He understood me. Anyway, son, have fun.
 Goodman: Thank y'll.
+do play("beginning_animation")
+
+=> END
+~ after_some_time
 : After some time.
+do PlayWalkingInTheDiningRoom()
+
+=> END 
+~ goodman_tired
+
 Goodman: Gosh. I'm so tired. I'll lie a little in this pit. I think nothing happens.
+do play("jump_animation")
+=> END
+
+~ waking_up
+do pause()
+Goodman: Geez. How long did I sleep? MOOM! DAAD! Pizzeria is already closed.
+Goodman: I think I had flashlight somewhere.[wait=0.5].[wait=0.5].
+Goodman: Aah. That's it!
+set Globals.isFlashlightDeactivated = false
+: Press R to charge the light.
+do play()
+=> END
+~ end_of_the_cutscene
+set Globals.isCutSceneGoing = false
+: Press W to walk\n		A S D 
+: Press Shift to run.
 => END

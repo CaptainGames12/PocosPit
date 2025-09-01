@@ -22,6 +22,14 @@ public partial class LightController : Node
     }
     public override void _Process(double delta)
     {
+        if (Globals.Instance.isFlashlightDeactivated)
+        {
+            light.Visible = false;
+        }
+        else
+        {
+            light.Visible = true;
+        }
         DirectLight();
         ChargeFlashlight();
     }
@@ -39,7 +47,7 @@ public partial class LightController : Node
     }
     private void ChargeFlashlight()
     {
-        if (Input.IsActionJustPressed("charge_flashlight"))
+        if (Input.IsActionJustPressed("charge_flashlight") && !Globals.Instance.isFlashlightDeactivated)
         {
             lightTimer.Start();
             chargingSound.Play();

@@ -6,7 +6,7 @@
 [sub_resource type="GDScript" id="GDScript_3i2ym"]
 script/source = "extends VideoStreamPlayer
 func _ready() -> void:
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(2.2).timeout
 	$AudioStreamPlayer2D.play()
 "
 

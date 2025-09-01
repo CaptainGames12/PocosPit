@@ -13,7 +13,7 @@ public partial class RabAnimatronic : AnimatronicBase
     }
     public override void _PhysicsProcess(double delta)
     {
-        if (!isDeactivated)
+        if (!isDeactivated && Globals.Instance.panelsActivated>0)
             base._PhysicsProcess(delta);
     }
     public void Deactivate()

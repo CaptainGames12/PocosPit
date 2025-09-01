@@ -11,7 +11,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u3f3p"]
 radius = 12.0
-height = 62.0
+height = 38.0
 
 [sub_resource type="Gradient" id="Gradient_rfe5m"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -40,6 +40,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_qsoyl"]
 resource_name = "right"
 length = 0.9
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,9 +72,11 @@ speedOfRest = 40
 speedOfTiredness = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_u3f3p")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 texture_filter = 2
 color = Color(0.714315, 0.453621, 0.17847, 1)
 shadow_enabled = true
@@ -106,8 +109,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 995
 limit_bottom = 435
-limit_smoothed = true
-position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("4_6nm46")
 
