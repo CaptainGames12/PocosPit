@@ -1,151 +1,37 @@
-
-[gd_scene load_steps=26 format=3 uid="uid://bkpj2eqgxch7d"]
-
+[gd_scene load_steps=12 format=3 uid="uid://bkpj2eqgxch7d"]
 
 [ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_rmeyy"]
-[ext_resource type="Texture2D" uid="uid://c3gvymqu5doqv" path="res://textures/rooms/electrical_room/Cabels.png" id="2_0xtsu"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_hwlqc"]
 [ext_resource type="Script" uid="uid://20tpm7a5l8s3" path="res://scripts/util/PanelAccess.cs" id="2_ibbai"]
-[ext_resource type="Texture2D" uid="uid://dtxcsy3ho35r6" path="res://textures/rooms/staff_room/lockers2.png" id="3_6caak"]
+[ext_resource type="Texture2D" uid="uid://ouywvldx0sue" path="res://textures/rooms/panel_room_1/panel.png" id="3_hwlqc"]
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="4_ibbai"]
-[ext_resource type="Texture2D" uid="uid://cirpx41hn561o" path="res://textures/rooms/staff_room/paper.png" id="4_kkuvp"]
-[ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="5_flxr2"]
-[ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="6_pvx18"]
-[ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="7_ohaou"]
-[ext_resource type="Texture2D" uid="uid://nej4nuseyevb" path="res://textures/rooms/diding_room/pizza.png" id="8_7j7t8"]
-[ext_resource type="Texture2D" uid="uid://bmqxit1b87alj" path="res://textures/rooms/diding_room/pizza_cycle.png" id="9_u2jw2"]
-[ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="10_cg76n"]
-[ext_resource type="Texture2D" uid="uid://hrmkaguvvdk2" path="res://textures/rooms/electrical_room/Swift_off.png" id="12_xmf1m"]
-[ext_resource type="Texture2D" uid="uid://dv3dhppfavy1a" path="res://textures/rooms/electrical_room/Swift_on.png" id="13_e72gx"]
-
 [ext_resource type="AudioStream" uid="uid://lyiggewtbnqa" path="res://audio/breaker-switch-45684.mp3" id="5_p06k4"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdiud"]
-size = Vector2(268, 129)
+size = Vector2(268, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibbai"]
 size = Vector2(85.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p06k4"]
-size = Vector2(20.625, 194.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uwgk"]
-size = Vector2(24, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xapx6"]
-size = Vector2(44, 21)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ratvy"]
-size = Vector2(35, 21)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8icw7"]
-size = Vector2(44.5, 26.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyx56"]
-size = Vector2(19.25, 79.25)
+size = Vector2(18.75, 177)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4ix"]
-size = Vector2(33, 25)
+size = Vector2(24, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arjqm"]
 size = Vector2(60, 20)
 
 [node name="ElectricalRoom1" type="Node2D"]
-texture_filter = 1
 
 [node name="ElectricalRoom" type="Sprite2D" parent="."]
 position = Vector2(121, 129)
 texture = ExtResource("1_rmeyy")
 
-[node name="Cabels" type="Sprite2D" parent="."]
-position = Vector2(121, 130)
-texture = ExtResource("2_0xtsu")
-
-[node name="Lockers2" type="Sprite2D" parent="."]
-position = Vector2(214, 86)
-texture = ExtResource("3_6caak")
-
-[node name="Paper" type="Sprite2D" parent="."]
-position = Vector2(177, 126)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper2" type="Sprite2D" parent="."]
-position = Vector2(158, 124)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper3" type="Sprite2D" parent="."]
-position = Vector2(168, 114)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper4" type="Sprite2D" parent="."]
-position = Vector2(202, 34)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper5" type="Sprite2D" parent="."]
-position = Vector2(222, 35)
-texture = ExtResource("4_kkuvp")
-
-[node name="Chair" type="Sprite2D" parent="."]
-position = Vector2(226, 151)
-texture = ExtResource("5_flxr2")
-
-[node name="Chair2" type="Sprite2D" parent="."]
-position = Vector2(226, 169)
-texture = ExtResource("5_flxr2")
-
-[node name="Chair3" type="Sprite2D" parent="."]
-position = Vector2(227, 188)
-texture = ExtResource("5_flxr2")
-
-[node name="Chair4" type="Sprite2D" parent="."]
-position = Vector2(226, 206)
-texture = ExtResource("5_flxr2")
-
-[node name="Cardbox" type="Sprite2D" parent="."]
-position = Vector2(18, 124)
-texture = ExtResource("6_pvx18")
-
-[node name="CardbpxBig" type="Sprite2D" parent="."]
-position = Vector2(58, 120)
-texture = ExtResource("7_ohaou")
-
-[node name="Pizza" type="Sprite2D" parent="."]
-position = Vector2(19, 71)
-texture = ExtResource("8_7j7t8")
-
-[node name="Pizza2" type="Sprite2D" parent="."]
-position = Vector2(18, 7)
-texture = ExtResource("8_7j7t8")
-
-[node name="PizzaCycle" type="Sprite2D" parent="."]
-position = Vector2(28, 39)
-texture = ExtResource("9_u2jw2")
-
-[node name="PizzaCycleCut" type="Sprite2D" parent="."]
-position = Vector2(172, 71)
-texture = ExtResource("10_cg76n")
-
-[node name="PizzaCycleCut2" type="Sprite2D" parent="."]
-position = Vector2(70, 41)
-texture = ExtResource("10_cg76n")
-
-[node name="PizzaCycle2" type="Sprite2D" parent="."]
-position = Vector2(127, 11)
-texture = ExtResource("9_u2jw2")
-
-[node name="Pizza3" type="Sprite2D" parent="."]
-position = Vector2(92, 98)
-texture = ExtResource("8_7j7t8")
-
-[node name="Pizza4" type="Sprite2D" parent="."]
-position = Vector2(213, 8)
-texture = ExtResource("8_7j7t8")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(124, 54.5)
+position = Vector2(124, 34)
 shape = SubResource("RectangleShape2D_rdiud")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -157,58 +43,29 @@ position = Vector2(251.625, 172)
 shape = SubResource("RectangleShape2D_p06k4")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-10.3125, 177.75)
+position = Vector2(-11.25, 169)
 shape = SubResource("RectangleShape2D_p06k4")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(41.25, 266)
 shape = SubResource("RectangleShape2D_ibbai")
 
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(18, 126)
-shape = SubResource("RectangleShape2D_4uwgk")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(58, 129.5)
-shape = SubResource("RectangleShape2D_xapx6")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(167.5, 127)
-shape = SubResource("RectangleShape2D_ratvy")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(213.75, 131.25)
-shape = SubResource("RectangleShape2D_8icw7")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(226, 184.375)
-shape = SubResource("RectangleShape2D_iyx56")
-
-[node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("switchSprite", "interactIndicator")]
-position = Vector2(125, 97)
-script = ExtResource("2_ibbai")
-switchSprite = NodePath("Panel")
-switchOn = ExtResource("12_xmf1m")
-
 [node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("activateSound", "interactIndicator")]
 position = Vector2(125, 97)
 script = ExtResource("2_ibbai")
 activateSound = NodePath("Activate Panel")
-
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 
 [node name="Panel" type="Sprite2D" parent="Panel"]
-position = Vector2(6, -25)
-texture = ExtResource("13_e72gx")
+texture = ExtResource("3_hwlqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel"]
-position = Vector2(-1, 18)
+position = Vector2(-2, -2.5)
 shape = SubResource("RectangleShape2D_5l4ix")
 
 [node name="InteractIndicator" parent="Panel" instance=ExtResource("4_ibbai")]
-position = Vector2(6, -48)
+position = Vector2(-1, -31)
 scale = Vector2(0.5, 0.5)
 
 [node name="Activate Panel" type="AudioStreamPlayer2D" parent="Panel"]

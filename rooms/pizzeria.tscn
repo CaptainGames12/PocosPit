@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=31 format=3 uid="uid://dx42ppxocjt0u"]
 
 [ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
 [ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
@@ -16,13 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://h2l5faxraftr" path="res://cut-scenes/beginning/mom.png" id="13_re8k1"]
 [ext_resource type="PackedScene" uid="uid://bbffvrpd50vhm" path="res://rooms/workshop.tscn" id="14_re8k1"]
 [ext_resource type="PackedScene" uid="uid://bkpj2eqgxch7d" path="res://rooms/electrical_room_1.tscn" id="15_0wck2"]
-[ext_resource type="PackedScene" uid="uid://cfmuda1rqn0s7" path="res://scene/animationTransition/animation_balls.tscn" id="15_671hi"]
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="16_sl4l6"]
 [ext_resource type="Script" uid="uid://cmgjemjyfkusl" path="res://scripts/util/Entrance.cs" id="17_sl4l6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7sefv"]
-vertices = PackedVector2Array(848.922, 121.633, 842.813, 120, 986.133, 120, 854.367, 127.078, 856, 133.188, 986.133, 423.82, 856, 422.273, -20, 161, -514.5, 161, -516.82, 29.8203, -20, 21.0313, 828, 120, 840.188, 120, 834.078, 121.633, 828.633, 127.078, 828, 128, 827, 133.188, 660, 151, 660, 128, 743, 229.25, 669, 229.25, 827, 421.93, 743, 416.75, -510.172, 406.109, -512.117, 296, -447, 296, -447, 318, 128, 413.656, -377, 318, -283, 330, 260, 229.25, 260, 415.219, 202, 414.531, 202, 229, 219.5, 141.75, 247, 143.633, 669, 416.75, 610, 416.75, 610, 229.25, 611, 159.141, -377, 296, -145, 296, -145, 299, -283, 299, -107.133, 330, -107.133, 336, -77, 336, -77, 320, -63.9375, 320, -63.9375, 296, -38, 296, -38, 299, -20, 306, -20, 299, 11, 306, 128, 229, 11, 128, 219.5, 128, 247, 141.75, 334, 229.25, 328, 143.633, 388.5, 143.75, 462, 158.141, 481.859, 178, 328, 128, 388.5, 128, 462, 143.75, 611, 151, 592.141, 178, 536, 229.25, 536, 416.75, 473, 416.75, 473, 229.25, 399, 229.25, 399, 416.75, 334, 416.094)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(11, 13, 14), PackedInt32Array(15, 11, 14), PackedInt32Array(15, 14, 16), PackedInt32Array(17, 18, 15, 16, 19, 20), PackedInt32Array(16, 21, 22, 19), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(27, 23, 26, 28, 29), PackedInt32Array(30, 31, 32, 33, 34, 35), PackedInt32Array(17, 20, 36, 37, 38, 39), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(28, 40, 43, 29), PackedInt32Array(29, 44, 45), PackedInt32Array(27, 29, 45), PackedInt32Array(27, 45, 46), PackedInt32Array(46, 47, 48, 27), PackedInt32Array(48, 49, 50, 51), PackedInt32Array(27, 48, 51, 52), PackedInt32Array(51, 53, 52), PackedInt32Array(27, 52, 54), PackedInt32Array(55, 27, 54, 56), PackedInt32Array(55, 56, 57, 34, 33), PackedInt32Array(34, 58, 35), PackedInt32Array(59, 30, 35, 60, 61, 62, 63), PackedInt32Array(60, 64, 65, 61), PackedInt32Array(61, 66, 62), PackedInt32Array(39, 67, 17), PackedInt32Array(68, 39, 38), PackedInt32Array(68, 38, 69, 63), PackedInt32Array(63, 69, 70, 71, 72), PackedInt32Array(36, 22, 21), PackedInt32Array(37, 36, 21), PackedInt32Array(70, 37, 21), PackedInt32Array(70, 21, 71), PackedInt32Array(63, 72, 73), PackedInt32Array(59, 63, 73), PackedInt32Array(59, 73, 74, 75), PackedInt32Array(21, 75, 74), PackedInt32Array(21, 74, 71)])
+vertices = PackedVector2Array(-510.172, 406.109, -512.203, 291, -448, 291, -448, 313, 747.617, 421, -284, 325, 905, 4.6875, 952.688, 3.85156, 952.688, 82, 905, 82, 339, 14.6875, 380.5, 13.9609, 380.5, 82, 339, 108, 986.133, 82, 986.133, 421, 856, 421, 856, 145.188, 854.367, 139.078, 848.922, 133.633, 827, 145.188, 827, 421, -378, 291, -146, 291, -146, 294, -284, 294, -378, 313, -108.133, 325, -108.133, 331, -78, 331, -78, 315, -64.9375, 315, -64.9375, 291, -39, 291, -39, 294, 18, 270.32, 18, 108, 1, 294, 1, 288.539, 8.17969, 286.633, 841.5, 131.648, 834.078, 133.633, 828.633, 139.078, 15.6328, 279.18, -22, 156, -514.594, 156, -516.82, 29.8203, -22, 21.0781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(8, 14, 15, 16, 17), PackedInt32Array(9, 8, 17, 18), PackedInt32Array(9, 18, 19), PackedInt32Array(12, 20, 21, 4, 13), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 22, 25, 5), PackedInt32Array(5, 27, 28), PackedInt32Array(29, 30, 31), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 36, 13, 4), PackedInt32Array(37, 38, 39, 4), PackedInt32Array(9, 19, 40), PackedInt32Array(12, 9, 40, 41), PackedInt32Array(12, 41, 42), PackedInt32Array(12, 42, 20), PackedInt32Array(43, 35, 4), PackedInt32Array(39, 43, 4), PackedInt32Array(29, 31, 34, 37, 4), PackedInt32Array(3, 26, 5), PackedInt32Array(4, 5, 28), PackedInt32Array(29, 4, 28), PackedInt32Array(44, 45, 46, 47)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-527, 20, -520, 416, 1001, 434, 1001, -7)])
 
 [sub_resource type="Curve2D" id="Curve2D_yah6n"]
@@ -183,20 +182,6 @@ tracks/11/keys = {
 "update": 0,
 "values": [-44.649]
 }
-tracks/12/type = "method"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("CutScenesPlayer/AnimationBalls")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"hide"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_anepg"]
 resource_name = "beginning_animation"
@@ -298,10 +283,10 @@ tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.685354, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 0.615572, 0.615572, 1),
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(572.91, 183), Vector2(572.91, 140), Vector2(572.91, 97.065), Vector2(572.91, 97.065), Vector2(572.91, 135.68)]
+"values": [Vector2(394, 183), Vector2(394, 140), Vector2(394, 215)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -377,43 +362,6 @@ tracks/6/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("CutScenesPlayer/AnimationBalls")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.833333, 0.866667, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [],
-"method": &"show"
-}, {
-"args": [],
-"method": &"playAnimation"
-}, {
-"args": [],
-"method": &"hide"
-}]
-}
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("NavigationRegion2D/DiningRoom")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.833333, 3.5),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [1],
-"method": &"ballPool"
-}, {
-"args": [0],
-"method": &"ballPool"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_2icu4"]
 resource_name = "waking_up_animation"
@@ -449,10 +397,10 @@ tracks/2/path = NodePath("Player:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1, 1.8, 2.16763, 5),
-"transitions": PackedFloat32Array(0.297302, 1, 1, 1),
+"times": PackedFloat32Array(1, 1.5, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(571.395, 141.45), Vector2(571.395, 192.715), Vector2(571.395, 192.715), Vector2(815, 194)]
+"values": [Vector2(394, 215), Vector2(394, 183), Vector2(394, 194), Vector2(815, 194)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -545,7 +493,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.0938377, 3, 6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(746, 360), Vector2(746, 172), Vector2(572.91, 183)]
+"values": [Vector2(746, 360), Vector2(746, 172), Vector2(394, 183)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -719,7 +667,6 @@ playerAnimTree = NodePath("../Player/AnimationTree")
 canvasModulate = NodePath("../CanvasModulate")
 
 [node name="Transition" type="ColorRect" parent="CutScenesPlayer"]
-z_index = 2
 offset_left = -565.0
 offset_top = -138.0
 offset_right = 1187.0
@@ -732,12 +679,6 @@ position = Vector2(906, 269.5)
 scale = Vector2(2.84375, 4.82812)
 energy = 3.0
 texture = SubResource("GradientTexture2D_re8k1")
-
-[node name="AnimationBalls" parent="CutScenesPlayer" instance=ExtResource("15_671hi")]
-visible = false
-z_index = 1
-position = Vector2(285, -14)
-scale = Vector2(1.145, 1.145)
 
 [node name="Entrance" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
 position = Vector2(-515, 322)
