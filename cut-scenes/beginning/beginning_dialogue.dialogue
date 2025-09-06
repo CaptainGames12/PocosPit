@@ -30,8 +30,8 @@ do play()
 => END
 ~ end_of_the_cutscene
 set Globals.isCutSceneGoing = false
-: Press W to walk\n		A S D 
-: Press Shift to run.
+: Press W to walk, Shift to run.\n		A S D
+
 => END
 ~ scared_dialogue
 Goodman: What happened with this place?! Where are mom and dad?! Why Poco tried to bite me?!
@@ -47,5 +47,8 @@ do SignalBus.ObjectiveUpdated.emit("Find the map of the pizzeria")
 Goodman: Are you kiddind?! It can't be real! It seems like a joke! Yeah. Maybe it's just fake magazine. Of course.
 => END
 ~ door_is_closed
+: Door is blocked with electrical lock.
+=> END
+~ room_is_not_used
 : Door is blocked.
 => END

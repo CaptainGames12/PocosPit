@@ -73,7 +73,7 @@ public partial class CutScenesController : AnimationPlayer
         dayAudio.Stop();
         GD.Print("is_anim_finished");
         Globals.Instance.beginningCutsceneIsFinished = true;
-        poco.GlobalPosition = new Vector2(617, 164);
+        poco.GlobalPosition = new Vector2(689, 174);
         DialogueManager.ShowDialogueBalloon(dialogue, "end_of_the_cutscene", [this]);
         playerAnimTree.Active = true;
         
@@ -82,8 +82,14 @@ public partial class CutScenesController : AnimationPlayer
     public async Task ScarePlayer()
     {
         player.isScared = true;
-        await ToSignal(GetTree().CreateTimer(10), "timeout");
+       
+        poco.angrySpeed = 0;
+        await ToSignal(GetTree().CreateTimer(3), "timeout");
+        poco.angrySpeed = 100;
+        
+        await ToSignal(GetTree().CreateTimer(8), "timeout");
         DialogueManager.ShowDialogueBalloon(dialogue, "scared_dialogue", [this]);
         player.isScared = false;
+        poco.angrySpeed = 180;
     }
 }

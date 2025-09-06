@@ -606,7 +606,7 @@ animatronic = NodePath("RabAnimatronic")
 position = Vector2(897, 380)
 player = NodePath("../../Player")
 pathFollow = NodePath("../PathFollow2D")
-angrySpeed = 250
+angrySpeed = 290
 normalSpeed = 100
 
 [node name="PathFollow2D" type="PathFollow2D" parent="RabPath"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://7agsflaafkw7"]
+[gd_scene load_steps=14 format=3 uid="uid://7agsflaafkw7"]
 
 [ext_resource type="Script" uid="uid://cyc25uuusvkch" path="res://scripts/ui/UiControl.cs" id="1_nb4k0"]
 [ext_resource type="Texture2D" uid="uid://cuws2v8cynw2n" path="res://textures/rooms/panel_room_1/numpad.png" id="2_ks8t7"]
 [ext_resource type="Script" uid="uid://jm0rc7iui72c" path="res://scripts/ui/Numpad.cs" id="3_tf0e0"]
 [ext_resource type="Script" uid="uid://ct6y28xtoxp18" path="res://ui/NumpadButton.cs" id="4_obcwv"]
 [ext_resource type="FontFile" uid="uid://bwvkqwg5ylynm" path="res://fonts/digital_numbers/fonts/DigitalNumbers-Regular.ttf" id="5_bo1jx"]
+[ext_resource type="Texture2D" uid="uid://ca1ce421mqlij" path="res://textures/writings/where_is_the_key.png" id="6_obcwv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nb4k0"]
 light_mode = 1
@@ -24,8 +25,9 @@ font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_tf0e0"]
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("objectiveLabel", "staminaBar", "loadingScreen")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("notes", "objectiveLabel", "staminaBar", "loadingScreen")]
 script = ExtResource("1_nb4k0")
+notes = NodePath("Notes")
 objectiveLabel = NodePath("Objective")
 staminaBar = NodePath("StaminaBar")
 loadingScreen = NodePath("LoadingScreen")
@@ -196,3 +198,11 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 label_settings = SubResource("LabelSettings_tf0e0")
+
+[node name="Notes" type="Node2D" parent="."]
+
+[node name="WhereIsTheKey" type="Sprite2D" parent="Notes"]
+visible = false
+position = Vector2(568, 274)
+scale = Vector2(6.46033, 6.46033)
+texture = ExtResource("6_obcwv")

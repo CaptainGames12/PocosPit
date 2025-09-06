@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkpj2eqgxch7d"]
+[gd_scene load_steps=12 format=3 uid="uid://bkpj2eqgxch7d"]
 
 [ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_rmeyy"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_hwlqc"]
 [ext_resource type="Script" uid="uid://20tpm7a5l8s3" path="res://scripts/util/PanelAccess.cs" id="2_ibbai"]
 [ext_resource type="Texture2D" uid="uid://ouywvldx0sue" path="res://textures/rooms/panel_room_1/panel.png" id="3_hwlqc"]
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="4_ibbai"]
+[ext_resource type="AudioStream" uid="uid://lyiggewtbnqa" path="res://audio/breaker-switch-45684.mp3" id="5_p06k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdiud"]
 size = Vector2(268, 88)
@@ -49,9 +50,10 @@ shape = SubResource("RectangleShape2D_p06k4")
 position = Vector2(41.25, 266)
 shape = SubResource("RectangleShape2D_ibbai")
 
-[node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+[node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("activateSound", "interactIndicator")]
 position = Vector2(125, 97)
 script = ExtResource("2_ibbai")
+activateSound = NodePath("Activate Panel")
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 
@@ -65,6 +67,9 @@ shape = SubResource("RectangleShape2D_5l4ix")
 [node name="InteractIndicator" parent="Panel" instance=ExtResource("4_ibbai")]
 position = Vector2(-1, -31)
 scale = Vector2(0.5, 0.5)
+
+[node name="Activate Panel" type="AudioStreamPlayer2D" parent="Panel"]
+stream = ExtResource("5_p06k4")
 
 [node name="WorkshopDoor" type="Area2D" parent="."]
 script = ExtResource("2_hwlqc")

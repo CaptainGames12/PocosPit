@@ -19,7 +19,7 @@ public partial class AnimatronicBase : CharacterBody2D
     [Export]
     private PathFollow2D pathFollow;
     [Export]
-    private int angrySpeed;
+    public int angrySpeed;
     [Export]
     private int normalSpeed;
     [Export]

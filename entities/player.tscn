@@ -5398,7 +5398,7 @@ script = ExtResource("1_merdl")
 walkingSound = NodePath("Walk")
 runningSound = NodePath("Run")
 speed = 150.0
-speedMultiplier = 2.0
+speedMultiplier = 1.5
 lightController = NodePath("LightController")
 speedOfRest = 40
 speedOfTiredness = 30
@@ -5408,6 +5408,7 @@ position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_u3f3p")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(-0.932292, -13)
 scale = Vector2(0.5, 0.5)
 color = Color(0.714315, 0.453621, 0.17847, 1)

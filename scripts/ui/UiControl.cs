@@ -4,6 +4,8 @@ using System;
 public partial class UiControl : CanvasLayer
 {
     [Export]
+    private Node2D notes;
+    [Export]
     private Label objectiveLabel;
     [Export]
     private ProgressBar staminaBar;
@@ -14,6 +16,7 @@ public partial class UiControl : CanvasLayer
     {
         SignalBus.Instance.Connect(SignalBus.SignalName.ObjectiveUpdated, Callable.From<string>(UpdateObjective));
         SignalBus.Instance.Connect(SignalBus.SignalName.RoomChanged, Callable.From<string>(LoadingRoomInitialize));
+        SignalBus.Instance.Connect(SignalBus.SignalName.PlayerInteractedWithNote, Callable.From<ShowNote>(ShowNote));
     }
     public override void _Process(double delta)
     {
@@ -38,5 +41,21 @@ public partial class UiControl : CanvasLayer
         objectiveLabel.Text = "Objective: " + objective;
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(objectiveLabel, "visible_ratio", 1, 1);
+    }
+    private void ShowNote(ShowNote note)
+    {
+
+        foreach (Node2D i in notes.GetChildren())
+        {
+            if (i.Name == note.Name)
+            {
+                i.Visible = note.isPlayerNearInteractableItem;
+            }
+        }
+        if (note.Name == "Map")
+        {
+            note.QueueFree();
+        }
+        
     }
 }
