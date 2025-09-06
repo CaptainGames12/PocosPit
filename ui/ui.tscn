@@ -25,12 +25,15 @@ font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_tf0e0"]
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("notes", "objectiveLabel", "staminaBar", "loadingScreen")]
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("notes", "objectiveLabel", "staminaBar", "loadingScreen", "objectiveLabelUI")]
+
 script = ExtResource("1_nb4k0")
 notes = NodePath("Notes")
 objectiveLabel = NodePath("Objective")
 staminaBar = NodePath("StaminaBar")
 loadingScreen = NodePath("LoadingScreen")
+objectiveLabelUI = NodePath("")
 
 [node name="StaminaBar" type="ProgressBar" parent="."]
 material = SubResource("CanvasItemMaterial_nb4k0")
@@ -194,8 +197,10 @@ text_direction = 2
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -43.335
+offset_top = 9.7
+offset_right = -4.83997
+offset_bottom = 32.7
 grow_horizontal = 0
 label_settings = SubResource("LabelSettings_tf0e0")
 
