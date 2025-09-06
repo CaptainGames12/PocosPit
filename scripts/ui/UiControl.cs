@@ -16,7 +16,6 @@ public partial class UiControl : CanvasLayer
     [Export]
     private Node2D notes;
    
-    private Tween loadingScreenTween;
     public override void _Ready()
     {
         SignalBus.Instance.Connect(SignalBus.SignalName.ObjectiveUpdated, Callable.From<string>(UpdateObjective));
