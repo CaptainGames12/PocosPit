@@ -1,0 +1,363 @@
+[gd_scene load_steps=22 format=3 uid="uid://c2tvpnj5vmlu1"]
+
+[ext_resource type="Texture2D" uid="uid://cbjsg57kry1hn" path="res://textures/rooms/storage_room/main.png" id="1_xgi1y"]
+[ext_resource type="Texture2D" uid="uid://buoh8ahyev6pe" path="res://textures/rooms/storage_room/table_big-1.png" id="2_jk7ey"]
+[ext_resource type="Texture2D" uid="uid://cirpx41hn561o" path="res://textures/rooms/staff_room/paper.png" id="3_1i8vf"]
+[ext_resource type="Texture2D" uid="uid://dey5grfkiq2hp" path="res://textures/rooms/reception/cardbox.png" id="4_11hf8"]
+[ext_resource type="Texture2D" uid="uid://dobhfh57d0bdo" path="res://textures/rooms/reception/plants.png" id="5_8xicq"]
+[ext_resource type="Texture2D" uid="uid://nej4nuseyevb" path="res://textures/rooms/diding_room/pizza.png" id="6_aid1h"]
+[ext_resource type="Texture2D" uid="uid://bmqxit1b87alj" path="res://textures/rooms/diding_room/pizza_cycle.png" id="7_h6we1"]
+[ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="8_qiqu4"]
+[ext_resource type="Texture2D" uid="uid://cr0bu70ex4sbt" path="res://textures/rooms/diding_room/TableMini.png" id="9_47lkf"]
+[ext_resource type="Texture2D" uid="uid://cyr6fh00kdv1r" path="res://textures/rooms/diding_room/Vase.png" id="10_vvs8v"]
+[ext_resource type="Texture2D" uid="uid://b73vuvevlp8he" path="res://textures/rooms/diding_room/Vase_with_flowers.png" id="11_q1cjo"]
+[ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="12_1vk0v"]
+[ext_resource type="Texture2D" uid="uid://dngycobc0k7d2" path="res://textures/rooms/staff_room/Vedro.png" id="13_b6sjy"]
+[ext_resource type="Texture2D" uid="uid://26drjq120q1l" path="res://textures/rooms/staff_room/Computer.png" id="14_8psa4"]
+[ext_resource type="Texture2D" uid="uid://cyfeif70rqb8a" path="res://textures/rooms/diding_room/garlands.png" id="15_1msmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhj4n"]
+size = Vector2(554, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idmhl"]
+size = Vector2(15, 385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7crkt"]
+size = Vector2(584.5, 14.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdl26"]
+size = Vector2(449, 31.1875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgi1y"]
+size = Vector2(66.5, 8.59375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7ey"]
+size = Vector2(446.25, 23)
+
+[node name="StorageRoom" type="Node2D"]
+texture_filter = 1
+
+[node name="Mask" type="ColorRect" parent="."]
+clip_children = 1
+offset_left = -277.0
+offset_top = -194.0
+offset_right = -237.0
+offset_bottom = -154.0
+scale = Vector2(13.88, 9.68)
+
+[node name="Texture" type="Node2D" parent="Mask"]
+position = Vector2(19.9568, 20.0413)
+scale = Vector2(0.0720461, 0.103306)
+
+[node name="Main" type="Sprite2D" parent="Mask/Texture"]
+texture = ExtResource("1_xgi1y")
+
+[node name="TableBig-1" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-50, -82)
+texture = ExtResource("2_jk7ey")
+
+[node name="TableBig-2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(5, 36)
+texture = ExtResource("2_jk7ey")
+
+[node name="TableBig-3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-53, 150)
+texture = ExtResource("2_jk7ey")
+
+[node name="Paper" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-258, 156)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-224, 127)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-158, 12)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper4" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-113, 40)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper5" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-55, 41)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper6" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-39, 12)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper7" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(144, 12)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper8" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(166, 13)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper9" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-181, -135)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper10" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-252, -105)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper11" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(126, -106)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper12" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-12, -105)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper13" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-122, -105)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper14" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-41, -134)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper15" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-71, -75)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper16" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(43, 156)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper17" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-123, 127)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper18" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(146, 98)
+texture = ExtResource("3_1i8vf")
+
+[node name="Paper19" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(57, 99)
+texture = ExtResource("3_1i8vf")
+
+[node name="Cardbox" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(99, 97)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-5, 97)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-74, 127)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox4" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-60, -15)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox5" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(57, -15)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox6" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(96, -134)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox7" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(9, -133)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox8" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-113, -135)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox9" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-208, -77)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox10" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-194, -16)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox11" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-2, 43)
+texture = ExtResource("4_11hf8")
+
+[node name="Cardbox12" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-228, 100)
+texture = ExtResource("4_11hf8")
+
+[node name="Plants" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(96, -22)
+texture = ExtResource("5_8xicq")
+
+[node name="Plants2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-78, -142)
+texture = ExtResource("5_8xicq")
+
+[node name="Plants3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-193, 91)
+texture = ExtResource("5_8xicq")
+
+[node name="Pizza" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(0, -164)
+texture = ExtResource("6_aid1h")
+
+[node name="Pizza2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(90, -164)
+texture = ExtResource("6_aid1h")
+
+[node name="Pizza3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-174, -167)
+texture = ExtResource("6_aid1h")
+
+[node name="PizzaCycle" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-51, -168)
+texture = ExtResource("7_h6we1")
+
+[node name="PizzaCycle2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-117, -170)
+texture = ExtResource("7_h6we1")
+
+[node name="PizzaCycleCut" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-250, -165)
+texture = ExtResource("8_qiqu4")
+
+[node name="PizzaCycleCut2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(141, -167)
+texture = ExtResource("8_qiqu4")
+
+[node name="Pizza4" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(253, -173)
+texture = ExtResource("6_aid1h")
+
+[node name="PizzaCycle3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(258, -124)
+texture = ExtResource("7_h6we1")
+
+[node name="PizzaCycleCut3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(265, -90)
+texture = ExtResource("8_qiqu4")
+
+[node name="TableMini" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-242, -50)
+texture = ExtResource("9_47lkf")
+
+[node name="Vase" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-193, 39)
+texture = ExtResource("10_vvs8v")
+
+[node name="VaseWithFlowers" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-169, 38)
+texture = ExtResource("11_q1cjo")
+
+[node name="VaseWithFlowers2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(172, -13)
+texture = ExtResource("11_q1cjo")
+
+[node name="VaseWithFlowers3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(78, 39)
+texture = ExtResource("11_q1cjo")
+
+[node name="VaseWithFlowers4" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-35, -16)
+texture = ExtResource("11_q1cjo")
+
+[node name="VaseWithFlowers5" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(46, -132)
+texture = ExtResource("11_q1cjo")
+
+[node name="VaseWithFlowers6" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(3, -80)
+texture = ExtResource("11_q1cjo")
+
+[node name="VaseWithFlowers7" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-207, -134)
+texture = ExtResource("11_q1cjo")
+
+[node name="Vase2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-79, 101)
+texture = ExtResource("10_vvs8v")
+
+[node name="Vase3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(21, 130)
+texture = ExtResource("10_vvs8v")
+
+[node name="CardbpxBig" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-1, -22)
+texture = ExtResource("12_1vk0v")
+
+[node name="Vedro" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-201, 44)
+texture = ExtResource("13_b6sjy")
+
+[node name="Vedro2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-195, -76)
+texture = ExtResource("13_b6sjy")
+
+[node name="Computer" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-123, 7)
+texture = ExtResource("14_8psa4")
+
+[node name="Computer2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(140, -110)
+texture = ExtResource("14_8psa4")
+
+[node name="Garlands" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-184, -158)
+texture = ExtResource("15_1msmf")
+
+[node name="Garlands2" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(308, -163)
+texture = ExtResource("15_1msmf")
+
+[node name="Garlands3" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-205, -62.5)
+texture = ExtResource("15_1msmf")
+
+[node name="Garlands4" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(287, -67.5)
+texture = ExtResource("15_1msmf")
+
+[node name="Garlands5" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(-200, 54.5)
+texture = ExtResource("15_1msmf")
+
+[node name="Garlands6" type="Sprite2D" parent="Mask/Texture"]
+position = Vector2(292, 49.5)
+texture = ExtResource("15_1msmf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -132)
+shape = SubResource("RectangleShape2D_jhj4n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(285, -0.5)
+shape = SubResource("RectangleShape2D_idmhl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-284.5, 0)
+shape = SubResource("RectangleShape2D_idmhl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.75, 200)
+shape = SubResource("RectangleShape2D_7crkt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-52.5, -55.5938)
+shape = SubResource("RectangleShape2D_tdl26")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-243.25, -35.7031)
+shape = SubResource("RectangleShape2D_xgi1y")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6, 65)
+shape = SubResource("RectangleShape2D_jk7ey")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-54, 180)
+shape = SubResource("RectangleShape2D_jk7ey")

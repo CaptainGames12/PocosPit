@@ -3,14 +3,19 @@ using System;
 
 public partial class UiControl : CanvasLayer
 {
+
+	[Export]
+	private Label objectiveLabel;
+	[Export]
+	private ProgressBar staminaBar;
+	[Export]
+	private ColorRect loadingScreen;
+	private Tween loadingScreenTween;
+	[Export]
+	private Sprite2D objectiveLabelUI;
     [Export]
     private Node2D notes;
-    [Export]
-    private Label objectiveLabel;
-    [Export]
-    private ProgressBar staminaBar;
-    [Export]
-    private ColorRect loadingScreen;
+   
     private Tween loadingScreenTween;
     public override void _Ready()
     {
@@ -21,20 +26,24 @@ public partial class UiControl : CanvasLayer
     public override void _Process(double delta)
     {
         staminaBar.Visible = !Globals.Instance.isCutSceneGoing;
+		    staminaBar.Value = Globals.Instance.stamina;
 
-        staminaBar.Value = Globals.Instance.stamina;
-    }
-    private void LoadingRoomInitialize(string _roomName)
-    {
-        if (loadingScreenTween != null)
-        {
-            loadingScreenTween.Kill();
-        }
-        loadingScreenTween = GetTree().CreateTween();
 
-        loadingScreen.SelfModulate = new Color(1, 1, 1, 1);
-        loadingScreenTween.TweenProperty(loadingScreen, "self_modulate", new Color(1, 1, 1, 0), 2);
-    }
+	  }
+	private void LoadingRoomInitialize(string _roomName)
+	{
+		if (loadingScreenTween != null)
+		{
+			loadingScreenTween.Kill();
+		}
+		loadingScreenTween = GetTree().CreateTween();
+
+		loadingScreen.SelfModulate = new Color(1, 1, 1, 1);
+		loadingScreenTween.TweenProperty(loadingScreen, "self_modulate", new Color(1, 1, 1, 0), 2);
+	}
+
+
+
     private void UpdateObjective(string objective)
     {
         objectiveLabel.VisibleRatio = 0;
@@ -58,4 +67,5 @@ public partial class UiControl : CanvasLayer
         }
         
     }
+
 }
