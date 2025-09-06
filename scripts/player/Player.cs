@@ -18,10 +18,15 @@ public partial class Player : CharacterBody2D
     public int speedOfTiredness;
     public bool fullyTired = false;
     public PlayerState currentState = PlayerState.WALK;
+    public bool isRunning = false;
+    public bool isChargingLight = false;
+    public bool isWalking = false;
+    public bool isScared = false;
     public override void _PhysicsProcess(double delta)
     {
+
         HandleMovement(delta);
-        HandleSounds();
+        //HandleSounds();
     }
     private void HandleMovement(double delta)
     {
@@ -35,6 +40,8 @@ public partial class Player : CharacterBody2D
         {
             Globals.Instance.stamina = Mathf.Clamp(Globals.Instance.stamina - speedOfTiredness * (float)delta, 0, 100);
             currentState = PlayerState.RUN;
+            isRunning = true;
+            isWalking = false;
             if (Globals.Instance.stamina == 0)
             {
                 fullyTired = true;
@@ -43,6 +50,8 @@ public partial class Player : CharacterBody2D
         else
         {
             currentState = PlayerState.WALK;
+            isRunning = false;
+            isWalking = true;
             Globals.Instance.stamina = Mathf.Clamp(Globals.Instance.stamina + speedOfRest * (float)delta, 0, 100);
             if (Globals.Instance.stamina == 100)
             {

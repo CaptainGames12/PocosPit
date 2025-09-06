@@ -12,7 +12,7 @@ public partial class RoomChanger : Area2D
     {
         Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnRoomChangerEntered));
     }
-    public void OnRoomChangerEntered(Node2D body)
+    public virtual void OnRoomChangerEntered(Node2D body)
     {
         if (body.IsInGroup("player"))
         {

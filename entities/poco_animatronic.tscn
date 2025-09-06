@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwetc1prqf4o6"]
+[gd_scene load_steps=8 format=3 uid="uid://cwetc1prqf4o6"]
 
 [ext_resource type="Script" uid="uid://bvvgumrpjr6we" path="res://scripts/animatronics/PocoAnimatronic.cs" id="1_s6hxr"]
 [ext_resource type="Texture2D" uid="uid://c0gofjls0vmy" path="res://textures/animatronics/poco.png" id="2_b1stt"]
 [ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_y4bro"]
+[ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_i0sk7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
-radius = 33.0606
+radius = 91.2414
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
 
@@ -13,10 +14,11 @@ radius = 33.0606
 radius = 12.0
 height = 48.0
 
-[node name="PocoAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
+[node name="PocoAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_s6hxr")
+angrySound = NodePath("AngrySound")
 stepsSound = NodePath("Walking")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
@@ -52,3 +54,6 @@ shape = SubResource("CapsuleShape2D_b1stt")
 [node name="Walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_y4bro")
 max_distance = 1000.0
+
+[node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i0sk7")

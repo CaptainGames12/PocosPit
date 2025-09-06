@@ -5,7 +5,8 @@ public partial class Globals : Node
 {
 
     public static Globals Instance;
-
+    public string currentObjective = "";
+    public bool beginningCutsceneIsFinished = false;
     public int panelsActivated = 0;
     public bool isFlashlightDeactivated = true;
     public bool isCutSceneGoing = false;

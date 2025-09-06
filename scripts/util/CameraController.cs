@@ -20,7 +20,21 @@ public partial class CameraController : Camera2D
             right: -31,
             bottom: 426,
             zoom: new Vector2(3, 3)
-            )
+            ),
+        ["Workshop"] = new RoomScale(
+            left: 390,
+            top: -390,
+            right: 1000,
+            bottom: -35,
+            zoom: new Vector2(3, 3)
+        ),
+        ["PanelRoom"] = new RoomScale(
+            left: 807,
+            top: -673,
+            right: 1051,
+            bottom: -411,
+            zoom: new Vector2(4, 4)
+        )
     };
     public override void _Ready()
     {

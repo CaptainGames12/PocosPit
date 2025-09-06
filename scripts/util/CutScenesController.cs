@@ -1,25 +1,53 @@
 using DialogueManagerRuntime;
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class CutScenesController : AnimationPlayer
 {
+    [Export]
+    private Node2D parents;
+    [Export]
+    private AudioStreamPlayer dayAudio;
+    [Export]
+    private AnimationPlayer playerAnimations;
     [Export]
     private PocoAnimatronic poco;
     [Export]
     private Player player;
     [Export]
     private Resource dialogue;
+    [Export]
+    private AnimationTree playerAnimTree;
+    [Export]
+    private CanvasModulate canvasModulate;
     private int chargeCounter;
     public override void _Ready()
     {
+        if (!Globals.Instance.beginningCutsceneIsFinished)
+        {
+            StartBeginningCutscene();
 
-        Globals.Instance.isCutSceneGoing = true;
-        SignalBus.Instance.EmitSignal(SignalBus.SignalName.RoomChanged, "Reception");
-        player.GlobalPosition = new Vector2(-444, 343);
-        DialogueManager.ShowDialogueBalloon(dialogue, "start", [this]);
+        }
+        else
+        {
+            FinishBeginningCutscene();
+            player.GlobalPosition = new Vector2(789, 174);
+            canvasModulate.Visible = true;
+            dayAudio.Playing = false;
+            //Play("waking_up_animation");
+        }
+            
 
-
+    }
+    private void StartBeginningCutscene()
+    {
+            playerAnimTree.Active = false;
+            playerAnimations.CurrentAnimation = "idle_left_beginning";
+            Globals.Instance.isCutSceneGoing = true;
+            SignalBus.Instance.EmitSignal(SignalBus.SignalName.RoomChanged, "Reception");
+            player.GlobalPosition = new Vector2(-444, 343);
+            DialogueManager.ShowDialogueBalloon(dialogue, "start", [this]);
     }
     private void ShowTransitionText()
     {
@@ -41,7 +69,21 @@ public partial class CutScenesController : AnimationPlayer
     }
     public void FinishBeginningCutscene()
     {
-        poco.GlobalPosition = new Vector2(29, 185);
+        parents.Visible = false;
+        dayAudio.Stop();
+        GD.Print("is_anim_finished");
+        Globals.Instance.beginningCutsceneIsFinished = true;
+        poco.GlobalPosition = new Vector2(617, 164);
         DialogueManager.ShowDialogueBalloon(dialogue, "end_of_the_cutscene", [this]);
+        playerAnimTree.Active = true;
+        
+        ScarePlayer();
+    }
+    public async Task ScarePlayer()
+    {
+        player.isScared = true;
+        await ToSignal(GetTree().CreateTimer(10), "timeout");
+        DialogueManager.ShowDialogueBalloon(dialogue, "scared_dialogue", [this]);
+        player.isScared = false;
     }
 }

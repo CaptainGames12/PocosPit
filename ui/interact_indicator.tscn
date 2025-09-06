@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drx8jti3cblx"]
+
+[ext_resource type="Texture2D" uid="uid://bcohn1arigwit" path="res://textures/rooms/panel_room_1/interact_indicator.png" id="1_vb25k"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8eyd2"]
+light_mode = 1
+
+[node name="InteractIndicator" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_8eyd2")
+texture = ExtResource("1_vb25k")

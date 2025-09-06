@@ -48,6 +48,7 @@ size = Vector2(46, 4.5)
 [node name="Reception" type="Node2D"]
 
 [node name="Texture" type="Node2D" parent="."]
+position = Vector2(252, 131)
 
 [node name="Main" type="Sprite2D" parent="Texture"]
 texture_filter = 1
@@ -107,7 +108,7 @@ position = Vector2(-136, -41)
 texture = ExtResource("10_x3g6h")
 
 [node name="ColisionReception" type="StaticBody2D" parent="."]
-position = Vector2(15, 19)
+position = Vector2(267, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionReception"]
 position = Vector2(74.5, -4.5)
@@ -146,7 +147,7 @@ position = Vector2(245, -89)
 shape = SubResource("RectangleShape2D_x7sg6")
 
 [node name="DiningRoomCorridor" type="Area2D" parent="."]
-position = Vector2(263, 59)
+position = Vector2(515, 190)
 script = ExtResource("11_eue5r")
 currentRoomName = "Reception"
 newRoomName = "DiningRoom"
@@ -157,7 +158,7 @@ position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_63cxr")
 
 [node name="StaffRoomDoor" type="Area2D" parent="."]
-position = Vector2(-47, -6)
+position = Vector2(205, 125)
 script = ExtResource("11_eue5r")
 currentRoomName = "Reception"
 newRoomName = "StaffRoom"

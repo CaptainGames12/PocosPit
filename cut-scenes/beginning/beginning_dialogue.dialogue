@@ -33,3 +33,19 @@ set Globals.isCutSceneGoing = false
 : Press W to walk\n		A S D 
 : Press Shift to run.
 => END
+~ scared_dialogue
+Goodman: What happened with this place?! Where are mom and dad?! Why Poco tried to bite me?!
+Goodman: Calm down, calm down. I just need to escape from this place through the entrance door. 
+do SignalBus.ObjectiveUpdated.emit("Exit through the entrance door")
+=> END
+~ door_seems_closed
+Goodman: Damn. Door is blocked with electrical lock. Then I need to turn on the light. Be strong, Goodman. We will escape, we will be safe.
+Goodman: I have to turn on the electricity to get out of here. I need the map of building to find panels or something like that. And I should just avoid this robot.
+do SignalBus.ObjectiveUpdated.emit("Find the map of the pizzeria")
+=> END
+~ realization
+Goodman: Are you kiddind?! It can't be real! It seems like a joke! Yeah. Maybe it's just fake magazine. Of course.
+=> END
+~ door_is_closed
+: Door is blocked.
+=> END

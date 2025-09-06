@@ -8,6 +8,10 @@ script/source = "extends VideoStreamPlayer
 func _ready() -> void:
 	await get_tree().create_timer(2.2).timeout
 	$AudioStreamPlayer2D.play()
+
+
+func _on_finished() -> void:
+	get_tree().change_scene_to_file(\"uid://dx42ppxocjt0u\")
 "
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer"]
@@ -20,3 +24,5 @@ script = SubResource("GDScript_3i2ym")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_3i2ym")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

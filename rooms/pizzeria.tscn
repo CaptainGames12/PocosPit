@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=31 format=3 uid="uid://dx42ppxocjt0u"]
 
 [ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
 [ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
@@ -10,9 +10,14 @@
 [ext_resource type="Script" uid="uid://ch4fvmnj2i1qk" path="res://scripts/util/TransportingPlayerController.cs" id="8_wne6k"]
 [ext_resource type="AudioStream" uid="uid://c27t7w5p7idef" path="res://audio/poco_x3pro_main_theme.mp3" id="9_anepg"]
 [ext_resource type="Script" uid="uid://bbvj758s85npg" path="res://scripts/util/CutScenesController.cs" id="10_wn245"]
+[ext_resource type="AudioStream" uid="uid://bke5n10jcs0v2" path="res://audio/children-playing-30728.mp3" id="11_1qmer"]
 [ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="11_a6j83"]
 [ext_resource type="Texture2D" uid="uid://bwtyg76vo6aqv" path="res://cut-scenes/beginning/dad.png" id="12_2icu4"]
 [ext_resource type="Texture2D" uid="uid://h2l5faxraftr" path="res://cut-scenes/beginning/mom.png" id="13_re8k1"]
+[ext_resource type="PackedScene" uid="uid://bbffvrpd50vhm" path="res://rooms/workshop.tscn" id="14_re8k1"]
+[ext_resource type="PackedScene" uid="uid://bkpj2eqgxch7d" path="res://rooms/electrical_room_1.tscn" id="15_0wck2"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="16_sl4l6"]
+[ext_resource type="Script" uid="uid://cmgjemjyfkusl" path="res://scripts/util/Entrance.cs" id="17_sl4l6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7sefv"]
 vertices = PackedVector2Array(-510.172, 406.109, -512.203, 291, -448, 291, -448, 313, 747.617, 421, -284, 325, 905, 4.6875, 952.688, 3.85156, 952.688, 82, 905, 82, 339, 14.6875, 380.5, 13.9609, 380.5, 82, 339, 108, 986.133, 82, 986.133, 421, 856, 421, 856, 145.188, 854.367, 139.078, 848.922, 133.633, 827, 145.188, 827, 421, -378, 291, -146, 291, -146, 294, -284, 294, -378, 313, -108.133, 325, -108.133, 331, -78, 331, -78, 315, -64.9375, 315, -64.9375, 291, -39, 291, -39, 294, 18, 270.32, 18, 108, 1, 294, 1, 288.539, 8.17969, 286.633, 841.5, 131.648, 834.078, 133.633, 828.633, 139.078, 15.6328, 279.18, -22, 156, -514.594, 156, -516.82, 29.8203, -22, 21.0781)
@@ -30,6 +35,153 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 897, 380, 0, 0, 0, 0, 901, 196, 0, 0, 0, 0, 860, 123, 0, 0, 0, 0, 805, 124, 0, 0, 0, 0, 612, 142, 0, 0, 0, 0, 431, 174, 0, 0, 0, 0, 249, 233, 0, 0, 0, 0, 102, 279, 0, 0, 0, 0, 107, 335, 0, 0, 0, 0, 239, 386, 0, 0, 0, 0, 443, 370, 0, 0, 0, 0, 531, 372, 0, 0, 0, 0, 683, 345, 0, 0, 0, 0, 735, 358, 0, 0, 0, 0, 753, 271, 0, 0, 0, 0, 736, 213, 0, 0, 0, 0, 776, 173, 0, 0, 0, 0, 714, 144, 0, 0, 0, 0, 753, 129, 0, 0, 0, 0, 876, 115, 0, 0, 0, 0, 953, 148, 0, 0, 0, 0, 953, 391, 0, 0, 0, 0, 897, 379)
 }
 point_count = 23
+
+[sub_resource type="Animation" id="Animation_wn245"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-444, 343)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutScenesPlayer/Transition:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parents/Mom:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-500, 343)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parents/Dad:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-483, 322)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasModulate:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutScenesPlayer/LastLight:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/AnimationTree:active")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/AnimationPlayer:current_animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["right"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DayTheme:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DayTheme:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("NightTheme:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("NightTheme:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-44.649]
+}
 
 [sub_resource type="Animation" id="Animation_anepg"]
 resource_name = "beginning_animation"
@@ -75,7 +227,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Mom:position")
+tracks/3/path = NodePath("Parents/Mom:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -87,7 +239,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Dad:position")
+tracks/4/path = NodePath("Parents/Dad:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -96,76 +248,25 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-483, 322), Vector2(-599, 322)]
 }
-
-[sub_resource type="Animation" id="Animation_wn245"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-444, 343)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CutScenesPlayer/Transition:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Mom:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-500, 343)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Dad:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-483, 322)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CanvasModulate:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CutScenesPlayer/LastLight:visible")
+tracks/5/path = NodePath("Player/AnimationPlayer:current_animation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"right"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/AnimationTree:active")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -174,7 +275,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_4i26a"]
 resource_name = "jump_animation"
-length = 1.5
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -194,7 +295,7 @@ tracks/1/path = NodePath("CutScenesPlayer/Transition:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 1.5),
+"times": PackedFloat32Array(1, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -206,54 +307,60 @@ tracks/2/path = NodePath("CutScenesPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.5),
+"times": PackedFloat32Array(3.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"waking_up_animation", -1, 1.0, false],
 "method": &"play"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_a6j83"]
-resource_name = "walking_in_the_dining_room"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CutScenesPlayer/Transition:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0866815, 0.20476),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/AnimationPlayer:current_animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"left"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DayTheme:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.800104, 3.46667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [0.0, -29.403]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.0938377, 3, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(746, 360), Vector2(746, 172), Vector2(394, 183)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CutScenesPlayer")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(6),
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DayTheme:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"PlayJumpAnimation"
-}]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_2icu4"]
@@ -324,6 +431,108 @@ tracks/4/keys = {
 "method": &"FinishBeginningCutscene"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NightTheme:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NightTheme:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-44.649, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/AnimationPlayer:current_animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"confused_idle", &"confused_with_light"]
+}
+
+[sub_resource type="Animation" id="Animation_a6j83"]
+resource_name = "walking_in_the_dining_room"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CutScenesPlayer/Transition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0866815, 0.20476),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0938377, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(746, 360), Vector2(746, 172), Vector2(394, 183)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutScenesPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayJumpAnimation"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/AnimationPlayer:current_animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"left"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a6j83"]
 _data = {
@@ -343,17 +552,29 @@ fill = 1
 fill_from = Vector2(0.509434, 0.514151)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkn55"]
+size = Vector2(20, 108)
+
 [node name="Pizzeria" type="Node2D"]
+y_sort_enabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_7sefv")
 
 [node name="DiningRoom" parent="NavigationRegion2D" instance=ExtResource("1_j3ksj")]
 
 [node name="Reception" parent="NavigationRegion2D" instance=ExtResource("7_gcwg4")]
-position = Vector2(-279, 295)
+position = Vector2(-530, 169)
+
+[node name="Workshop" parent="NavigationRegion2D" instance=ExtResource("14_re8k1")]
+position = Vector2(383, -390)
+
+[node name="ElectricalRoom1" parent="NavigationRegion2D" instance=ExtResource("15_0wck2")]
+position = Vector2(809, -669)
 
 [node name="PocoPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
+y_sort_enabled = true
 curve = SubResource("Curve2D_yah6n")
 script = ExtResource("2_7sefv")
 speed = 5
@@ -368,12 +589,13 @@ angrySpeed = 180
 normalSpeed = 100
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PocoPath"]
-position = Vector2(336.327, 118.909)
-progress = 345.85
+position = Vector2(723.683, 145.702)
+progress = 2491.51
 rotates = false
 cubic_interp = false
 
 [node name="RabPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
+y_sort_enabled = true
 curve = SubResource("Curve2D_4ptq7")
 script = ExtResource("2_7sefv")
 speed = 5
@@ -408,22 +630,41 @@ player = NodePath("../Player")
 position = Vector2(-75, 367)
 
 [node name="DiningRoomFromReception" type="Marker2D" parent="Markers"]
-position = Vector2(116, 360)
+position = Vector2(35, 356)
+
+[node name="WorkshopFromDiningRoom" type="Marker2D" parent="Markers"]
+position = Vector2(928, -83)
+
+[node name="DiningRoomFromWorkshop" type="Marker2D" parent="Markers"]
+position = Vector2(930, 130)
+
+[node name="PanelRoomFromWorkshop" type="Marker2D" parent="Markers"]
+position = Vector2(933, -471)
+
+[node name="WorkshopFromPanelRoom" type="Marker2D" parent="Markers"]
+position = Vector2(928, -216)
 
 [node name="DayTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_1qmer")
+autoplay = true
 
 [node name="NightTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_anepg")
-volume_db = -2.059
+volume_db = -44.649
 
-[node name="CutScenesPlayer" type="AnimationPlayer" parent="." node_paths=PackedStringArray("poco", "player")]
+[node name="CutScenesPlayer" type="AnimationPlayer" parent="." node_paths=PackedStringArray("parents", "dayAudio", "playerAnimations", "poco", "player", "playerAnimTree", "canvasModulate")]
 libraries = {
 &"": SubResource("AnimationLibrary_a6j83")
 }
 script = ExtResource("10_wn245")
+parents = NodePath("../Parents")
+dayAudio = NodePath("../DayTheme")
+playerAnimations = NodePath("../Player/AnimationPlayer")
 poco = NodePath("../PocoPath/PocoAnimatronic")
 player = NodePath("../Player")
 dialogue = ExtResource("11_a6j83")
+playerAnimTree = NodePath("../Player/AnimationTree")
+canvasModulate = NodePath("../CanvasModulate")
 
 [node name="Transition" type="ColorRect" parent="CutScenesPlayer"]
 offset_left = -565.0
@@ -439,10 +680,30 @@ scale = Vector2(2.84375, 4.82812)
 energy = 3.0
 texture = SubResource("GradientTexture2D_re8k1")
 
-[node name="Dad" type="Sprite2D" parent="."]
+[node name="Entrance" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+position = Vector2(-515, 322)
+script = ExtResource("17_sl4l6")
+dialogue = ExtResource("11_a6j83")
+interactIndicator = NodePath("InteractIndicator")
+metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance"]
+position = Vector2(0, 44)
+shape = SubResource("RectangleShape2D_hkn55")
+
+[node name="InteractIndicator" parent="Entrance" instance=ExtResource("16_sl4l6")]
+position = Vector2(32, 37)
+scale = Vector2(0.5, 0.5)
+
+[node name="Parents" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Dad" type="Sprite2D" parent="Parents"]
 position = Vector2(-483, 322)
 texture = ExtResource("12_2icu4")
 
-[node name="Mom" type="Sprite2D" parent="."]
+[node name="Mom" type="Sprite2D" parent="Parents"]
 position = Vector2(-500, 343)
 texture = ExtResource("13_re8k1")
+
+[editable path="Player"]

@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbfxtxp2kw0r2"]
+[gd_scene load_steps=8 format=3 uid="uid://dbfxtxp2kw0r2"]
 
 [ext_resource type="Script" uid="uid://dkm4f8eicns10" path="res://scripts/animatronics/RabAnimatronic.cs" id="1_ksgdc"]
 [ext_resource type="Texture2D" uid="uid://qc07clobp6l8" path="res://textures/animatronics/rab.png" id="2_kkgba"]
 [ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_gehp1"]
+[ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_hdbg3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
-radius = 104.48
+radius = 85.3756
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
 
@@ -13,11 +14,12 @@ radius = 104.48
 radius = 12.0
 height = 48.0
 
-[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
+[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_ksgdc")
 deactivationTimer = NodePath("DeactivationTimer")
+angrySound = NodePath("AngrySound")
 stepsSound = NodePath("Walking")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
@@ -58,3 +60,6 @@ one_shot = true
 stream = ExtResource("3_gehp1")
 max_distance = 1000.0
 attenuation = 3.03144
+
+[node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hdbg3")

@@ -4,6 +4,8 @@ using System;
 public partial class LightController : Node
 {
     [Export]
+    private Player player;
+    [Export]
     private Area2D lightArea;
     [Export]
     private PointLight2D light;
@@ -37,35 +39,43 @@ public partial class LightController : Node
     {
         if (directionOfPlayer != Vector2.Zero)
         {
-            if (directionOfPlayer.Y != 0 && directionOfPlayer.X != 0)
+            if (directionOfPlayer.X > 0)
             {
-                directionOfPlayer = new Vector2(0, directionOfPlayer.Y);
-
+                light.RotationDegrees = 0;
             }
-            light.Rotation = directionOfPlayer.Angle();
+            else if (directionOfPlayer.X < 0)
+            {
+                light.RotationDegrees = -180;
+            }
         }
     }
     private void ChargeFlashlight()
     {
         if (Input.IsActionJustPressed("charge_flashlight") && !Globals.Instance.isFlashlightDeactivated)
         {
+            player.isChargingLight = true;
             lightTimer.Start();
             chargingSound.Play();
             lightTween.Kill();
             lightTween = GetTree().CreateTween().SetParallel(true);
             float newEnergy = (float)Mathf.Lerp(light.Energy, 1.0, 0.3f);
-            Vector2 newScale = light.Scale.Lerp(Vector2.One, 0.3f);
-            lightTween.TweenProperty(light, "scale", newScale, 0.1);
+            //Vector2 newScale = light.Scale.Lerp(Vector2.One, 0.3f);
+            //lightTween.TweenProperty(light, "scale", newScale, 0.1);
             lightTween.TweenProperty(light, "energy", newEnergy, 0.1);
+            lightTween.TweenProperty(light.GetChild(0), "energy", newEnergy, 0.1);
+            
         }
-
+        if (Input.IsActionJustReleased("charge_flashlight"))
+        {
+            player.isChargingLight = false;
+        }
     }
     private void OnTimerTimeout()
     {
         lightTween = GetTree().CreateTween().SetParallel(true);
-        lightTween.TweenProperty(light, "scale", Vector2.Zero, 10);
+        //lightTween.TweenProperty(light, "scale", Vector2.Zero, 10);
         lightTween.TweenProperty(light, "energy", 0, 10);
-
+        lightTween.TweenProperty(light.GetChild(0), "energy", 0, 10);
     }
     private void OnRabEnteredLightArea(Node2D body)
     {

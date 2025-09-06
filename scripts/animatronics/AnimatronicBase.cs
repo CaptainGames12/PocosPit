@@ -3,6 +3,8 @@ using Godot;
 public partial class AnimatronicBase : CharacterBody2D
 {
     [Export]
+    private AudioStreamPlayer2D angrySound;
+    [Export]
     private AudioStreamPlayer2D stepsSound;
     [Export]
     public Area2D attackArea;
@@ -49,14 +51,18 @@ public partial class AnimatronicBase : CharacterBody2D
         }
         targetArea.Monitoring = !Globals.Instance.isCutSceneGoing;
         attackArea.Monitoring = !Globals.Instance.isCutSceneGoing;
-        
+
         if (isAngry)
         {
             navAgent.TargetPosition = player.GlobalPosition;
             chosenSpeed = angrySpeed;
+            if (!angrySound.Playing)
+                angrySound.Play();
         }
         else
         {
+            if (angrySound.Playing)
+                angrySound.Stop();
             navAgent.TargetPosition = pathFollow.GlobalPosition;
             chosenSpeed = normalSpeed;
         }
