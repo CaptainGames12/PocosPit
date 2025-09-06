@@ -11,10 +11,10 @@
 size = Vector2(12, 367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhk5t"]
-size = Vector2(513, 101)
+size = Vector2(513, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyfx4"]
-size = Vector2(43, 103)
+size = Vector2(43, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4xf5"]
 size = Vector2(32.5, 15)
@@ -23,7 +23,7 @@ size = Vector2(32.5, 15)
 size = Vector2(504, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3irxn"]
-size = Vector2(55.75, 20)
+size = Vector2(64, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh5nx"]
 size = Vector2(64, 12)
@@ -32,7 +32,7 @@ size = Vector2(64, 12)
 size = Vector2(53, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4f84"]
-size = Vector2(20, 14)
+size = Vector2(30, 14)
 
 [node name="Workshop" type="Node2D"]
 
@@ -51,11 +51,11 @@ position = Vector2(628, 178)
 shape = SubResource("RectangleShape2D_dnpw0")
 
 [node name="Up" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(257.5, 40.5)
+position = Vector2(257.5, 55)
 shape = SubResource("RectangleShape2D_dhk5t")
 
 [node name="Up2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(601, 42.5)
+position = Vector2(601, 56)
 shape = SubResource("RectangleShape2D_lyfx4")
 
 [node name="Bottom2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -67,7 +67,7 @@ position = Vector2(254, 364)
 shape = SubResource("RectangleShape2D_8eyd2")
 
 [node name="Door" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(547, 70)
+position = Vector2(547, 54.5)
 shape = SubResource("RectangleShape2D_3irxn")
 
 [node name="DiningRoomDoor" type="Area2D" parent="."]
@@ -90,7 +90,7 @@ newRoomName = "PanelRoom"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelRoomDoor"]
-position = Vector2(0.5, -3.5)
+position = Vector2(1, 49)
 shape = SubResource("RectangleShape2D_c4jty")
 
 [node name="Numpad" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
@@ -100,8 +100,9 @@ interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Numpad"]
-position = Vector2(1, 38)
+position = Vector2(-4, 66)
 shape = SubResource("RectangleShape2D_o4f84")
+debug_color = Color(0.965068, 1.54018e-06, 0.488947, 0.42)
 
 [node name="Mini-numpad" type="Sprite2D" parent="Numpad"]
 texture = ExtResource("3_dhk5t")
