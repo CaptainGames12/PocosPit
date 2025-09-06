@@ -13,6 +13,8 @@ public partial class SignalBus : Node
     public delegate void NumLockOpenedEventHandler();
     [Signal]
     public delegate void ObjectiveUpdatedEventHandler(string objective);
+    [Signal]
+    public delegate void PlayerInteractedWithNoteEventHandler(Node2D note);
     public static SignalBus Instance;
     public override void _Ready()
     {

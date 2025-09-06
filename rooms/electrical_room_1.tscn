@@ -1,210 +1,155 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkpj2eqgxch7d"]
+[gd_scene load_steps=28 format=3 uid="uid://h043obvnw2lu"]
 
-[ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_rmeyy"]
-[ext_resource type="Texture2D" uid="uid://c3gvymqu5doqv" path="res://textures/rooms/electrical_room/Cabels.png" id="2_0xtsu"]
-[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_hwlqc"]
-[ext_resource type="Script" uid="uid://20tpm7a5l8s3" path="res://scripts/util/PanelAccess.cs" id="2_ibbai"]
-[ext_resource type="Texture2D" uid="uid://dtxcsy3ho35r6" path="res://textures/rooms/staff_room/lockers2.png" id="3_6caak"]
-[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="4_ibbai"]
-[ext_resource type="Texture2D" uid="uid://cirpx41hn561o" path="res://textures/rooms/staff_room/paper.png" id="4_kkuvp"]
-[ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="5_flxr2"]
-[ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="6_pvx18"]
-[ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="7_ohaou"]
-[ext_resource type="Texture2D" uid="uid://nej4nuseyevb" path="res://textures/rooms/diding_room/pizza.png" id="8_7j7t8"]
-[ext_resource type="Texture2D" uid="uid://bmqxit1b87alj" path="res://textures/rooms/diding_room/pizza_cycle.png" id="9_u2jw2"]
-[ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="10_cg76n"]
-[ext_resource type="Texture2D" uid="uid://hrmkaguvvdk2" path="res://textures/rooms/electrical_room/Swift_off.png" id="12_xmf1m"]
-[ext_resource type="Texture2D" uid="uid://dv3dhppfavy1a" path="res://textures/rooms/electrical_room/Swift_on.png" id="13_e72gx"]
+[ext_resource type="Texture2D" uid="uid://b1bmwv3wq5akx" path="res://textures/rooms/hall.png" id="1_63ene"]
+[ext_resource type="Script" uid="uid://plpcy3pbxmk6" path="res://scripts/scene/dining_room.gd" id="1_tojaa"]
+[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_imkyr"]
+[ext_resource type="Texture2D" uid="uid://cr0bu70ex4sbt" path="res://textures/rooms/diding_room/TableMini.png" id="3_nhaaw"]
+[ext_resource type="Texture2D" uid="uid://cyr6fh00kdv1r" path="res://textures/rooms/diding_room/Vase.png" id="4_tojaa"]
+[ext_resource type="Texture2D" uid="uid://b73vuvevlp8he" path="res://textures/rooms/diding_room/Vase_with_flowers.png" id="5_c0r8t"]
+[ext_resource type="Texture2D" uid="uid://bsnocycin5fsq" path="res://textures/rooms/diding_room/Ball_Pool.png" id="6_ty0bs"]
+[ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="7_h8if0"]
+[ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="8_qspdn"]
+[ext_resource type="Texture2D" uid="uid://cyfeif70rqb8a" path="res://textures/rooms/diding_room/garlands.png" id="9_2tvw7"]
+[ext_resource type="Texture2D" uid="uid://nej4nuseyevb" path="res://textures/rooms/diding_room/pizza.png" id="10_kupw3"]
+[ext_resource type="Texture2D" uid="uid://bmqxit1b87alj" path="res://textures/rooms/diding_room/pizza_cycle.png" id="11_prork"]
+[ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="12_03mni"]
+[ext_resource type="Texture2D" uid="uid://cjekjr0ykbbyi" path="res://textures/rooms/diding_room/Table.png" id="13_y0h68"]
+[ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="15_c0r8t"]
+[ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/ShowNote.cs" id="3_mbyoa"]
+[ext_resource type="Texture2D" uid="uid://bo2756ftx0xtc" path="res://textures/writings/where_is_the_key_mini.png" id="4_mbyoa"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="5_1b2y7"]
+[ext_resource type="Script" uid="uid://dbax3t7inf3lx" path="res://scripts/util/BlockedDoor.cs" id="6_mbyoa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdiud"]
-size = Vector2(268, 129)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b2y7"]
+size = Vector2(7, 138)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6787"]
+size = Vector2(56, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63ene"]
+size = Vector2(21.75, 461)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imkyr"]
+size = Vector2(1000, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo03h"]
+size = Vector2(817, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h7st"]
+size = Vector2(178, 120)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63ene"]
+radius = 4.5
+height = 314.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbyoa"]
+size = Vector2(11, 306)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhaaw"]
+size = Vector2(61, 15.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tojaa"]
+size = Vector2(45.5, 22.875)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0r8t"]
+size = Vector2(27.5, 13.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty0bs"]
+size = Vector2(54, 167.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fuil"]
+size = Vector2(53, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meubu"]
+size = Vector2(50, 50) # для WhereIsTheKey
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibbai"]
-size = Vector2(85.5, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p06k4"]
-size = Vector2(20.625, 194.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uwgk"]
-size = Vector2(24, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xapx6"]
-size = Vector2(44, 21)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ratvy"]
-size = Vector2(35, 21)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8icw7"]
-size = Vector2(44.5, 26.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyx56"]
-size = Vector2(19.25, 79.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4ix"]
-size = Vector2(33, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_arjqm"]
-size = Vector2(60, 20)
-
-[node name="ElectricalRoom1" type="Node2D"]
+[node name="DiningRoom" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_tojaa")
 
-[node name="ElectricalRoom" type="Sprite2D" parent="."]
-position = Vector2(121, 129)
-texture = ExtResource("1_rmeyy")
+[node name="Hall" type="Sprite2D" parent="."]
+position = Vector2(498, 219)
+texture = ExtResource("1_63ene")
+metadata/_edit_lock_ = true
 
-[node name="Cabels" type="Sprite2D" parent="."]
-position = Vector2(121, 130)
-texture = ExtResource("2_0xtsu")
+# Двері до інших кімнат
+[node name="ReceptionCorridor" type="Area2D" parent="."]
+position = Vector2(-18, 13)
+script = ExtResource("2_imkyr")
+currentRoomName = "DiningRoom"
+newRoomName = "Reception"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
 
-[node name="Lockers2" type="Sprite2D" parent="."]
-position = Vector2(214, 86)
-texture = ExtResource("3_6caak")
-
-[node name="Paper" type="Sprite2D" parent="."]
-position = Vector2(177, 126)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper2" type="Sprite2D" parent="."]
-position = Vector2(158, 124)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper3" type="Sprite2D" parent="."]
-position = Vector2(168, 114)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper4" type="Sprite2D" parent="."]
-position = Vector2(202, 34)
-texture = ExtResource("4_kkuvp")
-
-[node name="Paper5" type="Sprite2D" parent="."]
-position = Vector2(222, 35)
-texture = ExtResource("4_kkuvp")
-
-[node name="Chair" type="Sprite2D" parent="."]
-position = Vector2(226, 151)
-texture = ExtResource("5_flxr2")
-
-[node name="Chair2" type="Sprite2D" parent="."]
-position = Vector2(226, 169)
-texture = ExtResource("5_flxr2")
-
-[node name="Chair3" type="Sprite2D" parent="."]
-position = Vector2(227, 188)
-texture = ExtResource("5_flxr2")
-
-[node name="Chair4" type="Sprite2D" parent="."]
-position = Vector2(226, 206)
-texture = ExtResource("5_flxr2")
-
-[node name="Cardbox" type="Sprite2D" parent="."]
-position = Vector2(18, 124)
-texture = ExtResource("6_pvx18")
-
-[node name="CardbpxBig" type="Sprite2D" parent="."]
-position = Vector2(58, 120)
-texture = ExtResource("7_ohaou")
-
-[node name="Pizza" type="Sprite2D" parent="."]
-position = Vector2(19, 71)
-texture = ExtResource("8_7j7t8")
-
-[node name="Pizza2" type="Sprite2D" parent="."]
-position = Vector2(18, 7)
-texture = ExtResource("8_7j7t8")
-
-[node name="PizzaCycle" type="Sprite2D" parent="."]
-position = Vector2(28, 39)
-texture = ExtResource("9_u2jw2")
-
-[node name="PizzaCycleCut" type="Sprite2D" parent="."]
-position = Vector2(172, 71)
-texture = ExtResource("10_cg76n")
-
-[node name="PizzaCycleCut2" type="Sprite2D" parent="."]
-position = Vector2(70, 41)
-texture = ExtResource("10_cg76n")
-
-[node name="PizzaCycle2" type="Sprite2D" parent="."]
-position = Vector2(127, 11)
-texture = ExtResource("9_u2jw2")
-
-[node name="Pizza3" type="Sprite2D" parent="."]
-position = Vector2(92, 98)
-texture = ExtResource("8_7j7t8")
-
-[node name="Pizza4" type="Sprite2D" parent="."]
-position = Vector2(213, 8)
-texture = ExtResource("8_7j7t8")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(124, 54.5)
-shape = SubResource("RectangleShape2D_rdiud")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(196, 267)
-shape = SubResource("RectangleShape2D_ibbai")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(251.625, 172)
-shape = SubResource("RectangleShape2D_p06k4")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-10.3125, 177.75)
-shape = SubResource("RectangleShape2D_p06k4")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(41.25, 266)
-shape = SubResource("RectangleShape2D_ibbai")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(18, 126)
-shape = SubResource("RectangleShape2D_4uwgk")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(58, 129.5)
-shape = SubResource("RectangleShape2D_xapx6")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(167.5, 127)
-shape = SubResource("RectangleShape2D_ratvy")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(213.75, 131.25)
-shape = SubResource("RectangleShape2D_8icw7")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(226, 184.375)
-shape = SubResource("RectangleShape2D_iyx56")
-
-[node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("switchSprite", "interactIndicator")]
-position = Vector2(125, 97)
-script = ExtResource("2_ibbai")
-switchSprite = NodePath("Panel")
-switchOn = ExtResource("12_xmf1m")
-interactIndicator = NodePath("InteractIndicator")
-metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
-
-[node name="Panel" type="Sprite2D" parent="Panel"]
-position = Vector2(6, -25)
-texture = ExtResource("13_e72gx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel"]
-position = Vector2(-1, 18)
-shape = SubResource("RectangleShape2D_5l4ix")
-
-[node name="InteractIndicator" parent="Panel" instance=ExtResource("4_ibbai")]
-position = Vector2(6, -48)
-scale = Vector2(0.5, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReceptionCorridor"]
+position = Vector2(15.5, 353)
+shape = SubResource("RectangleShape2D_1b2y7")
+debug_color = Color(0.961217, 0.162139, 0.294092, 0.42)
 
 [node name="WorkshopDoor" type="Area2D" parent="."]
-script = ExtResource("2_hwlqc")
-currentRoomName = "PanelRoom"
+position = Vector2(1, 59)
+script = ExtResource("2_imkyr")
+currentRoomName = "DiningRoom"
 newRoomName = "Workshop"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopDoor"]
-position = Vector2(119, 266)
-shape = SubResource("RectangleShape2D_arjqm")
+position = Vector2(929, 60)
+shape = SubResource("RectangleShape2D_r6787")
+debug_color = Color(0.962749, 0, 0.502765, 0.42)
+
+# Столи
+[node name="TableMini" type="Sprite2D" parent="."]
+position = Vector2(429, 119)
+texture = ExtResource("3_nhaaw")
+[node name="TableMini2" type="Sprite2D" parent="."]
+position = Vector2(288, 117)
+texture = ExtResource("3_nhaaw")
+[node name="TableMini3" type="Sprite2D" parent="."]
+position = Vector2(89, 117)
+texture = ExtResource("3_nhaaw")
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(165, 313)
+texture = ExtResource("13_y0h68")
+[node name="Table2" type="Sprite2D" parent="."]
+position = Vector2(297, 313)
+texture = ExtResource("13_y0h68")
+[node name="Table3" type="Sprite2D" parent="."]
+position = Vector2(436, 314)
+texture = ExtResource("13_y0h68")
+[node name="Table4" type="Sprite2D" parent="."]
+position = Vector2(573, 313)
+texture = ExtResource("13_y0h68")
+[node name="Table5" type="Sprite2D" parent="."]
+position = Vector2(706, 315)
+texture = ExtResource("13_y0h68")
+
+# Вази
+[node name="Vase" type="Sprite2D" parent="."]
+position = Vector2(406, 101)
+texture = ExtResource("4_tojaa")
+[node name="Vase2" type="Sprite2D" parent="."]
+position = Vector2(262, 97)
+texture = ExtResource("4_tojaa")
+[node name="Vase3" type="Sprite2D" parent="."]
+position = Vector2(163, 325)
+texture = ExtResource("4_tojaa")
+[node name="Vase4" type="Sprite2D" parent="."]
+position = Vector2(299, 324)
+texture = ExtResource("4_tojaa")
+[node name="Vase5" type="Sprite2D" parent="."]
+position = Vector2(439, 325)
+texture = ExtResource("4_tojaa")
+[node name="Vase6" type="Sprite2D" parent="."]
+position = Vector2(575, 325)
+texture = ExtResource("4_tojaa")
+[node name="Vase7" type="Sprite2D" parent="."]
+position = Vector2(90, 94)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers" type="Sprite2D" parent="."]
+position = Vector2(311, 97)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers2" type="Sprite2D" parent="."]
+position = Vector2(454, 94)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers3" type="Sprite2D" parent="."]
+position = Vector2(706, 318)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers4" type="Sprite2D" parent="."]
+position = Vector2(162, 260)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers5" type="Sprite2D" parent="."]
+position = Vector2(437, 265)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers6" type="Sprite2D" parent="."]
+position = Vector2(706, 259)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers7" type="Sprite2D" parent="."]
+position = Vector2(90, 94)
+texture = ExtResource("5_c0r8t")

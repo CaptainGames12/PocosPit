@@ -15,43 +15,40 @@
 [ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="12_03mni"]
 [ext_resource type="Texture2D" uid="uid://cjekjr0ykbbyi" path="res://textures/rooms/diding_room/Table.png" id="13_y0h68"]
 [ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="15_c0r8t"]
+[ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/ShowNote.cs" id="3_mbyoa"]
+[ext_resource type="Texture2D" uid="uid://bo2756ftx0xtc" path="res://textures/writings/where_is_the_key_mini.png" id="4_mbyoa"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="5_1b2y7"]
+[ext_resource type="Script" uid="uid://dbax3t7inf3lx" path="res://scripts/util/BlockedDoor.cs" id="6_mbyoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b2y7"]
 size = Vector2(7, 138)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6787"]
 size = Vector2(56, 14)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63ene"]
 size = Vector2(21.75, 461)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imkyr"]
 size = Vector2(1000, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo03h"]
 size = Vector2(817, 128)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3h7st"]
 size = Vector2(178, 120)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63ene"]
 radius = 4.5
 height = 314.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbyoa"]
 size = Vector2(11, 306)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhaaw"]
 size = Vector2(61, 15.75)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tojaa"]
 size = Vector2(45.5, 22.875)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0r8t"]
 size = Vector2(27.5, 13.75)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty0bs"]
 size = Vector2(54, 167.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fuil"]
+size = Vector2(53, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meubu"]
+size = Vector2(50, 50) # для WhereIsTheKey
 
 [node name="DiningRoom" type="Node2D"]
 texture_filter = 1
@@ -62,6 +59,7 @@ position = Vector2(498, 219)
 texture = ExtResource("1_63ene")
 metadata/_edit_lock_ = true
 
+# Двері до інших кімнат
 [node name="ReceptionCorridor" type="Area2D" parent="."]
 position = Vector2(-18, 13)
 script = ExtResource("2_imkyr")
@@ -86,341 +84,72 @@ position = Vector2(929, 60)
 shape = SubResource("RectangleShape2D_r6787")
 debug_color = Color(0.962749, 0, 0.502765, 0.42)
 
+# Столи
 [node name="TableMini" type="Sprite2D" parent="."]
-texture_filter = 1
 position = Vector2(429, 119)
 texture = ExtResource("3_nhaaw")
-
 [node name="TableMini2" type="Sprite2D" parent="."]
-texture_filter = 1
 position = Vector2(288, 117)
 texture = ExtResource("3_nhaaw")
-
 [node name="TableMini3" type="Sprite2D" parent="."]
-texture_filter = 1
 position = Vector2(89, 117)
 texture = ExtResource("3_nhaaw")
-
-[node name="Vase" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(406, 101)
-texture = ExtResource("4_tojaa")
-
-[node name="Vase2" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(262, 97)
-texture = ExtResource("4_tojaa")
-
-[node name="VaseWithFlowers" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(311, 97)
-texture = ExtResource("5_c0r8t")
-
-[node name="VaseWithFlowers2" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(454, 94)
-texture = ExtResource("5_c0r8t")
-
-[node name="VaseWithFlowers7" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(90, 94)
-texture = ExtResource("5_c0r8t")
-
-[node name="BallPool2" type="Sprite2D" parent="."]
-position = Vector2(536, 113)
-texture = ExtResource("6_ty0bs")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-clip_children = 1
-offset_left = 471.0
-offset_top = 135.0
-offset_right = 511.0
-offset_bottom = 175.0
-scale = Vector2(3.2434, 0.831747)
-
-[node name="BallPool" type="Sprite2D" parent="ColorRect"]
-position = Vector2(20.0407, -26.4503)
-scale = Vector2(0.308319, 1.20229)
-texture = ExtResource("6_ty0bs")
-
-[node name="Cardbox" type="Sprite2D" parent="."]
-position = Vector2(243, 120)
-texture = ExtResource("7_h8if0")
-
-[node name="CardbpxBig" type="Sprite2D" parent="."]
-position = Vector2(627, 120)
-texture = ExtResource("8_qspdn")
-
-[node name="Garlands" type="Sprite2D" parent="."]
-position = Vector2(251, 15)
-texture = ExtResource("9_2tvw7")
-
-[node name="Garlands2" type="Sprite2D" parent="."]
-position = Vector2(751, 10)
-texture = ExtResource("9_2tvw7")
-
-[node name="Pizza" type="Sprite2D" parent="."]
-position = Vector2(34, 71)
-texture = ExtResource("10_kupw3")
-
-[node name="Pizza2" type="Sprite2D" parent="."]
-position = Vector2(157, 40)
-texture = ExtResource("10_kupw3")
-
-[node name="Pizza3" type="Sprite2D" parent="."]
-position = Vector2(254, 76)
-texture = ExtResource("10_kupw3")
-
-[node name="Pizza4" type="Sprite2D" parent="."]
-position = Vector2(441, 35)
-texture = ExtResource("10_kupw3")
-
-[node name="Pizza5" type="Sprite2D" parent="."]
-position = Vector2(639, 54)
-texture = ExtResource("10_kupw3")
-
-[node name="Pizza6" type="Sprite2D" parent="."]
-position = Vector2(757, 27)
-texture = ExtResource("10_kupw3")
-
-[node name="Pizza7" type="Sprite2D" parent="."]
-position = Vector2(877, 67)
-texture = ExtResource("10_kupw3")
-
-[node name="PizzaCycle" type="Sprite2D" parent="."]
-position = Vector2(719, 79)
-texture = ExtResource("11_prork")
-
-[node name="PizzaCycle2" type="Sprite2D" parent="."]
-position = Vector2(104, 72)
-texture = ExtResource("11_prork")
-
-[node name="PizzaCycle3" type="Sprite2D" parent="."]
-position = Vector2(223, 42)
-texture = ExtResource("11_prork")
-
-[node name="PizzaCycle4" type="Sprite2D" parent="."]
-position = Vector2(503, 32)
-texture = ExtResource("11_prork")
-
-[node name="PizzaCycleCut" type="Sprite2D" parent="."]
-position = Vector2(154, 96)
-texture = ExtResource("12_03mni")
-
-[node name="PizzaCycleCut2" type="Sprite2D" parent="."]
-position = Vector2(574, 36)
-texture = ExtResource("12_03mni")
-
-[node name="PizzaCycleCut3" type="Sprite2D" parent="."]
-position = Vector2(809, 68)
-texture = ExtResource("12_03mni")
-
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(165, 313)
 texture = ExtResource("13_y0h68")
-
 [node name="Table2" type="Sprite2D" parent="."]
 position = Vector2(297, 313)
 texture = ExtResource("13_y0h68")
-
 [node name="Table3" type="Sprite2D" parent="."]
 position = Vector2(436, 314)
 texture = ExtResource("13_y0h68")
-
 [node name="Table4" type="Sprite2D" parent="."]
 position = Vector2(573, 313)
 texture = ExtResource("13_y0h68")
-
 [node name="Table5" type="Sprite2D" parent="."]
 position = Vector2(706, 315)
 texture = ExtResource("13_y0h68")
 
+# Вази
+[node name="Vase" type="Sprite2D" parent="."]
+position = Vector2(406, 101)
+texture = ExtResource("4_tojaa")
+[node name="Vase2" type="Sprite2D" parent="."]
+position = Vector2(262, 97)
+texture = ExtResource("4_tojaa")
 [node name="Vase3" type="Sprite2D" parent="."]
 position = Vector2(163, 325)
 texture = ExtResource("4_tojaa")
-
 [node name="Vase4" type="Sprite2D" parent="."]
 position = Vector2(299, 324)
 texture = ExtResource("4_tojaa")
-
 [node name="Vase5" type="Sprite2D" parent="."]
 position = Vector2(439, 325)
 texture = ExtResource("4_tojaa")
-
 [node name="Vase6" type="Sprite2D" parent="."]
 position = Vector2(575, 325)
 texture = ExtResource("4_tojaa")
-
+[node name="Vase7" type="Sprite2D" parent="."]
+position = Vector2(90, 94)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers" type="Sprite2D" parent="."]
+position = Vector2(311, 97)
+texture = ExtResource("5_c0r8t")
+[node name="VaseWithFlowers2" type="Sprite2D" parent="."]
+position = Vector2(454, 94)
+texture = ExtResource("5_c0r8t")
 [node name="VaseWithFlowers3" type="Sprite2D" parent="."]
 position = Vector2(706, 318)
 texture = ExtResource("5_c0r8t")
-
 [node name="VaseWithFlowers4" type="Sprite2D" parent="."]
 position = Vector2(162, 260)
 texture = ExtResource("5_c0r8t")
-
 [node name="VaseWithFlowers5" type="Sprite2D" parent="."]
 position = Vector2(437, 265)
 texture = ExtResource("5_c0r8t")
-
-[node name="Vase7" type="Sprite2D" parent="."]
-position = Vector2(295, 262)
-texture = ExtResource("4_tojaa")
-
-[node name="Vase8" type="Sprite2D" parent="."]
-position = Vector2(579, 263)
-texture = ExtResource("4_tojaa")
-
 [node name="VaseWithFlowers6" type="Sprite2D" parent="."]
 position = Vector2(706, 259)
 texture = ExtResource("5_c0r8t")
-
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="Right" type="CollisionShape2D" parent="Walls"]
-position = Vector2(1007, 220.5)
-shape = SubResource("RectangleShape2D_63ene")
-
-[node name="Bottom" type="CollisionShape2D" parent="Walls"]
-position = Vector2(496, 445)
-shape = SubResource("RectangleShape2D_imkyr")
-
-[node name="Wall1" type="CollisionShape2D" parent="Walls"]
-position = Vector2(409.5, 54)
-shape = SubResource("RectangleShape2D_uo03h")
-
-[node name="Wall2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(907, 50)
-shape = SubResource("RectangleShape2D_3h7st")
-
-[node name="Scene" type="CollisionShape2D" parent="Walls"]
-position = Vector2(841.5, 287)
-shape = SubResource("CapsuleShape2D_63ene")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-4.5, 143)
-shape = SubResource("RectangleShape2D_mbyoa")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(287.5, 125.75)
-shape = SubResource("RectangleShape2D_nhaaw")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
-position = Vector2(89, 126)
-shape = SubResource("RectangleShape2D_nhaaw")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(429, 125.875)
-shape = SubResource("RectangleShape2D_nhaaw")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2(627.25, 129.563)
-shape = SubResource("RectangleShape2D_tojaa")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(243.25, 124.875)
-shape = SubResource("RectangleShape2D_c0r8t")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PackedVector2Array(472, 118, 601, 118, 601, 155, 588, 168, 486, 168, 472, 154)
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-position = Vector2(165, 322.75)
-shape = SubResource("RectangleShape2D_ty0bs")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
-position = Vector2(297, 323)
-shape = SubResource("RectangleShape2D_ty0bs")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls"]
-position = Vector2(436, 323)
-shape = SubResource("RectangleShape2D_ty0bs")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls"]
-position = Vector2(573, 323)
-shape = SubResource("RectangleShape2D_ty0bs")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
-position = Vector2(706, 323)
-shape = SubResource("RectangleShape2D_ty0bs")
-
-[node name="Chair" type="Sprite2D" parent="."]
-position = Vector2(210, 381)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair2" type="Sprite2D" parent="."]
-position = Vector2(203, 310)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair3" type="Sprite2D" parent="."]
-position = Vector2(204, 252)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair17" type="Sprite2D" parent="."]
-position = Vector2(750, 293)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair18" type="Sprite2D" parent="."]
-position = Vector2(748, 357)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair4" type="Sprite2D" parent="."]
-position = Vector2(335, 250)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair5" type="Sprite2D" parent="."]
-position = Vector2(341, 320)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair6" type="Sprite2D" parent="."]
-position = Vector2(476, 316)
-texture = ExtResource("15_c0r8t")
-
-[node name="Chair7" type="Sprite2D" parent="."]
-position = Vector2(530, 245)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair10" type="Sprite2D" parent="."]
-position = Vector2(667, 253)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair11" type="Sprite2D" parent="."]
-position = Vector2(667, 253)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair12" type="Sprite2D" parent="."]
-position = Vector2(395, 353)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair13" type="Sprite2D" parent="."]
-position = Vector2(397, 273)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair14" type="Sprite2D" parent="."]
-position = Vector2(250, 300)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair15" type="Sprite2D" parent="."]
-position = Vector2(124, 339)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair16" type="Sprite2D" parent="."]
-position = Vector2(124, 271)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair8" type="Sprite2D" parent="."]
-position = Vector2(528, 370)
-texture = ExtResource("15_c0r8t")
-flip_h = true
-
-[node name="Chair9" type="Sprite2D" parent="."]
-position = Vector2(617, 338)
-texture = ExtResource("15_c0r8t")
+[node name="VaseWithFlowers7" type="Sprite2D" parent="."]
+position = Vector2(90, 94)
+texture = ExtResource("5_c0r8t")

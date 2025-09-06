@@ -109,10 +109,6 @@ texture = ExtResource("6_ee5cv")
 position = Vector2(0, 15)
 texture = ExtResource("6_ee5cv")
 
-[node name="Paper2" type="Sprite2D" parent="Texture"]
-position = Vector2(-166, 258)
-texture = ExtResource("6_ee5cv")
-
 [node name="Paper6" type="Sprite2D" parent="Texture"]
 position = Vector2(-41, 115)
 texture = ExtResource("6_ee5cv")

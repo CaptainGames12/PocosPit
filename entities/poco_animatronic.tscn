@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_i0sk7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
-radius = 91.2414
+radius = 108.074
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
 

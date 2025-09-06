@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://dfl0hm8hfvdr3"]
+[gd_scene load_steps=11 format=3 uid="uid://b34qqc7cr7sit"]
 
-[node name="ElectricalRoom2" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_b3rxo"]
+[ext_resource type="Script" uid="uid://20tpm7a5l8s3" path="res://scripts/util/PanelAccess.cs" id="2_73s5c"]
+[ext_resource type="Texture2D" uid="uid://ouywvldx0sue" path="res://textures/rooms/panel_room_1/panel.png" id="3_nn5xl"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="4_2o1mf"]
+[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="5_xtl3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdiud"]
+size = Vector2(268, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibbai"]
+size = Vector2(85.5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p06k4"]
+size = Vector2(18.75, 177)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4ix"]
+size = Vector2(24, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arjqm"]
+size = Vector2(60, 20)
+
+[node name="ElectricalRoom1" type="Node2D"]
+
+[node name="ElectricalRoom" type="Sprite2D" parent="."]
+position = Vector2(121, 129)
+texture = ExtResource("1_b3rxo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(124, 34)
+shape = SubResource("RectangleShape2D_rdiud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(196, 267)
+shape = SubResource("RectangleShape2D_ibbai")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(251.625, 172)
+shape = SubResource("RectangleShape2D_p06k4")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11.25, 169)
+shape = SubResource("RectangleShape2D_p06k4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(41.25, 266)
+shape = SubResource("RectangleShape2D_ibbai")
+
+[node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+position = Vector2(125, 97)
+script = ExtResource("2_73s5c")
+interactIndicator = NodePath("InteractIndicator")
+metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="Panel" type="Sprite2D" parent="Panel"]
+texture = ExtResource("3_nn5xl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel"]
+position = Vector2(-2, -2.5)
+shape = SubResource("RectangleShape2D_5l4ix")
+
+[node name="InteractIndicator" parent="Panel" instance=ExtResource("4_2o1mf")]
+position = Vector2(-1, -31)
+scale = Vector2(0.5, 0.5)
+
+[node name="WorkshopDoor" type="Area2D" parent="."]
+script = ExtResource("5_xtl3v")
+currentRoomName = "PanelRoom"
+newRoomName = "Workshop"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopDoor"]
+position = Vector2(119, 266)
+shape = SubResource("RectangleShape2D_arjqm")
