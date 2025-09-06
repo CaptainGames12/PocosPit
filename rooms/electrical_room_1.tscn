@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=26 format=3 uid="uid://bkpj2eqgxch7d"]
+
 
 [ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_rmeyy"]
 [ext_resource type="Texture2D" uid="uid://c3gvymqu5doqv" path="res://textures/rooms/electrical_room/Cabels.png" id="2_0xtsu"]
@@ -15,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="10_cg76n"]
 [ext_resource type="Texture2D" uid="uid://hrmkaguvvdk2" path="res://textures/rooms/electrical_room/Swift_off.png" id="12_xmf1m"]
 [ext_resource type="Texture2D" uid="uid://dv3dhppfavy1a" path="res://textures/rooms/electrical_room/Swift_on.png" id="13_e72gx"]
+
+[ext_resource type="AudioStream" uid="uid://lyiggewtbnqa" path="res://audio/breaker-switch-45684.mp3" id="5_p06k4"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdiud"]
 size = Vector2(268, 129)
@@ -159,6 +164,7 @@ shape = SubResource("RectangleShape2D_p06k4")
 position = Vector2(41.25, 266)
 shape = SubResource("RectangleShape2D_ibbai")
 
+
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(18, 126)
 shape = SubResource("RectangleShape2D_4uwgk")
@@ -184,6 +190,12 @@ position = Vector2(125, 97)
 script = ExtResource("2_ibbai")
 switchSprite = NodePath("Panel")
 switchOn = ExtResource("12_xmf1m")
+
+[node name="Panel" type="Area2D" parent="." node_paths=PackedStringArray("activateSound", "interactIndicator")]
+position = Vector2(125, 97)
+script = ExtResource("2_ibbai")
+activateSound = NodePath("Activate Panel")
+
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 
@@ -198,6 +210,9 @@ shape = SubResource("RectangleShape2D_5l4ix")
 [node name="InteractIndicator" parent="Panel" instance=ExtResource("4_ibbai")]
 position = Vector2(6, -48)
 scale = Vector2(0.5, 0.5)
+
+[node name="Activate Panel" type="AudioStreamPlayer2D" parent="Panel"]
+stream = ExtResource("5_p06k4")
 
 [node name="WorkshopDoor" type="Area2D" parent="."]
 script = ExtResource("2_hwlqc")

@@ -12,6 +12,7 @@ public partial class Globals : Node
     public bool isCutSceneGoing = false;
     public float stamina = 100;
     public string lastRoom = "DiningRoom";
+    public bool keyIsCollected = false;
     public override void _Ready()
     {
         Instance = this;

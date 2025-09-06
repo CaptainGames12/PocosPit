@@ -1,8 +1,10 @@
+
 [gd_scene load_steps=28 format=3 uid="uid://h043obvnw2lu"]
 
 [ext_resource type="Texture2D" uid="uid://b1bmwv3wq5akx" path="res://textures/rooms/hall.png" id="1_63ene"]
 [ext_resource type="Script" uid="uid://plpcy3pbxmk6" path="res://scripts/scene/dining_room.gd" id="1_tojaa"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_imkyr"]
+
 [ext_resource type="Texture2D" uid="uid://cr0bu70ex4sbt" path="res://textures/rooms/diding_room/TableMini.png" id="3_nhaaw"]
 [ext_resource type="Texture2D" uid="uid://cyr6fh00kdv1r" path="res://textures/rooms/diding_room/Vase.png" id="4_tojaa"]
 [ext_resource type="Texture2D" uid="uid://b73vuvevlp8he" path="res://textures/rooms/diding_room/Vase_with_flowers.png" id="5_c0r8t"]
@@ -21,6 +23,12 @@ size = Vector2(7, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6787"]
 size = Vector2(56, 14)
+
+[ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/ShowNote.cs" id="3_mbyoa"]
+[ext_resource type="Texture2D" uid="uid://bo2756ftx0xtc" path="res://textures/writings/where_is_the_key_mini.png" id="4_mbyoa"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="5_1b2y7"]
+[ext_resource type="Script" uid="uid://dbax3t7inf3lx" path="res://scripts/util/BlockedDoor.cs" id="6_mbyoa"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63ene"]
 size = Vector2(21.75, 461)
@@ -41,6 +49,13 @@ height = 314.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbyoa"]
 size = Vector2(11, 306)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7rij"]
+size = Vector2(61, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b2y7"]
+size = Vector2(7, 138)
+
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nhaaw"]
 size = Vector2(61, 15.75)
 
@@ -52,6 +67,11 @@ size = Vector2(27.5, 13.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty0bs"]
 size = Vector2(54, 167.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meubu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fuil"]
+size = Vector2(53, 20)
 
 [node name="DiningRoom" type="Node2D"]
 texture_filter = 1
@@ -297,9 +317,22 @@ shape = SubResource("RectangleShape2D_3h7st")
 position = Vector2(841.5, 287)
 shape = SubResource("CapsuleShape2D_63ene")
 
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-4.5, 143)
 shape = SubResource("RectangleShape2D_mbyoa")
+
+[node name="KitchenDoor" type="CollisionShape2D" parent="Walls"]
+position = Vector2(360.5, 62)
+shape = SubResource("RectangleShape2D_l7rij")
+
+[node name="ReceptionCorridor" type="Area2D" parent="."]
+position = Vector2(-18, 3)
+script = ExtResource("2_imkyr")
+currentRoomName = "DiningRoom"
+newRoomName = "Reception"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
 position = Vector2(287.5, 125.75)
@@ -308,6 +341,7 @@ shape = SubResource("RectangleShape2D_nhaaw")
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls"]
 position = Vector2(89, 126)
 shape = SubResource("RectangleShape2D_nhaaw")
+
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(429, 125.875)
@@ -424,3 +458,35 @@ flip_h = true
 [node name="Chair9" type="Sprite2D" parent="."]
 position = Vector2(617, 338)
 texture = ExtResource("15_c0r8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopDoor"]
+position = Vector2(929, 60)
+shape = SubResource("RectangleShape2D_r6787")
+
+[node name="WhereIsTheKey" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+position = Vector2(927, 143)
+script = ExtResource("3_mbyoa")
+interactIndicator = NodePath("InteractIndicator")
+metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="WhereIsTheKeyMini" type="Sprite2D" parent="WhereIsTheKey"]
+texture = ExtResource("4_mbyoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WhereIsTheKey"]
+shape = SubResource("RectangleShape2D_meubu")
+
+[node name="InteractIndicator" parent="WhereIsTheKey" instance=ExtResource("5_1b2y7")]
+position = Vector2(0, -31)
+scale = Vector2(0.5, 0.5)
+
+[node name="BlockedDoor" type="Area2D" parent="."]
+position = Vector2(362, 69)
+script = ExtResource("6_mbyoa")
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockedDoor"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_6fuil")
+
+[connection signal="body_entered" from="BlockedDoor" to="ReceptionCorridor" method="OnBlockedDoorEntered"]
+

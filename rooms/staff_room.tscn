@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=27 format=3 uid="uid://dia8idkpq6tdv"]
 
 [ext_resource type="Texture2D" uid="uid://bgketl8jqljuu" path="res://textures/rooms/staff_room/main.png" id="1_lvta7"]
@@ -338,3 +339,13 @@ shape = SubResource("RectangleShape2D_13t74")
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-195.438, 8.625)
 shape = SubResource("RectangleShape2D_jftym")
+
+[gd_scene load_steps=2 format=3 uid="uid://dia8idkpq6tdv"]
+
+[ext_resource type="Texture2D" uid="uid://duaqop12y4buy" path="res://textures/rooms/staff_room.png" id="1_4nhv7"]
+
+[node name="StaffRoom" type="Node2D"]
+
+[node name="StaffRoom" type="Sprite2D" parent="."]
+position = Vector2(213, 360)
+texture = ExtResource("1_4nhv7")

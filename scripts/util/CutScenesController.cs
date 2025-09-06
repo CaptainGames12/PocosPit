@@ -56,6 +56,7 @@ public partial class CutScenesController : AnimationPlayer
 	public void PlayWalkingInTheDiningRoom()
 	{
 
+
 		Play("walking_in_the_dining_room");
 		SignalBus.Instance.EmitSignal(SignalBus.SignalName.RoomChanged, "DiningRoom");
 	}
@@ -86,4 +87,42 @@ public partial class CutScenesController : AnimationPlayer
 		DialogueManager.ShowDialogueBalloon(dialogue, "scared_dialogue", [this]);
 		player.isScared = false;
 	}
+
+        Play("walking_in_the_dining_room");
+        SignalBus.Instance.EmitSignal(SignalBus.SignalName.RoomChanged, "DiningRoom");
+    }
+    public void PlayJumpAnimation()
+    {
+        DialogueManager.ShowDialogueBalloon(dialogue, "goodman_tired", [this]);
+    }
+    public void PlayWakeUp()
+    {
+        DialogueManager.ShowDialogueBalloon(dialogue, "waking_up", [this]);
+    }
+    public void FinishBeginningCutscene()
+    {
+        parents.Visible = false;
+        dayAudio.Stop();
+        GD.Print("is_anim_finished");
+        Globals.Instance.beginningCutsceneIsFinished = true;
+        poco.GlobalPosition = new Vector2(689, 174);
+        DialogueManager.ShowDialogueBalloon(dialogue, "end_of_the_cutscene", [this]);
+        playerAnimTree.Active = true;
+        
+        ScarePlayer();
+    }
+    public async Task ScarePlayer()
+    {
+        player.isScared = true;
+       
+        poco.angrySpeed = 0;
+        await ToSignal(GetTree().CreateTimer(3), "timeout");
+        poco.angrySpeed = 100;
+        
+        await ToSignal(GetTree().CreateTimer(8), "timeout");
+        DialogueManager.ShowDialogueBalloon(dialogue, "scared_dialogue", [this]);
+        player.isScared = false;
+        poco.angrySpeed = 180;
+    }
+
 }
