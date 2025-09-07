@@ -1,0 +1,74 @@
+[gd_scene load_steps=15 format=3 uid="uid://cv2v3ihmtecj5"]
+
+[ext_resource type="Script" uid="uid://b3io7rkwbigxg" path="res://scripts/menu/Bals.cs" id="1_wd6lm"]
+[ext_resource type="Texture2D" uid="uid://bb11vx3yb75rf" path="res://textures/ui/animationTransition/balls/ball2.png" id="2_nuiae"]
+[ext_resource type="Texture2D" uid="uid://bral8s4ok1kxq" path="res://textures/ui/animationTransition/balls/ball3.png" id="3_pb5j1"]
+[ext_resource type="Texture2D" uid="uid://ce0t7nrfep70d" path="res://textures/ui/animationTransition/balls/ball4.png" id="4_6fejx"]
+[ext_resource type="Texture2D" uid="uid://dussrtprjsa4t" path="res://textures/ui/animationTransition/balls/ball5.png" id="5_akoio"]
+[ext_resource type="Texture2D" uid="uid://cj3prf3ep8e70" path="res://textures/ui/animationTransition/balls/ball6.png" id="6_ho73k"]
+[ext_resource type="Texture2D" uid="uid://bm56jjm1q4up7" path="res://textures/ui/animationTransition/balls/ball.png" id="7_dyuxe"]
+[ext_resource type="Texture2D" uid="uid://cwl6ieucd6wtj" path="res://textures/ui/logo/Logo.png" id="8_8of67"]
+[ext_resource type="Script" uid="uid://b8vqyrtvbgv70" path="res://scripts/ui/Button/ButtonPlay.cs" id="9_6fejx"]
+[ext_resource type="Texture2D" uid="uid://crxi1331g76xw" path="res://textures/ui/text/Play.png" id="9_pb5j1"]
+[ext_resource type="Texture2D" uid="uid://bic576thjvjpk" path="res://textures/ui/text/Exit.png" id="10_6fejx"]
+[ext_resource type="Script" uid="uid://cgb41klagfyy" path="res://scripts/ui/Button/ButtonExit.cs" id="11_akoio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akoio"]
+size = Vector2(24.7619, 10.068)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho73k"]
+size = Vector2(24.7619, 10.068)
+
+[node name="Menu" type="Node2D"]
+texture_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -3.0
+offset_top = -8.0
+offset_right = 37.0
+offset_bottom = 32.0
+scale = Vector2(29.1619, 16.8049)
+mouse_filter = 2
+color = Color(0, 0.13741, 0.276766, 1)
+
+[node name="Bals" type="Node2D" parent="."]
+position = Vector2(4, 7)
+scale = Vector2(3.16, 3.16)
+script = ExtResource("1_wd6lm")
+ballsTexture = Array[Texture2D]([ExtResource("2_nuiae"), ExtResource("3_pb5j1"), ExtResource("4_6fejx"), ExtResource("5_akoio"), ExtResource("6_ho73k"), ExtResource("7_dyuxe")])
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(324, 217)
+scale = Vector2(6.575, 6.575)
+texture = ExtResource("8_8of67")
+
+[node name="Button_Play" type="Area2D" parent="." node_paths=PackedStringArray("sprite2D")]
+position = Vector2(108, 418)
+scale = Vector2(7.35, 7.35)
+script = ExtResource("9_6fejx")
+sprite2D = NodePath("Play")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Play"]
+position = Vector2(0.136056, 0.272114)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_akoio")
+
+[node name="Play" type="Sprite2D" parent="Button_Play"]
+scale = Vector2(1, 1)
+texture = ExtResource("9_pb5j1")
+
+[node name="Button_Exit" type="Area2D" parent="." node_paths=PackedStringArray("sprite2D")]
+position = Vector2(108, 418)
+scale = Vector2(7.35, 7.35)
+script = ExtResource("11_akoio")
+sprite2D = NodePath("Exit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Exit"]
+position = Vector2(1.53482e-06, 11.7007)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ho73k")
+
+[node name="Exit" type="Sprite2D" parent="Button_Exit"]
+position = Vector2(-1.63265, 11.7007)
+scale = Vector2(1, 1)
+texture = ExtResource("10_6fejx")
