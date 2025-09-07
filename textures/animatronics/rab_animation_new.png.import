@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca1ce421mqlij"
-path="res://.godot/imported/where_is_the_key.png-8bdd46f3a8139ec306dc01c39f42838b.ctex"
+uid="uid://bis1t4oartbti"
+path="res://.godot/imported/rab_animation_new.png-9de0e8492c576453ca84fd9e594da43c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/writings/where_is_the_key.png"
-dest_files=["res://.godot/imported/where_is_the_key.png-8bdd46f3a8139ec306dc01c39f42838b.ctex"]
+source_file="res://textures/animatronics/rab_animation_new.png"
+dest_files=["res://.godot/imported/rab_animation_new.png-9de0e8492c576453ca84fd9e594da43c.ctex"]
 
 [params]
 

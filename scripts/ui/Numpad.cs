@@ -48,7 +48,7 @@ public partial class Numpad : Sprite2D
             if (currentCode == correctCode)
             {
                 GD.Print("Correct");
-                SignalBus.Instance.EmitSignal(SignalBus.SignalName.NumLockOpened);
+                SignalBus.Instance.EmitSignal(SignalBus.SignalName.DoorUnlocked, "numpad");
             }
             else
             {

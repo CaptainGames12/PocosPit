@@ -1,11 +1,13 @@
-[gd_scene load_steps=28 format=3 uid="uid://h043obvnw2lu"]
+[gd_scene load_steps=30 format=3 uid="uid://h043obvnw2lu"]
 
 [ext_resource type="Texture2D" uid="uid://b1bmwv3wq5akx" path="res://textures/rooms/hall.png" id="1_63ene"]
 [ext_resource type="Script" uid="uid://plpcy3pbxmk6" path="res://scripts/scene/dining_room.gd" id="1_tojaa"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_imkyr"]
 [ext_resource type="Texture2D" uid="uid://cr0bu70ex4sbt" path="res://textures/rooms/diding_room/TableMini.png" id="3_nhaaw"]
+[ext_resource type="Script" uid="uid://c58qrbbcn11ia" path="res://scripts/util/ClosedDoor.cs" id="4_h8if0"]
 [ext_resource type="Texture2D" uid="uid://cyr6fh00kdv1r" path="res://textures/rooms/diding_room/Vase.png" id="4_tojaa"]
 [ext_resource type="Texture2D" uid="uid://b73vuvevlp8he" path="res://textures/rooms/diding_room/Vase_with_flowers.png" id="5_c0r8t"]
+[ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="5_qspdn"]
 [ext_resource type="Texture2D" uid="uid://bsnocycin5fsq" path="res://textures/rooms/diding_room/Ball_Pool.png" id="6_ty0bs"]
 [ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="7_h8if0"]
 [ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="8_qspdn"]
@@ -54,13 +56,14 @@ size = Vector2(27.5, 13.75)
 size = Vector2(54, 167.5)
 
 [node name="DiningRoom" type="Node2D"]
+y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_tojaa")
 
 [node name="Hall" type="Sprite2D" parent="."]
-position = Vector2(498, 219)
+position = Vector2(-4, -1)
 texture = ExtResource("1_63ene")
-metadata/_edit_lock_ = true
+centered = false
 
 [node name="ReceptionCorridor" type="Area2D" parent="."]
 position = Vector2(-18, 13)
@@ -76,7 +79,9 @@ debug_color = Color(0.961217, 0.162139, 0.294092, 0.42)
 
 [node name="WorkshopDoor" type="Area2D" parent="."]
 position = Vector2(1, 59)
-script = ExtResource("2_imkyr")
+script = ExtResource("4_h8if0")
+theTypeOfLock = "door_is_locked"
+dialogue = ExtResource("5_qspdn")
 currentRoomName = "DiningRoom"
 newRoomName = "Workshop"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"
@@ -127,8 +132,9 @@ position = Vector2(90, 94)
 texture = ExtResource("5_c0r8t")
 
 [node name="BallPool2" type="Sprite2D" parent="."]
-position = Vector2(536, 113)
+position = Vector2(470.5, 51)
 texture = ExtResource("6_ty0bs")
+centered = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 clip_children = 1

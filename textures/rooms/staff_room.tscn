@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dia8idkpq6tdv"]
+[gd_scene load_steps=36 format=3 uid="uid://dia8idkpq6tdv"]
 
 [ext_resource type="Texture2D" uid="uid://bgketl8jqljuu" path="res://textures/rooms/staff_room/main.png" id="1_lvta7"]
 [ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="2_wugoc"]
@@ -17,6 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://cyfeif70rqb8a" path="res://textures/rooms/diding_room/garlands.png" id="15_rnudg"]
 [ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="16_jgilu"]
 [ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="17_ek85g"]
+[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="18_iirna"]
+[ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/CollectableItems.cs" id="19_e434p"]
+[ext_resource type="Script" uid="uid://c58qrbbcn11ia" path="res://scripts/util/ClosedDoor.cs" id="19_ynldp"]
+[ext_resource type="Resource" uid="uid://d3xpl2qvem4na" path="res://ui/doors.dialogue" id="20_b3hr7"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="20_q3q7r"]
+[ext_resource type="Texture2D" uid="uid://bisc3r5vntw5e" path="res://textures/collectables/map_mini.png" id="21_ynldp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba7d7"]
 size = Vector2(491, 18)
@@ -45,239 +51,262 @@ size = Vector2(23.75, 21)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jftym"]
 size = Vector2(32.875, 141.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whbrm"]
+size = Vector2(9.81793, 54.9165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d17dq"]
+size = Vector2(88, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3hr7"]
+size = Vector2(23, 20)
+
 [node name="StaffRoom" type="Node2D"]
+y_sort_enabled = true
 texture_filter = 1
 
 [node name="Texture" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Main" type="Sprite2D" parent="Texture"]
+position = Vector2(0, -1)
 texture = ExtResource("1_lvta7")
+centered = false
 
 [node name="Chair" type="Sprite2D" parent="Texture"]
-position = Vector2(-3, 260)
+position = Vector2(213, 620)
 texture = ExtResource("2_wugoc")
 
 [node name="Chair2" type="Sprite2D" parent="Texture"]
-position = Vector2(-114, 255)
+position = Vector2(102, 615)
 texture = ExtResource("2_wugoc")
 
 [node name="Lockers2" type="Sprite2D" parent="Texture"]
-position = Vector2(48, -278)
+position = Vector2(264, 82)
 texture = ExtResource("3_emrf2")
 
 [node name="Lockers3" type="Sprite2D" parent="Texture"]
-position = Vector2(96, -273)
+position = Vector2(312, 87)
 texture = ExtResource("3_emrf2")
 
 [node name="Lockers4" type="Sprite2D" parent="Texture"]
-position = Vector2(143, -278)
+position = Vector2(359, 82)
 texture = ExtResource("3_emrf2")
 
 [node name="Lockers2Lock" type="Sprite2D" parent="Texture"]
-position = Vector2(191, -271)
+position = Vector2(407, 89)
 texture = ExtResource("4_2cua6")
 
 [node name="Table" type="Sprite2D" parent="Texture"]
-position = Vector2(-135, 290)
+position = Vector2(81, 650)
 texture = ExtResource("5_kgb0o")
 
 [node name="Table2" type="Sprite2D" parent="Texture"]
-position = Vector2(-6, 290)
+position = Vector2(210, 650)
 texture = ExtResource("5_kgb0o")
 
 [node name="Table3" type="Sprite2D" parent="Texture"]
-position = Vector2(-133, 147)
+position = Vector2(83, 507)
 texture = ExtResource("5_kgb0o")
 
 [node name="Table4" type="Sprite2D" parent="Texture"]
-position = Vector2(0, 150)
+position = Vector2(216, 510)
 texture = ExtResource("5_kgb0o")
 
 [node name="Paper" type="Sprite2D" parent="Texture"]
-position = Vector2(33, 278)
+position = Vector2(250.5, 692)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper4" type="Sprite2D" parent="Texture"]
-position = Vector2(-152, 273)
+position = Vector2(65.5, 687)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper3" type="Sprite2D" parent="Texture"]
-position = Vector2(-170, 259)
+position = Vector2(47.5, 673)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper2" type="Sprite2D" parent="Texture/Paper3"]
 position = Vector2(0, 15)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper6" type="Sprite2D" parent="Texture"]
-position = Vector2(-41, 115)
+position = Vector2(176.5, 529)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper5" type="Sprite2D" parent="Texture"]
-position = Vector2(-25, 137)
+position = Vector2(192.5, 551)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper7" type="Sprite2D" parent="Texture"]
-position = Vector2(-175, 109)
+position = Vector2(42.5, 523)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper8" type="Sprite2D" parent="Texture"]
-position = Vector2(-176, 134)
+position = Vector2(41.5, 548)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Paper9" type="Sprite2D" parent="Texture"]
-position = Vector2(-154, 131)
+position = Vector2(63.5, 545)
 texture = ExtResource("6_ee5cv")
+offset = Vector2(0, -50)
 
 [node name="Computer" type="Sprite2D" parent="Texture"]
-position = Vector2(-116, 162)
+position = Vector2(100, 522)
 texture = ExtResource("7_uj607")
 
 [node name="Computer2" type="Sprite2D" parent="Texture"]
-position = Vector2(-123, 305)
+position = Vector2(93, 665)
 texture = ExtResource("7_uj607")
 
 [node name="Computer3" type="Sprite2D" parent="Texture"]
-position = Vector2(-10, 305)
+position = Vector2(206, 665)
 texture = ExtResource("7_uj607")
 
 [node name="Computer4" type="Sprite2D" parent="Texture"]
-position = Vector2(3, 166)
+position = Vector2(219, 526)
 texture = ExtResource("7_uj607")
 
 [node name="Vedro" type="Sprite2D" parent="Texture"]
-position = Vector2(21, 381)
+position = Vector2(237, 741)
 texture = ExtResource("8_e1fxa")
 
 [node name="Vedro2" type="Sprite2D" parent="Texture"]
-position = Vector2(-108, 364)
+position = Vector2(108, 724)
 texture = ExtResource("8_e1fxa")
 
 [node name="Vedro3" type="Sprite2D" parent="Texture"]
-position = Vector2(23, 231)
+position = Vector2(239, 591)
 texture = ExtResource("8_e1fxa")
 
 [node name="Lockers" type="Sprite2D" parent="Texture"]
-position = Vector2(-195, -41)
+position = Vector2(21, 319)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers5" type="Sprite2D" parent="Texture"]
-position = Vector2(-195, 10)
+position = Vector2(21, 370)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers7" type="Sprite2D" parent="Texture"]
-position = Vector2(46, -159)
+position = Vector2(262, 201)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers8" type="Sprite2D" parent="Texture"]
-position = Vector2(46, -96)
+position = Vector2(262, 264)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers6" type="Sprite2D" parent="Texture"]
-position = Vector2(197, 21)
+position = Vector2(413, 381)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers9" type="Sprite2D" parent="Texture"]
-position = Vector2(197, 73)
+position = Vector2(413, 433)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers10" type="Sprite2D" parent="Texture"]
-position = Vector2(193, 132)
+position = Vector2(409, 492)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers11" type="Sprite2D" parent="Texture"]
-position = Vector2(197, 187)
+position = Vector2(413, 547)
 texture = ExtResource("9_23yc6")
 
 [node name="Lockers12" type="Sprite2D" parent="Texture"]
-position = Vector2(194, 242)
+position = Vector2(410, 602)
 texture = ExtResource("9_23yc6")
 
 [node name="PizzaCycle" type="Sprite2D" parent="Texture"]
-position = Vector2(-178, -133)
+position = Vector2(38, 227)
 texture = ExtResource("10_jorwy")
 
 [node name="PizzaCycle2" type="Sprite2D" parent="Texture"]
-position = Vector2(-149, -69)
+position = Vector2(67, 291)
 texture = ExtResource("10_jorwy")
 
 [node name="Pizza" type="Sprite2D" parent="Texture"]
-position = Vector2(-87, -130)
+position = Vector2(129, 230)
 texture = ExtResource("11_x5mud")
 
 [node name="PizzaCycleCut" type="Sprite2D" parent="Texture"]
-position = Vector2(-95, -95)
+position = Vector2(121, 265)
 texture = ExtResource("12_i8ekd")
 
 [node name="Pizza2" type="Sprite2D" parent="Texture"]
-position = Vector2(-136, -114)
+position = Vector2(80, 246)
 texture = ExtResource("11_x5mud")
 
 [node name="PizzaCycleCut2" type="Sprite2D" parent="Texture"]
-position = Vector2(-74, -56)
+position = Vector2(142, 304)
 texture = ExtResource("12_i8ekd")
 
 [node name="VaseWithFlowers" type="Sprite2D" parent="Texture"]
-position = Vector2(-92, 280)
+position = Vector2(124, 640)
 texture = ExtResource("13_ti3h6")
 
 [node name="VaseWithFlowers2" type="Sprite2D" parent="Texture"]
-position = Vector2(38, 139)
+position = Vector2(254, 499)
 texture = ExtResource("13_ti3h6")
 
 [node name="Vase" type="Sprite2D" parent="Texture"]
-position = Vector2(-90, 131)
+position = Vector2(126, 491)
 texture = ExtResource("14_mgh80")
 
 [node name="Garlands" type="Sprite2D" parent="Texture"]
-position = Vector2(4, -136)
+position = Vector2(220, 224)
 texture = ExtResource("15_rnudg")
 
 [node name="Garlands2" type="Sprite2D" parent="Texture"]
-position = Vector2(4, -136)
+position = Vector2(220, 224)
 texture = ExtResource("15_rnudg")
 
 [node name="Garlands3" type="Sprite2D" parent="Texture"]
-position = Vector2(5, 20)
+position = Vector2(221, 380)
 texture = ExtResource("15_rnudg")
 
 [node name="Garlands4" type="Sprite2D" parent="Texture"]
-position = Vector2(9, 157)
+position = Vector2(225, 517)
 texture = ExtResource("15_rnudg")
 
 [node name="Cardbox" type="Sprite2D" parent="Texture"]
-position = Vector2(-155, -29)
+position = Vector2(61, 331)
 texture = ExtResource("16_jgilu")
 
 [node name="CardbpxBig" type="Sprite2D" parent="Texture"]
-position = Vector2(-110, -35)
+position = Vector2(106, 325)
 texture = ExtResource("17_ek85g")
 
 [node name="Cardbox2" type="Sprite2D" parent="Texture"]
-position = Vector2(80, -205)
+position = Vector2(296, 155)
 texture = ExtResource("16_jgilu")
 
 [node name="Cardbox3" type="Sprite2D" parent="Texture"]
-position = Vector2(43, -208)
+position = Vector2(259, 152)
 texture = ExtResource("16_jgilu")
 
 [node name="Cardbox4" type="Sprite2D" parent="Texture"]
-position = Vector2(40, -142)
+position = Vector2(256, 218)
 texture = ExtResource("16_jgilu")
 
 [node name="Cardbox5" type="Sprite2D" parent="Texture"]
-position = Vector2(141, -329)
+position = Vector2(357, 31)
 texture = ExtResource("16_jgilu")
 
 [node name="Cardbox6" type="Sprite2D" parent="Texture"]
-position = Vector2(-196, -36)
+position = Vector2(20, 324)
 texture = ExtResource("16_jgilu")
 
 [node name="Cardbox7" type="Sprite2D" parent="Texture"]
-position = Vector2(194, 81)
+position = Vector2(410, 441)
 texture = ExtResource("16_jgilu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(216, 360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-0.5, 372)
@@ -334,3 +363,58 @@ shape = SubResource("RectangleShape2D_13t74")
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-195.438, 8.625)
 shape = SubResource("RectangleShape2D_jftym")
+
+[node name="PanelRoomDoor" type="Area2D" parent="."]
+position = Vector2(216, 360)
+script = ExtResource("18_iirna")
+currentRoomName = "StaffRoom"
+newRoomName = "PanelRoom2"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelRoomDoor"]
+position = Vector2(208, -161)
+shape = SubResource("RectangleShape2D_whbrm")
+
+[node name="SecurityRoomDoor" type="Area2D" parent="."]
+position = Vector2(216, 360)
+script = ExtResource("19_ynldp")
+theTypeOfLock = "door_is_closed_with_electricity"
+howToUnlock = "electricity"
+dialogue = ExtResource("20_b3hr7")
+currentRoomName = "StaffRoom"
+newRoomName = "SecurityRoom"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecurityRoomDoor"]
+position = Vector2(-26, -26)
+rotation = -1.55437
+shape = SubResource("RectangleShape2D_whbrm")
+
+[node name="ReceptionDoor2" type="Area2D" parent="."]
+position = Vector2(216, 360)
+script = ExtResource("18_iirna")
+currentRoomName = "StaffRoom"
+newRoomName = "Reception"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReceptionDoor2"]
+position = Vector2(118, 351)
+shape = SubResource("RectangleShape2D_d17dq")
+
+[node name="Map" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+position = Vector2(331, 649)
+script = ExtResource("19_e434p")
+noteDescription = "map"
+interactIndicator = NodePath("InteractIndicator")
+metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map"]
+position = Vector2(1, 34)
+shape = SubResource("RectangleShape2D_b3hr7")
+
+[node name="InteractIndicator" parent="Map" instance=ExtResource("20_q3q7r")]
+scale = Vector2(0.5, 0.5)
+
+[node name="MapMini" type="Sprite2D" parent="."]
+position = Vector2(334, 680)
+texture = ExtResource("21_ynldp")

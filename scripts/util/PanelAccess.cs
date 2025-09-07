@@ -20,6 +20,7 @@ public partial class PanelAccess : InteractionHandler
             activateSound.Play();
             isActivated = true;
             Globals.Instance.panelsActivated += 1;
+            SignalBus.Instance.EmitSignal(SignalBus.SignalName.PlayerInteractedWithItem, "electricity");
             SignalBus.Instance.EmitSignal(SignalBus.SignalName.ObjectiveUpdated, $"Activate electrical panels {Globals.Instance.panelsActivated}/2");
             GD.Print("interact");
         }

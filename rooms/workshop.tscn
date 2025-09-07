@@ -1,11 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbffvrpd50vhm"]
+[gd_scene load_steps=21 format=3 uid="uid://bbffvrpd50vhm"]
 
 [ext_resource type="Texture2D" uid="uid://b17q7b0sratq2" path="res://textures/rooms/spare_parts_room.png" id="1_ayeok"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_dnpw0"]
+[ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="2_o4f84"]
 [ext_resource type="Texture2D" uid="uid://mwuddrwj5vmr" path="res://textures/rooms/panel_room_1/mini-numpad.png" id="3_dhk5t"]
-[ext_resource type="Script" uid="uid://c58qrbbcn11ia" path="res://scripts/util/PanelRoomDoor.cs" id="3_k4xf5"]
+[ext_resource type="Script" uid="uid://c58qrbbcn11ia" path="res://scripts/util/ClosedDoor.cs" id="3_k4xf5"]
 [ext_resource type="Script" uid="uid://dtkjdi1hn001" path="res://scripts/ui/NumpadAccess.cs" id="3_lyfx4"]
+[ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="5_3irxn"]
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="6_8eyd2"]
+[ext_resource type="Texture2D" uid="uid://buoh8ahyev6pe" path="res://textures/rooms/storage_room/table_big-1.png" id="8_3irxn"]
+[ext_resource type="Texture2D" uid="uid://dey5grfkiq2hp" path="res://textures/rooms/reception/cardbox.png" id="9_fiex2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnpw0"]
 size = Vector2(12, 367)
@@ -25,6 +29,9 @@ size = Vector2(504, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3irxn"]
 size = Vector2(64, 123)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq0bq"]
+size = Vector2(446.25, 23)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh5nx"]
 size = Vector2(64, 12)
 
@@ -39,6 +46,11 @@ size = Vector2(30, 14)
 [node name="SparePartsRoom" type="Sprite2D" parent="."]
 position = Vector2(313, 178)
 texture = ExtResource("1_ayeok")
+
+[node name="Chair3" type="Sprite2D" parent="SparePartsRoom"]
+position = Vector2(-295, 14)
+texture = ExtResource("2_o4f84")
+flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -70,6 +82,10 @@ shape = SubResource("RectangleShape2D_8eyd2")
 position = Vector2(547, 54.5)
 shape = SubResource("RectangleShape2D_3irxn")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(257, 337)
+shape = SubResource("RectangleShape2D_bq0bq")
+
 [node name="DiningRoomDoor" type="Area2D" parent="."]
 position = Vector2(546, 363)
 script = ExtResource("2_dnpw0")
@@ -84,9 +100,12 @@ shape = SubResource("RectangleShape2D_bh5nx")
 [node name="PanelRoomDoor" type="Area2D" parent="." node_paths=PackedStringArray("door")]
 position = Vector2(546, 79)
 script = ExtResource("3_k4xf5")
+theTypeOfLock = "door_with_code"
+howToUnlock = "numpad"
 door = NodePath("../StaticBody2D/Door")
+dialogue = ExtResource("5_3irxn")
 currentRoomName = "Workshop"
-newRoomName = "PanelRoom"
+newRoomName = "PanelRoom1"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelRoomDoor"]
@@ -110,3 +129,19 @@ texture = ExtResource("3_dhk5t")
 [node name="InteractIndicator" parent="Numpad" instance=ExtResource("6_8eyd2")]
 position = Vector2(-0.999969, -27)
 scale = Vector2(0.5, 0.5)
+
+[node name="TableBig-2" type="Sprite2D" parent="."]
+position = Vector2(255, 313)
+texture = ExtResource("8_3irxn")
+
+[node name="Cardbox10" type="Sprite2D" parent="TableBig-2"]
+position = Vector2(-190, -24)
+texture = ExtResource("9_fiex2")
+
+[node name="Cardbox11" type="Sprite2D" parent="TableBig-2"]
+position = Vector2(-41, -23)
+texture = ExtResource("9_fiex2")
+
+[node name="Cardbox12" type="Sprite2D" parent="TableBig-2"]
+position = Vector2(-57, -62)
+texture = ExtResource("9_fiex2")

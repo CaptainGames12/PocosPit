@@ -1,0 +1,21 @@
+~ animatronics_description
+: "William A.! Stop losing your mask! Do you remember about defense system of animatronics?"
+: "If you lose mask again you are supposed to wait until lights on. The bear is not that scary yet. You can run from him"
+: "But the rabbit... In any case, remember that you can just flash him with your light and his sensors stop him for some time."
+=> END
+~ magazine
+The article from piece of magazine: Today, August 25, let's remember The Poco's Pizzeria.  A pizzeria that gave most of us pleasant memories. We will recall its entire history, from its heyday in 1980 to its fall in 1990. 
+: The fall occurred because its founder, a brilliant engineer, mysteriously disappeared, and his son became the owner of the pizzeria. After that, The Poco's Pizzeria went bankrupt, and the founder's son 
+: was forced to sell it in 1990. No one visited this pizzeria or tried to change it in any way. And here we are, ten years after the sale.
+Goodman: Are you kiddind?! It can't be real! It seems like a joke! Yeah. Maybe it's just fake magazine. Of course.
+=> END
+~ numpad_note
+: William, I know that you are really forgetful so I decided to put the code on your desk.
+=> END
+~ map
+: You've found map.
+do SignalBus.ObjectiveUpdated.emit("Activate electrical panels "+Globals.Instance.panelsActivated+"/2")
+=> END
+~ key_from_workshop
+: "For newbies. The key from the workshop is in the security room."
+=> END

@@ -21,7 +21,7 @@ public partial class Entrance : InteractionHandler
         }
         else if (!Globals.Instance.isCutSceneGoing && isPlayerNearInteractableItem && Input.IsActionJustPressed("interact") && isNotFirstInteraction)
         {
-            DialogueManager.ShowDialogueBalloon(dialogue, "door_is_closed");
+            DialogueManager.ShowDialogueBalloon(dialogue, "door_is_closed_with_electricity");
         }
     }
 }

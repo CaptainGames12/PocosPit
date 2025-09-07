@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkpj2eqgxch7d"]
+[gd_scene load_steps=27 format=3 uid="uid://bkpj2eqgxch7d"]
 
 [ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_rmeyy"]
 [ext_resource type="Texture2D" uid="uid://c3gvymqu5doqv" path="res://textures/rooms/electrical_room/Cabels.png" id="2_0xtsu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://nej4nuseyevb" path="res://textures/rooms/diding_room/pizza.png" id="8_7j7t8"]
 [ext_resource type="Texture2D" uid="uid://bmqxit1b87alj" path="res://textures/rooms/diding_room/pizza_cycle.png" id="9_u2jw2"]
 [ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="10_cg76n"]
+[ext_resource type="Texture2D" uid="uid://hrmkaguvvdk2" path="res://textures/rooms/electrical_room/Swift_off.png" id="12_kkuvp"]
 [ext_resource type="Texture2D" uid="uid://dv3dhppfavy1a" path="res://textures/rooms/electrical_room/Swift_on.png" id="13_e72gx"]
 [ext_resource type="AudioStream" uid="uid://lyiggewtbnqa" path="res://audio/breaker-switch-45684.mp3" id="14_0xtsu"]
 
@@ -183,7 +184,7 @@ shape = SubResource("RectangleShape2D_iyx56")
 position = Vector2(125, 97)
 script = ExtResource("2_ibbai")
 switchSprite = NodePath("Panel")
-switchOn = ExtResource("13_e72gx")
+switchOn = ExtResource("12_kkuvp")
 activateSound = NodePath("AudioStreamPlayer2D")
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
@@ -205,7 +206,7 @@ stream = ExtResource("14_0xtsu")
 
 [node name="WorkshopDoor" type="Area2D" parent="."]
 script = ExtResource("2_hwlqc")
-currentRoomName = "PanelRoom"
+currentRoomName = "PanelRoom1"
 newRoomName = "Workshop"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"
 

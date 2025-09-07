@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo2756ftx0xtc"
-path="res://.godot/imported/where_is_the_key_mini.png-8161c8391b09dc720b8d5dc228832c01.ctex"
+uid="uid://c06l5f3o4ytgu"
+path="res://.godot/imported/rab_animation.png-5140097833788630caeecafae9baaeae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/writings/where_is_the_key_mini.png"
-dest_files=["res://.godot/imported/where_is_the_key_mini.png-8161c8391b09dc720b8d5dc228832c01.ctex"]
+source_file="res://textures/animatronics/rab_animation.png"
+dest_files=["res://.godot/imported/rab_animation.png-5140097833788630caeecafae9baaeae.ctex"]
 
 [params]
 

@@ -1,0 +1,14 @@
+~ door_seems_closed
+Goodman: Damn. Door is blocked with electrical lock. Then I need to turn on the light. Be strong, Goodman. We will escape, we will be safe.
+Goodman: I have to turn on the electricity to get out of here. I need the map of building to find panels or something like that. And I should just avoid this robot.
+do SignalBus.ObjectiveUpdated.emit("Find the map of the pizzeria")
+=> END
+~ door_with_code
+: Door is locked with number code.
+=> END
+~ door_is_closed_with_electricity
+: Door is blocked with electrical lock.
+=> END
+~ door_is_locked
+: Door is locked.
+=> END
