@@ -1,0 +1,311 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx0fbwcdu7o1n"]
+
+[ext_resource type="Texture2D" uid="uid://d5kjjceyb27p" path="res://textures/scream/rab/rab_scream_head_up.png" id="1_ai55p"]
+[ext_resource type="Texture2D" uid="uid://cefstk2q4nh33" path="res://textures/scream/rab/rab_scream_head_down.png" id="2_6yvpt"]
+[ext_resource type="AudioStream" uid="uid://kotphp3bpial" path="res://audio/fx_babaika_oret.mp3" id="3_wrqyg"]
+
+[sub_resource type="Gradient" id="Gradient_rfe5m"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e334x"]
+gradient = SubResource("Gradient_rfe5m")
+fill = 1
+fill_from = Vector2(0.509434, 0.504717)
+fill_to = Vector2(0.666667, 0.17094)
+
+[sub_resource type="Animation" id="Animation_ai55p"]
+resource_name = "scream"
+length = 1.6655
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.31765, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.40164, 0.744456)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(3.95, -0.25, 0, 0.25, 0, 3.95, -0.25, 0, 0.25, 0, 5.56, -0.25, 0, 0.25, 0, 12.565, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 0.743521, 1.09849)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(3.95, -0.25, 0, 0.25, 0, 3.95, -0.25, 0, 0.25, 0, 5.56, -0.25, 0, 0.25, 0, 12.565, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 0.743521, 1.09849)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(580, -0.25, 0, 0.25, 0, 579, -0.25, 0, 0.25, 0, 579, -0.25, 0, 0.25, 0, 576, -0.25, 0, 0.25, 0, 576, -0.25, 0, 0.25, 0, 576.325, -0.25, 0, 0.25, 0, 592, -0.25, 0, 0.25, 0, 542, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.245102, 0.284462, 0.333284, 0.333333, 0.743521, 0.82476, 1.09849)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(936, -0.25, 0, 0.25, 0, 385, -0.25, 0, 0.25, 0, 371, -0.25, 0, 0.25, 0, 378, -0.692844, 55.314, 0.25, 0, 378, -0.226227, 31.4777, 0.405977, 698.896, 332.86, -0.362099, -30.6461, 0.25, 0, 360, -0.25, 0, 0.25, 0, 122, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.245102, 0.284462, 0.333284, 0.333333, 0.743521, 0.82476, 1.09849)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Head/PocoScreamHeadUp:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Head/PocoScreamHeadUp:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Head/PocoScreamHeadDown:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-6.32911, -0.25, 0, 0.25, 0, -6.83532, -0.25, 0, 0.25, 0, -6.58246, -0.25, 0, 0.25, 0, -6.69385, -0.25, 0, 0.25, 0, -6.16485, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.336345, 0.731728, 0.82476, 1.09849)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Head/PocoScreamHeadDown:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(41.0126, -0.25, 0, 0.25, 0, 37.675, -0.25, 0, 0.25, 0, 40.606, -0.25, 0, 0.25, 0, 52.3501, -0.25, 0, 0.25, 0, 30.9814, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.336345, 0.731728, 0.82476, 1.09849)
+}
+
+[sub_resource type="Animation" id="Animation_6yvpt"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.95, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Head:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.95, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Head:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(581, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Head:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(954, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Head/PocoScreamHeadUp:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Head/PocoScreamHeadUp:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Head/PocoScreamHeadDown:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Head/PocoScreamHeadDown:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q71rc"]
+_data = {
+&"RESET": SubResource("Animation_6yvpt"),
+&"scream": SubResource("Animation_ai55p")
+}
+
+[node name="rab_cream" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.7664, 16.1177)
+color = Color(0, 0, 0, 1)
+
+[node name="Head" type="Node2D" parent="."]
+position = Vector2(581, 954)
+scale = Vector2(3.95, 3.95)
+
+[node name="PocoScreamHeadUp" type="Sprite2D" parent="Head"]
+texture = ExtResource("1_ai55p")
+
+[node name="PocoScreamHeadDown" type="Sprite2D" parent="Head"]
+position = Vector2(-1, 34)
+texture = ExtResource("2_6yvpt")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Head"]
+position = Vector2(-34.6835, -11.3924)
+scale = Vector2(0.393, 0.393)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 2.76
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_e334x")
+offset = Vector2(34.455, 0)
+texture_scale = 4.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="Head"]
+position = Vector2(4.55691, -10.8767)
+scale = Vector2(0.278, 0.278)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 1.73
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_e334x")
+offset = Vector2(35, 0)
+texture_scale = 4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wrqyg")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(494, 285)
+rotation = -0.31765
+scale = Vector2(7.24468, 7.24468)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 0.7
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_e334x")
+offset = Vector2(35, 0)
+texture_scale = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q71rc")
+}
