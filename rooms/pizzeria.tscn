@@ -6052,9 +6052,12 @@ tracks/8/path = NodePath("NavigationRegion2D/DiningRoom")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.833333, 3.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.833333, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
+"args": [-5],
+"method": &"ballPool"
+}, {
 "args": [1],
 "method": &"ballPool"
 }, {
@@ -6344,6 +6347,14 @@ size = Vector2(20, 108)
 
 [node name="Pizzeria" type="Node2D"]
 y_sort_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1773.0
+offset_top = -1721.0
+offset_right = -1689.8761
+offset_bottom = -1656.0272
+scale = Vector2(53.33, 53.33)
+color = Color(0, 0, 0, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true

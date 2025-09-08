@@ -44,7 +44,7 @@ size = Vector2(76, 120)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63ene"]
 radius = 4.5
-height = 292.0
+height = 318.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbyoa"]
 size = Vector2(11, 306)
@@ -330,7 +330,7 @@ position = Vector2(993, 51)
 shape = SubResource("RectangleShape2D_3h7st")
 
 [node name="Scene" type="CollisionShape2D" parent="Walls"]
-position = Vector2(841.5, 287)
+position = Vector2(841, 301)
 shape = SubResource("CapsuleShape2D_63ene")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]

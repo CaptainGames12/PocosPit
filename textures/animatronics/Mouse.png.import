@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wymtsfesgnuo"
-path="res://.godot/imported/tex_code.png-6821668ca648e1fed4e39bc427edaa50.ctex"
+uid="uid://5des3m5h0d7u"
+path="res://.godot/imported/Mouse.png-fe8e3686eddfc56b101b58e2f7810b88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/collectables/tex_code.png"
-dest_files=["res://.godot/imported/tex_code.png-6821668ca648e1fed4e39bc427edaa50.ctex"]
+source_file="res://textures/animatronics/Mouse.png"
+dest_files=["res://.godot/imported/Mouse.png-fe8e3686eddfc56b101b58e2f7810b88.ctex"]
 
 [params]
 

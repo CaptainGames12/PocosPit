@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://v01rsxoyrpas"]
+[gd_scene load_steps=24 format=3 uid="uid://v01rsxoyrpas"]
 
 [ext_resource type="Texture2D" uid="uid://be2ebk5aumvga" path="res://textures/rooms/kichen/main.png" id="1_w8qvd"]
 [ext_resource type="Texture2D" uid="uid://3wtya8vpu0hm" path="res://textures/rooms/kichen/freadg.png" id="2_x6u10"]
@@ -34,6 +34,15 @@ size = Vector2(19.75, 348.375)
 size = Vector2(85, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abi6l"]
+
+[sub_resource type="Gradient" id="Gradient_nkl03"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_twssc"]
+gradient = SubResource("Gradient_nkl03")
+fill = 1
+fill_from = Vector2(0.509434, 0.504717)
+fill_to = Vector2(0.666667, 0.17094)
 
 [node name="Kitchen" type="Node2D"]
 y_sort_enabled = true
@@ -271,3 +280,12 @@ scale = Vector2(0.5, 0.5)
 [node name="Magazine" type="Sprite2D" parent="Magazine"]
 position = Vector2(64, 164)
 texture = ExtResource("14_2kcy0")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(380, 247)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_twssc")
+offset = Vector2(35, 0)
+texture_scale = 0.54
