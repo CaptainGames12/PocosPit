@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0qno47y8oqei" path="res://textures/animatronics/PocoTheBear_Breal-animation.png" id="2_i0sk7"]
 [ext_resource type="Texture2D" uid="uid://dxcxhqhuocfr2" path="res://textures/animatronics/PocoTheBear-New_idl_animation.png" id="3_2fcao"]
 [ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_y4bro"]
-[ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_i0sk7"]
+[ext_resource type="AudioStream" uid="uid://77d3shsp36ha" path="res://audio/babaika_vse_vidit.mp3" id="5_2fcao"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
 radius = 205.02196
@@ -147,4 +147,4 @@ stream = ExtResource("3_y4bro")
 max_distance = 1000.0
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_i0sk7")
+stream = ExtResource("5_2fcao")

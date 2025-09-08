@@ -56,21 +56,22 @@ public partial class CameraController : Camera2D
             zoom: new Vector2(5, 5)
         ),
         ["Kitchen"] = new RoomScale(
-            left: -528,
-            top: 160,
-            right: -31,
-            bottom: 426,
+            left: -160,
+            top: -353,
+            right: 371,
+            bottom: -66,
             zoom: new Vector2(3, 3)
             ),
     };
     public override void _Ready()
     {
-       
+        
         SignalBus.Instance.Connect(SignalBus.SignalName.RoomChanged, Callable.From<string>(ChangeCameraLimit));
     }
     public void ChangeCameraLimit(string newRoom)
     {
         GD.Print(newRoom);
+        
         LimitLeft = roomsScale[newRoom].left;
         LimitRight = roomsScale[newRoom].right;
         LimitBottom = roomsScale[newRoom].bottom;

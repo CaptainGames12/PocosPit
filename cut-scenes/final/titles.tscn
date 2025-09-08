@@ -12,7 +12,7 @@ func _ready() -> void:
 	tween_title.tween_property(thank_you, \"visible_ratio\", 1, 2)
 	for i in roles:
 		var tween = get_tree().create_tween()
-		tween.tween_property(i, \"modulate\", Color(1, 1, 1, 1), 1)
+		tween.tween_property(i, \"modulate\", Color(1.0, 1.0, 1.0, 1.0), 1)
 		await tween.finished
 	await get_tree().create_timer(3).timeout
 	var new_tween_title = get_tree().create_tween()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bis1t4oartbti" path="res://textures/animatronics/rab_animation_new.png" id="2_hdbg3"]
 [ext_resource type="Texture2D" uid="uid://c06l5f3o4ytgu" path="res://textures/animatronics/rab_animation.png" id="2_v5s46"]
 [ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_gehp1"]
-[ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_hdbg3"]
+[ext_resource type="AudioStream" uid="uid://77d3shsp36ha" path="res://audio/babaika_vse_vidit.mp3" id="5_v5s46"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
 radius = 191.09422
@@ -150,4 +150,4 @@ max_distance = 1000.0
 attenuation = 3.03144
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_hdbg3")
+stream = ExtResource("5_v5s46")
