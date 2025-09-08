@@ -5,7 +5,7 @@ using System;
 public partial class CollectableItems : InteractionHandler
 {
     [Export]
-    private string noteDescription;
+    private string itemDescription;
 
     private Resource dialogue = ResourceLoader.Load("res://ui/notes.dialogue");
     public override void _Process(double delta)
@@ -13,8 +13,8 @@ public partial class CollectableItems : InteractionHandler
         base._Process(delta);
         if (Input.IsActionJustPressed("interact") && isPlayerNearInteractableItem)
         {
-            DialogueManager.ShowDialogueBalloon(dialogue, noteDescription);
-            SignalBus.Instance.EmitSignal(SignalBus.SignalName.PlayerInteractedWithItem, this);
+            DialogueManager.ShowDialogueBalloon(dialogue, itemDescription);
+            SignalBus.Instance.EmitSignal(SignalBus.SignalName.PlayerInteractedWithItem, this, isPlayerNearInteractableItem);
             if (Name == "Key")
             {
                 SignalBus.Instance.EmitSignal(SignalBus.SignalName.DoorUnlocked, "key");
@@ -27,7 +27,7 @@ public partial class CollectableItems : InteractionHandler
         else if (!isPlayerNearInteractableItem)
         {
 
-            SignalBus.Instance.EmitSignal(SignalBus.SignalName.PlayerInteractedWithItem, this);
+            SignalBus.Instance.EmitSignal(SignalBus.SignalName.PlayerInteractedWithItem, this, isPlayerNearInteractableItem);
         }
     }
 }

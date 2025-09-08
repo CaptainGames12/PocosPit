@@ -7,15 +7,15 @@
 [ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_hdbg3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
-radius = 87.1436
+radius = 191.09422
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
-radius = 18.0
+radius = 16.0
 height = 66.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1stt"]
 radius = 26.0
-height = 102.0
+height = 88.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyd4e"]
 atlas = ExtResource("2_v5s46")
@@ -100,18 +100,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
+[node name="RabAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("deactivationTimer", "animation", "angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_ksgdc")
 deactivationTimer = NodePath("DeactivationTimer")
+animation = NodePath("Rab")
 angrySound = NodePath("AngrySound")
 stepsSound = NodePath("Walking")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
 targetArea = NodePath("TargetingArea")
 navAgent = NodePath("NavigationAgent2D")
-screamerScene = "freddy"
+screamerScene = "rab"
 metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"
 
 [node name="TargetingArea" type="Area2D" parent="."]
@@ -137,6 +138,7 @@ shape = SubResource("CapsuleShape2D_b1stt")
 sprite_frames = SubResource("SpriteFrames_wyd4e")
 autoplay = "default"
 frame_progress = 0.401903
+offset = Vector2(0, -15)
 
 [node name="DeactivationTimer" type="Timer" parent="."]
 wait_time = 3.0

@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Poco's Pit"
-run/main_scene="uid://dx42ppxocjt0u"
-config/features=PackedStringArray("4.4", "C#", "Mobile")
+run/main_scene="uid://uwbav16ypuo3"
+config/features=PackedStringArray("4.5", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,6 +25,11 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 runtime/advanced/uses_dotnet=true
 runtime/warn_about_method_property_or_signal_name_conflicts=true
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -87,7 +92,7 @@ open_map={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://cut-scenes/beginning/beginning_dialogue.dialogue", "res://ui/notes.dialogue", "res://ui/doors.dialogue")
+locale/translations_pot_files=PackedStringArray("res://cut-scenes/beginning/beginning_dialogue.dialogue", "res://ui/notes.dialogue", "res://ui/doors.dialogue", "res://cut-scenes/final/final.dialogue")
 
 [layer_names]
 

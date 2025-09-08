@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dd3oqsul42mo3"]
+[gd_scene load_steps=24 format=3 uid="uid://dd3oqsul42mo3"]
 
 [ext_resource type="Texture2D" uid="uid://ceerrrotc38hu" path="res://textures/rooms/reception/main.png" id="1_23kdh"]
 [ext_resource type="Texture2D" uid="uid://ypkpqdsobrhw" path="res://textures/rooms/reception/table.png" id="2_eue5r"]
@@ -19,7 +19,10 @@ size = Vector2(169, 11)
 size = Vector2(31, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m56f3"]
-size = Vector2(500, 115)
+size = Vector2(266, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eue5r"]
+size = Vector2(173, 115)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tlh"]
 size = Vector2(50, 9)
@@ -119,8 +122,12 @@ position = Vector2(143.5, -21.5)
 shape = SubResource("RectangleShape2D_hcwxc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="ColisionReception"]
-position = Vector2(-15, -90.5)
+position = Vector2(102, -90.5)
 shape = SubResource("RectangleShape2D_m56f3")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="ColisionReception"]
+position = Vector2(-178.5, -90)
+shape = SubResource("RectangleShape2D_eue5r")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="ColisionReception"]
 position = Vector2(-149, -15.5)

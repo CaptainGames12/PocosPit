@@ -3,6 +3,8 @@ using Godot;
 public partial class AnimatronicBase : CharacterBody2D
 {
     [Export]
+    public AnimatedSprite2D animation;
+    [Export]
     private AudioStreamPlayer2D angrySound;
     [Export]
     private AudioStreamPlayer2D stepsSound;
@@ -28,9 +30,11 @@ public partial class AnimatronicBase : CharacterBody2D
     private string screamerScene;
     public override void _Ready()
     {
+        SignalBus.Instance.Connect(SignalBus.SignalName.LightsOn, Callable.From(() => angrySound.Stop()));
         attackArea.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnAttackAreaEntered));
         angryTimer.Connect(Timer.SignalName.Timeout, Callable.From(OnAngryTimerTimeout));
         targetArea.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnTargetAreaEntered));
+        SignalBus.Instance.Connect(SignalBus.SignalName.NightStarted, Callable.From(()=>animation.Animation = "broken"));
     }
     public void SpawnScreamer()
     {
@@ -39,14 +43,18 @@ public partial class AnimatronicBase : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         int chosenSpeed;
+
         if (Globals.Instance.isCutSceneGoing)
         {
             if (stepsSound.Playing)
                 stepsSound.Stop();
             return;
         }
-        else if (!stepsSound.Playing)
+        else if (!stepsSound.Playing && !animation.IsPlaying())
         {
+            animation.SpriteFrames.SetAnimationLoop("broken", true);
+            animation.Play();
+            GD.Print(Name);
             stepsSound.Play();
         }
         targetArea.Monitoring = !Globals.Instance.isCutSceneGoing;
@@ -66,6 +74,15 @@ public partial class AnimatronicBase : CharacterBody2D
             navAgent.TargetPosition = pathFollow.GlobalPosition;
             chosenSpeed = normalSpeed;
         }
+        
+        if (Velocity.X > 0)
+        {
+            animation.FlipH = true;
+        }
+        else if (Velocity.X < 0)
+        {
+            animation.FlipH = false;
+        }
         Vector2 dir = ToLocal(navAgent.GetNextPathPosition()).Normalized();
         Velocity = dir * chosenSpeed;
         MoveAndSlide();
@@ -81,7 +98,7 @@ public partial class AnimatronicBase : CharacterBody2D
     }
     public void OnAttackAreaEntered(Node2D body)
     {
-        if (body.IsInGroup("player"))
+        if (body.IsInGroup("player") && !Globals.Instance.isCutSceneGoing)
             CallDeferred("SpawnScreamer");
     }
     public void OnAngryTimerTimeout()
@@ -89,4 +106,5 @@ public partial class AnimatronicBase : CharacterBody2D
         targetArea.SetDeferred("monitoring", true);
         isAngry = false;
     }
+ 
 }

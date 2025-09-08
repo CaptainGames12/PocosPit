@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dia8idkpq6tdv"]
+[gd_scene load_steps=37 format=3 uid="uid://dia8idkpq6tdv"]
 
 [ext_resource type="Texture2D" uid="uid://bgketl8jqljuu" path="res://textures/rooms/staff_room/main.png" id="1_lvta7"]
 [ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="2_wugoc"]
@@ -25,7 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://bisc3r5vntw5e" path="res://textures/collectables/map_mini.png" id="21_ynldp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba7d7"]
-size = Vector2(491, 18)
+size = Vector2(314, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynldp"]
+size = Vector2(63, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x00rv"]
 size = Vector2(490.75, 140.75)
@@ -309,8 +312,12 @@ texture = ExtResource("16_jgilu")
 position = Vector2(216, 360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.5, 372)
+position = Vector2(-89, 372)
 shape = SubResource("RectangleShape2D_ba7d7")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(191.5, 372)
+shape = SubResource("RectangleShape2D_ynldp")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -291.625)
@@ -379,7 +386,7 @@ shape = SubResource("RectangleShape2D_whbrm")
 position = Vector2(216, 360)
 script = ExtResource("19_ynldp")
 theTypeOfLock = "door_is_closed_with_electricity"
-howToUnlock = "electricity"
+howToUnlock = "panel"
 dialogue = ExtResource("20_b3hr7")
 currentRoomName = "StaffRoom"
 newRoomName = "SecurityRoom"
@@ -391,7 +398,7 @@ rotation = -1.55437
 shape = SubResource("RectangleShape2D_whbrm")
 
 [node name="ReceptionDoor2" type="Area2D" parent="."]
-position = Vector2(216, 360)
+position = Vector2(213, 375)
 script = ExtResource("18_iirna")
 currentRoomName = "StaffRoom"
 newRoomName = "Reception"
@@ -402,9 +409,9 @@ position = Vector2(118, 351)
 shape = SubResource("RectangleShape2D_d17dq")
 
 [node name="Map" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
-position = Vector2(331, 649)
+position = Vector2(307, 399)
 script = ExtResource("19_e434p")
-noteDescription = "map"
+itemDescription = "map"
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 
@@ -415,6 +422,6 @@ shape = SubResource("RectangleShape2D_b3hr7")
 [node name="InteractIndicator" parent="Map" instance=ExtResource("20_q3q7r")]
 scale = Vector2(0.5, 0.5)
 
-[node name="MapMini" type="Sprite2D" parent="."]
-position = Vector2(334, 680)
+[node name="MapMini" type="Sprite2D" parent="Map"]
+position = Vector2(3, 31)
 texture = ExtResource("21_ynldp")

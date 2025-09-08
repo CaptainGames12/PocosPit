@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://7agsflaafkw7"]
+[gd_scene load_steps=15 format=3 uid="uid://7agsflaafkw7"]
 
 [ext_resource type="Script" uid="uid://cyc25uuusvkch" path="res://scripts/ui/UiControl.cs" id="1_nb4k0"]
 [ext_resource type="Texture2D" uid="uid://bqdxximuddg0w" path="res://textures/ui/quest_bur.png" id="2_bo1jx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://jm0rc7iui72c" path="res://scripts/ui/Numpad.cs" id="3_tf0e0"]
 [ext_resource type="Script" uid="uid://ct6y28xtoxp18" path="res://ui/NumpadButton.cs" id="4_obcwv"]
 [ext_resource type="FontFile" uid="uid://bwvkqwg5ylynm" path="res://fonts/digital_numbers/fonts/DigitalNumbers-Regular.ttf" id="5_bo1jx"]
+[ext_resource type="Resource" uid="uid://qn13g2bm8ll6" path="res://ui/notes.dialogue" id="5_gycre"]
 [ext_resource type="Texture2D" uid="uid://c7m8xnhguc86c" path="res://textures/ui/map_poco.png" id="7_bo1jx"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nb4k0"]
@@ -19,9 +20,9 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_tf0e0"]
 font = ExtResource("5_bo1jx")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf0e0"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vkava"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tf0e0"]
 
 [node name="UI" type="CanvasLayer" node_paths=PackedStringArray("map", "objectiveBack", "objectiveLabel", "staminaBar", "loadingScreen")]
 script = ExtResource("1_nb4k0")
@@ -71,6 +72,7 @@ position = Vector2(560.5, 345.5)
 scale = Vector2(3.70312, 3.51562)
 texture = ExtResource("2_ks8t7")
 script = ExtResource("3_tf0e0")
+numpadDialogue = ExtResource("5_gycre")
 label = NodePath("Label")
 
 [node name="Label" type="Label" parent="UI#Numpad"]
@@ -99,24 +101,24 @@ theme_override_constants/separation = 3
 [node name="1" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="2" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="3" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
@@ -129,24 +131,24 @@ theme_override_constants/separation = 3
 [node name="4" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="5" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="6" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
@@ -159,24 +161,24 @@ theme_override_constants/separation = 3
 [node name="7" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="8" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="9" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
@@ -189,24 +191,24 @@ theme_override_constants/separation = 3
 [node name="Enter" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="0" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 
 [node name="Clear" type="Button" parent="Numpad#VBoxContainer/Numpad_VBoxContainer#HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vkava")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tf0e0")
 flat = true
 script = ExtResource("4_obcwv")
 

@@ -29,7 +29,7 @@ public partial class AnimationHandler : Node
             animationTree.Set("parameters/IdleScared/blend_position", player.Velocity.Normalized().X);
             animationTree.Set("parameters/RunScared/blend_position", player.Velocity.Normalized().X);
         }
-        AnimationNodeStateMachinePlayback state_machine_playback = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
-        GD.Print(state_machine_playback.GetCurrentNode());
+        //AnimationNodeStateMachinePlayback state_machine_playback = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
+        //GD.Print(state_machine_playback.GetCurrentNode());
     }
 }

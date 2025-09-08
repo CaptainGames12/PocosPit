@@ -1,8 +1,11 @@
+using DialogueManagerRuntime;
 using Godot;
 using System;
 
 public partial class Numpad : Sprite2D
 {
+    [Export]
+    private Resource numpadDialogue;
     [Export]
     private Label label;
     private const string correctCode = "1987";
@@ -25,6 +28,7 @@ public partial class Numpad : Sprite2D
             if (Input.IsActionJustPressed("interact"))
             {
                 Visible = !Visible;
+                DialogueManager.ShowDialogueBalloon(numpadDialogue, "numpad_note");
             }
         }
         else

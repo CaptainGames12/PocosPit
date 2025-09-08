@@ -1,0 +1,161 @@
+[gd_scene load_steps=2 format=3 uid="uid://baooqrd1p5b44"]
+
+[sub_resource type="GDScript" id="GDScript_dg1ci"]
+script/source = "extends Control
+@export var thank_you: RichTextLabel;
+@export var roles: Array[RichTextLabel]
+@onready var see_you_again: RichTextLabel = $\"See you again\"
+
+func _ready() -> void:
+	await get_tree().create_timer(3).timeout
+	var tween_title = get_tree().create_tween()
+	tween_title.tween_property(thank_you, \"visible_ratio\", 1, 2)
+	for i in roles:
+		var tween = get_tree().create_tween()
+		tween.tween_property(i, \"modulate\", Color(1, 1, 1, 1), 1)
+		await tween.finished
+	await get_tree().create_timer(3).timeout
+	var new_tween_title = get_tree().create_tween()
+	new_tween_title.tween_property(thank_you, \"modulate\", Color(0.0, 0.0, 0.0, 0.0), 2)
+	for i in roles:
+		var tween = get_tree().create_tween()
+		tween.tween_property(i, \"modulate\", Color(1.0, 1.0, 1.0, 0.0), 1)
+		await tween.finished
+	var tween_last = get_tree().create_tween()
+	tween_last.tween_property(see_you_again, \"visible_ratio\", 1, 1.5)
+	await tween_last.finished
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file(\"uid://uwbav16ypuo3\")
+"
+
+[node name="Titles" type="Control" node_paths=PackedStringArray("thank_you", "roles")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_dg1ci")
+thank_you = NodePath("Thank you")
+roles = [NodePath("CaptainGames"), NodePath("WorldPlay"), NodePath("Gribrid"), NodePath("Nathan")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -94.0
+offset_top = -47.0
+offset_right = 1256.0
+offset_bottom = 691.0
+color = Color(0, 0, 0, 1)
+
+[node name="Thank you" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 79.0
+offset_right = 172.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Thank you for playing!"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="CaptainGames" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -86.0
+offset_right = 506.0
+offset_bottom = 86.0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=red]CaptainGames[/color] 
+programmer, game-designer
+"
+horizontal_alignment = 1
+
+[node name="WorldPlay" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = -86.0
+offset_right = 253.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=purple]WorldPlay[/color] 
+artist, second programmer
+"
+horizontal_alignment = 1
+
+[node name="Gribrid" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -506.0
+offset_top = -86.0
+offset_bottom = 86.0
+grow_horizontal = 0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=blue]Gribrid[/color] 
+SFX and music creator"
+horizontal_alignment = 1
+
+[node name="Nathan" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -831.0
+offset_top = 72.0
+offset_right = -325.0
+offset_bottom = 244.0
+grow_horizontal = 0
+grow_vertical = 2
+bbcode_enabled = true
+text = "In this project was used plugin for Godot \"Dialogue manager 3\" made by Nathan Hoad"
+horizontal_alignment = 1
+
+[node name="See you again" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -22.5
+offset_right = 171.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "See you again"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0

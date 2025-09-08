@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://8t6jntt61gyf" path="res://textures/rooms/electrical_room.png" id="1_rmeyy"]
 [ext_resource type="Texture2D" uid="uid://c3gvymqu5doqv" path="res://textures/rooms/electrical_room/Cabels.png" id="2_0xtsu"]
-[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_hwlqc"]
 [ext_resource type="Script" uid="uid://20tpm7a5l8s3" path="res://scripts/util/PanelAccess.cs" id="2_ibbai"]
 [ext_resource type="Texture2D" uid="uid://dtxcsy3ho35r6" path="res://textures/rooms/staff_room/lockers2.png" id="3_6caak"]
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="4_ibbai"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://hrmkaguvvdk2" path="res://textures/rooms/electrical_room/Swift_off.png" id="12_kkuvp"]
 [ext_resource type="Texture2D" uid="uid://dv3dhppfavy1a" path="res://textures/rooms/electrical_room/Swift_on.png" id="13_e72gx"]
 [ext_resource type="AudioStream" uid="uid://lyiggewtbnqa" path="res://audio/breaker-switch-45684.mp3" id="14_0xtsu"]
+[ext_resource type="Script" uid="uid://bfl174qqf14us" path="res://cut-scenes/final/WorkshopDoor.cs" id="16_6caak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdiud"]
 size = Vector2(268, 129)
@@ -205,7 +205,7 @@ scale = Vector2(0.5, 0.5)
 stream = ExtResource("14_0xtsu")
 
 [node name="WorkshopDoor" type="Area2D" parent="."]
-script = ExtResource("2_hwlqc")
+script = ExtResource("16_6caak")
 currentRoomName = "PanelRoom1"
 newRoomName = "Workshop"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"

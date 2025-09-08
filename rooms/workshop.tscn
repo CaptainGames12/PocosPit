@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://mwuddrwj5vmr" path="res://textures/rooms/panel_room_1/mini-numpad.png" id="3_dhk5t"]
 [ext_resource type="Script" uid="uid://c58qrbbcn11ia" path="res://scripts/util/ClosedDoor.cs" id="3_k4xf5"]
 [ext_resource type="Script" uid="uid://dtkjdi1hn001" path="res://scripts/ui/NumpadAccess.cs" id="3_lyfx4"]
-[ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="5_3irxn"]
+[ext_resource type="Resource" uid="uid://d3xpl2qvem4na" path="res://ui/doors.dialogue" id="5_bq0bq"]
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="6_8eyd2"]
 [ext_resource type="Texture2D" uid="uid://buoh8ahyev6pe" path="res://textures/rooms/storage_room/table_big-1.png" id="8_3irxn"]
 [ext_resource type="Texture2D" uid="uid://dey5grfkiq2hp" path="res://textures/rooms/reception/cardbox.png" id="9_fiex2"]
@@ -103,7 +103,7 @@ script = ExtResource("3_k4xf5")
 theTypeOfLock = "door_with_code"
 howToUnlock = "numpad"
 door = NodePath("../StaticBody2D/Door")
-dialogue = ExtResource("5_3irxn")
+dialogue = ExtResource("5_bq0bq")
 currentRoomName = "Workshop"
 newRoomName = "PanelRoom1"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"

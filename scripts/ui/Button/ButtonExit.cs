@@ -33,7 +33,7 @@ public partial class ButtonExit : Area2D
 		{
 			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
 			{
-				GD.Print("Это для тебя КАПКАН");
+				GetTree().Quit();
 			}
 		}
 	}

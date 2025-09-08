@@ -1,0 +1,5 @@
+~ start
+do pause()
+Goodman: Yeaah! Finally. Now I think, I can sleep a little.
+do play()
+=> END

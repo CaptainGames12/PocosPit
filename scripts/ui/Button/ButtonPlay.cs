@@ -33,7 +33,7 @@ public partial class ButtonPlay : Area2D
 		{
 			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
 			{
-				GD.Print("Это для тебя КАПКАН");
+				GetTree().ChangeSceneToFile("uid://dx42ppxocjt0u");
 			}
 		}
 	}

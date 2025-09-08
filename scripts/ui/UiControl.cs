@@ -18,9 +18,10 @@ public partial class UiControl : CanvasLayer
    
     public override void _Ready()
     {
+        isMapCollected = false;
         SignalBus.Instance.Connect(SignalBus.SignalName.ObjectiveUpdated, Callable.From<string>(UpdateObjective));
         SignalBus.Instance.Connect(SignalBus.SignalName.RoomChanged, Callable.From<string>(LoadingRoomInitialize));
-        SignalBus.Instance.Connect(SignalBus.SignalName.PlayerInteractedWithItem, Callable.From<CollectableItems>(ShowMap));
+        SignalBus.Instance.Connect(SignalBus.SignalName.PlayerInteractedWithItem, Callable.From<CollectableItems, bool>(ShowMap));
     }
     public override void _Process(double delta)
     {
@@ -55,12 +56,11 @@ public partial class UiControl : CanvasLayer
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(objectiveLabel, "visible_ratio", 1, 1);
     }
-    private void ShowMap(CollectableItems note)
+    private void ShowMap(CollectableItems note, bool playerNear)
     {
-        if (note.Name == "Map")
+        if (note.Name == "Map" && playerNear)
         {
-            map.Visible = true;
-            
+            GD.Print(note.Name);
             isMapCollected = true;
         }
         

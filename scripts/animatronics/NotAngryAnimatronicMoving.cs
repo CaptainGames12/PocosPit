@@ -3,6 +3,7 @@ using System;
 
 public partial class NotAngryAnimatronicMoving : Path2D
 {
+	
 	[Export]
 	private int speed;
 	[Export] 

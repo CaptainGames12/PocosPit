@@ -59,8 +59,8 @@ public partial class LightController : Node
 			lightTween.Kill();
 			lightTween = GetTree().CreateTween().SetParallel(true);
 			float newEnergy = (float)Mathf.Lerp(light.Energy, 1.0, 0.3f);
-			//Vector2 newScale = light.Scale.Lerp(Vector2.One, 0.3f);
-			//lightTween.TweenProperty(light, "scale", newScale, 0.1);
+			Vector2 newScale = lightArea.Scale.Lerp(Vector2.One, 0.3f);
+			lightTween.TweenProperty(lightArea, "scale", newScale, 0.1);
 			lightTween.TweenProperty(light, "energy", newEnergy, 0.1);
 			lightTween.TweenProperty(light.GetChild(0), "energy", newEnergy, 0.1);
 			
@@ -73,9 +73,9 @@ public partial class LightController : Node
 	private void OnTimerTimeout()
 	{
 		lightTween = GetTree().CreateTween().SetParallel(true);
-		//lightTween.TweenProperty(light, "scale", Vector2.Zero, 10);
-		lightTween.TweenProperty(light, "energy", 0, 10);
-		lightTween.TweenProperty(light.GetChild(0), "energy", 0, 10);
+		lightTween.TweenProperty(lightArea, "scale", Vector2.Zero, 5);
+		lightTween.TweenProperty(light, "energy", 0, 5);
+		lightTween.TweenProperty(light.GetChild(0), "energy", 0, 5);
 	}
 	private void OnRabEnteredLightArea(Node2D body)
 	{

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv2v3ihmtecj5"]
+[gd_scene load_steps=15 format=3 uid="uid://uwbav16ypuo3"]
 
 [ext_resource type="Script" uid="uid://b3io7rkwbigxg" path="res://scripts/menu/Bals.cs" id="1_wd6lm"]
 [ext_resource type="Texture2D" uid="uid://bb11vx3yb75rf" path="res://textures/ui/animationTransition/balls/ball2.png" id="2_nuiae"]
@@ -50,11 +50,9 @@ sprite2D = NodePath("Play")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Play"]
 position = Vector2(0.136056, 0.272114)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_akoio")
 
 [node name="Play" type="Sprite2D" parent="Button_Play"]
-scale = Vector2(1, 1)
 texture = ExtResource("9_pb5j1")
 
 [node name="Button_Exit" type="Area2D" parent="." node_paths=PackedStringArray("sprite2D")]
@@ -65,10 +63,8 @@ sprite2D = NodePath("Exit")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Exit"]
 position = Vector2(1.53482e-06, 11.7007)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ho73k")
 
 [node name="Exit" type="Sprite2D" parent="Button_Exit"]
 position = Vector2(-1.63265, 11.7007)
-scale = Vector2(1, 1)
 texture = ExtResource("10_6fejx")

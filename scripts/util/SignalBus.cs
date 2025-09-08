@@ -14,7 +14,13 @@ public partial class SignalBus : Node
     [Signal]
     public delegate void ObjectiveUpdatedEventHandler(string objective);
     [Signal]
-    public delegate void PlayerInteractedWithItemEventHandler(Node2D note);
+    public delegate void PlayerInteractedWithItemEventHandler(Node2D note, bool isPlayerNearInteractableItem);
+    [Signal]
+    public delegate void NightStartedEventHandler();
+    [Signal]
+    public delegate void PlayFinalCutsceneEventHandler();
+    [Signal]
+    public delegate void LightsOnEventHandler();
     public static SignalBus Instance;
     public override void _Ready()
     {

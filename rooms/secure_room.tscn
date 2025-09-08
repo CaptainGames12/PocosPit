@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c0yum45ub20jk"]
+[gd_scene load_steps=26 format=3 uid="uid://c0yum45ub20jk"]
 
 [ext_resource type="Texture2D" uid="uid://c2y6uqsovf3jn" path="res://textures/rooms/secure_room/main.png" id="1_xoqgq"]
 [ext_resource type="Texture2D" uid="uid://cd3o0xmhpye6b" path="res://textures/rooms/secure_room/cablels.png" id="2_prpac"]
@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://cyfeif70rqb8a" path="res://textures/rooms/diding_room/garlands.png" id="13_jbr8h"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="14_prpac"]
 [ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/CollectableItems.cs" id="15_batf6"]
+[ext_resource type="Texture2D" uid="uid://dxni4t70xrk3n" path="res://textures/collectables/the_key.png" id="16_uouai"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="17_hs7e7"]
+[ext_resource type="Texture2D" uid="uid://bo2756ftx0xtc" path="res://textures/collectables/where_is_the_key_mini.png" id="18_vj0gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_julyd"]
 size = Vector2(210, 157)
@@ -33,6 +36,8 @@ size = Vector2(17.375, 12.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_batf6"]
 size = Vector2(56, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1abv"]
 
 [node name="SecureRoom" type="Node2D"]
 y_sort_enabled = true
@@ -229,6 +234,62 @@ metadata/_custom_type_script = "uid://cciaieu3iuggs"
 position = Vector2(40, 120)
 shape = SubResource("RectangleShape2D_batf6")
 
-[node name="Key" type="Area2D" parent="."]
+[node name="Key" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+y_sort_enabled = true
 script = ExtResource("15_batf6")
+itemDescription = "key_collected"
+interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="TheKey" type="Sprite2D" parent="Key"]
+position = Vector2(64, 122)
+texture = ExtResource("16_uouai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
+position = Vector2(64, 164)
+shape = SubResource("RectangleShape2D_s1abv")
+
+[node name="InteractIndicator" parent="Key" instance=ExtResource("17_hs7e7")]
+position = Vector2(64, 138)
+scale = Vector2(0.5, 0.5)
+
+[node name="Code" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+y_sort_enabled = true
+position = Vector2(71, 0)
+script = ExtResource("15_batf6")
+itemDescription = "code"
+interactIndicator = NodePath("InteractIndicator")
+metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Code"]
+position = Vector2(64, 164)
+shape = SubResource("RectangleShape2D_s1abv")
+
+[node name="InteractIndicator" parent="Code" instance=ExtResource("17_hs7e7")]
+position = Vector2(64, 138)
+scale = Vector2(0.5, 0.5)
+
+[node name="Code" type="Sprite2D" parent="Code"]
+position = Vector2(60, 119)
+texture = ExtResource("18_vj0gh")
+
+[node name="AnimDesc" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
+y_sort_enabled = true
+position = Vector2(34, 19)
+script = ExtResource("15_batf6")
+itemDescription = "animatronics_description"
+interactIndicator = NodePath("InteractIndicator")
+metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimDesc"]
+position = Vector2(64, 164)
+shape = SubResource("RectangleShape2D_s1abv")
+
+[node name="InteractIndicator" parent="AnimDesc" instance=ExtResource("17_hs7e7")]
+position = Vector2(64, 138)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatronicsDescription" type="Sprite2D" parent="AnimDesc"]
+position = Vector2(64, 164)
+texture = ExtResource("18_vj0gh")
+flip_h = true

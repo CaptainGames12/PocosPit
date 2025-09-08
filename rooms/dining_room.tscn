@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://h043obvnw2lu"]
+[gd_scene load_steps=33 format=3 uid="uid://h043obvnw2lu"]
 
 [ext_resource type="Texture2D" uid="uid://b1bmwv3wq5akx" path="res://textures/rooms/hall.png" id="1_63ene"]
 [ext_resource type="Script" uid="uid://plpcy3pbxmk6" path="res://scripts/scene/dining_room.gd" id="1_tojaa"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c58qrbbcn11ia" path="res://scripts/util/ClosedDoor.cs" id="4_h8if0"]
 [ext_resource type="Texture2D" uid="uid://cyr6fh00kdv1r" path="res://textures/rooms/diding_room/Vase.png" id="4_tojaa"]
 [ext_resource type="Texture2D" uid="uid://b73vuvevlp8he" path="res://textures/rooms/diding_room/Vase_with_flowers.png" id="5_c0r8t"]
-[ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="5_qspdn"]
+[ext_resource type="Resource" uid="uid://d3xpl2qvem4na" path="res://ui/doors.dialogue" id="5_h8if0"]
 [ext_resource type="Texture2D" uid="uid://bsnocycin5fsq" path="res://textures/rooms/diding_room/Ball_Pool.png" id="6_ty0bs"]
 [ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="7_h8if0"]
 [ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="8_qspdn"]
@@ -24,6 +24,9 @@ size = Vector2(7, 138)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6787"]
 size = Vector2(56, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qspdn"]
+size = Vector2(62, 13)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63ene"]
 size = Vector2(21.75, 461)
 
@@ -31,14 +34,17 @@ size = Vector2(21.75, 461)
 size = Vector2(1000, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo03h"]
-size = Vector2(817, 128)
+size = Vector2(432, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8if0"]
+size = Vector2(323, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3h7st"]
-size = Vector2(178, 120)
+size = Vector2(76, 120)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63ene"]
 radius = 4.5
-height = 314.0
+height = 292.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbyoa"]
 size = Vector2(11, 306)
@@ -54,6 +60,9 @@ size = Vector2(27.5, 13.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty0bs"]
 size = Vector2(54, 167.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tvw7"]
+size = Vector2(61, 20)
 
 [node name="DiningRoom" type="Node2D"]
 y_sort_enabled = true
@@ -77,11 +86,13 @@ position = Vector2(15.5, 353)
 shape = SubResource("RectangleShape2D_1b2y7")
 debug_color = Color(0.961217, 0.162139, 0.294092, 0.42)
 
-[node name="WorkshopDoor" type="Area2D" parent="."]
+[node name="WorkshopDoor" type="Area2D" parent="." node_paths=PackedStringArray("door")]
 position = Vector2(1, 59)
 script = ExtResource("4_h8if0")
 theTypeOfLock = "door_is_locked"
-dialogue = ExtResource("5_qspdn")
+howToUnlock = "key"
+door = NodePath("../Walls/CollisionShape2D12")
+dialogue = ExtResource("5_h8if0")
 currentRoomName = "DiningRoom"
 newRoomName = "Workshop"
 metadata/_custom_type_script = "uid://cciaieu3iuggs"
@@ -281,6 +292,17 @@ texture = ExtResource("4_tojaa")
 position = Vector2(706, 259)
 texture = ExtResource("5_c0r8t")
 
+[node name="RoomChanger" type="Area2D" parent="."]
+position = Vector2(162.5, 54)
+script = ExtResource("2_imkyr")
+currentRoomName = "DiningRoom"
+newRoomName = "Kitchen"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomChanger"]
+position = Vector2(194.5, 61.5)
+shape = SubResource("RectangleShape2D_qspdn")
+
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="Right" type="CollisionShape2D" parent="Walls"]
@@ -292,11 +314,19 @@ position = Vector2(496, 445)
 shape = SubResource("RectangleShape2D_imkyr")
 
 [node name="Wall1" type="CollisionShape2D" parent="Walls"]
-position = Vector2(409.5, 54)
+position = Vector2(602, 54)
 shape = SubResource("RectangleShape2D_uo03h")
 
+[node name="Wall4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(162.5, 54)
+shape = SubResource("RectangleShape2D_h8if0")
+
 [node name="Wall2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(907, 50)
+position = Vector2(856, 50)
+shape = SubResource("RectangleShape2D_3h7st")
+
+[node name="Wall3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(993, 51)
 shape = SubResource("RectangleShape2D_3h7st")
 
 [node name="Scene" type="CollisionShape2D" parent="Walls"]
@@ -349,6 +379,10 @@ shape = SubResource("RectangleShape2D_ty0bs")
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls"]
 position = Vector2(706, 323)
 shape = SubResource("RectangleShape2D_ty0bs")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls"]
+position = Vector2(930, 99)
+shape = SubResource("RectangleShape2D_2tvw7")
 
 [node name="Chair" type="Sprite2D" parent="."]
 position = Vector2(210, 381)

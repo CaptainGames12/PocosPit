@@ -1,12 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwetc1prqf4o6"]
+[gd_scene load_steps=20 format=3 uid="uid://cwetc1prqf4o6"]
 
 [ext_resource type="Script" uid="uid://bvvgumrpjr6we" path="res://scripts/animatronics/PocoAnimatronic.cs" id="1_s6hxr"]
 [ext_resource type="Texture2D" uid="uid://b0qno47y8oqei" path="res://textures/animatronics/PocoTheBear_Breal-animation.png" id="2_i0sk7"]
+[ext_resource type="Texture2D" uid="uid://dxcxhqhuocfr2" path="res://textures/animatronics/PocoTheBear-New_idl_animation.png" id="3_2fcao"]
 [ext_resource type="AudioStream" uid="uid://bhrmnuajoh45l" path="res://audio/fx_babaika_idet.mp3" id="3_y4bro"]
 [ext_resource type="AudioStream" uid="uid://ug5gddrpbxie" path="res://audio/angrysound.mp3" id="4_i0sk7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4bro"]
-radius = 132.0
+radius = 205.02196
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0sk7"]
 radius = 20.0
@@ -36,6 +37,22 @@ region = Rect2(400, 0, 100, 100)
 atlas = ExtResource("2_i0sk7")
 region = Rect2(500, 0, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi50v"]
+atlas = ExtResource("3_2fcao")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_647jq"]
+atlas = ExtResource("3_2fcao")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxtxd"]
+atlas = ExtResource("3_2fcao")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rego"]
+atlas = ExtResource("3_2fcao")
+region = Rect2(300, 0, 100, 100)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yi50v"]
 animations = [{
 "frames": [{
@@ -57,11 +74,23 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_frqac")
 }],
-"loop": true,
+"loop": false,
 "name": &"broken",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi50v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_647jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxtxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rego")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -71,17 +100,18 @@ animations = [{
 radius = 34.0
 height = 102.0
 
-[node name="PocoAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
+[node name="PocoAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("animation", "angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_s6hxr")
+animation = NodePath("Poco")
 angrySound = NodePath("AngrySound")
 stepsSound = NodePath("Walking")
 attackArea = NodePath("AttackArea")
 angryTimer = NodePath("AngryTimer")
 targetArea = NodePath("TargetingArea")
 navAgent = NodePath("NavigationAgent2D")
-screamerScene = "freddy"
+screamerScene = "poco"
 metadata/_custom_type_script = "uid://cvk3fkrfbwvvu"
 
 [node name="TargetingArea" type="Area2D" parent="."]
@@ -93,10 +123,12 @@ shape = SubResource("CircleShape2D_y4bro")
 shape = SubResource("CapsuleShape2D_i0sk7")
 
 [node name="Poco" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -7)
 sprite_frames = SubResource("SpriteFrames_yi50v")
+animation = &"broken"
 autoplay = "default"
-speed_scale = 1.5
+frame = 5
+frame_progress = 1.0
+offset = Vector2(0, -15)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

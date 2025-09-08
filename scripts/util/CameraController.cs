@@ -15,7 +15,7 @@ public partial class CameraController : Camera2D
             ),
         ["Reception"] = new RoomScale(
             left: -528,
-            top: 164,
+            top: 160,
             right: -31,
             bottom: 426,
             zoom: new Vector2(3, 3)
@@ -35,26 +35,33 @@ public partial class CameraController : Camera2D
             zoom: new Vector2(5, 5)
         ),
         ["StaffRoom"] = new RoomScale(
-            left: -645,
+            left: -640,
             top: -573,
             right: -210,
             bottom: 150,
             zoom: new Vector2(3, 3)
         ),
         ["SecurityRoom"] = new RoomScale(
-            left: -600,
-            top: -857,
-            right: -405,
-            bottom: -605,
+            left: -623,
+            top: -862,
+            right: -429,
+            bottom: -612,
             zoom: new Vector2(6, 6)
         ),
         ["PanelRoom2"] = new RoomScale(
-            left: -135,
+            left: -130,
             top: -631,
             right: 106,
             bottom: -370,
             zoom: new Vector2(5, 5)
         ),
+        ["Kitchen"] = new RoomScale(
+            left: -528,
+            top: 160,
+            right: -31,
+            bottom: 426,
+            zoom: new Vector2(3, 3)
+            ),
     };
     public override void _Ready()
     {
