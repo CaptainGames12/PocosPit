@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dia8idkpq6tdv"]
+[gd_scene load_steps=39 format=3 uid="uid://dia8idkpq6tdv"]
 
 [ext_resource type="Texture2D" uid="uid://bgketl8jqljuu" path="res://textures/rooms/staff_room/main.png" id="1_lvta7"]
 [ext_resource type="Texture2D" uid="uid://nkety278we40" path="res://textures/rooms/diding_room/chair.png" id="2_wugoc"]
@@ -62,6 +62,15 @@ size = Vector2(88, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3hr7"]
 size = Vector2(23, 20)
+
+[sub_resource type="Gradient" id="Gradient_2fcao"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ynldp"]
+gradient = SubResource("Gradient_2fcao")
+fill = 1
+fill_from = Vector2(0.509434, 0.504717)
+fill_to = Vector2(0.666667, 0.17094)
 
 [node name="StaffRoom" type="Node2D"]
 y_sort_enabled = true
@@ -425,3 +434,12 @@ scale = Vector2(0.5, 0.5)
 [node name="MapMini" type="Sprite2D" parent="Map"]
 position = Vector2(3, 31)
 texture = ExtResource("21_ynldp")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(273, 432)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 0.8
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ynldp")
+offset = Vector2(35, 0)
+texture_scale = 0.85

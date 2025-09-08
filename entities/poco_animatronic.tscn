@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwetc1prqf4o6"]
+[gd_scene load_steps=22 format=3 uid="uid://cwetc1prqf4o6"]
 
 [ext_resource type="Script" uid="uid://bvvgumrpjr6we" path="res://scripts/animatronics/PocoAnimatronic.cs" id="1_s6hxr"]
 [ext_resource type="Texture2D" uid="uid://b0qno47y8oqei" path="res://textures/animatronics/PocoTheBear_Breal-animation.png" id="2_i0sk7"]
@@ -100,6 +100,15 @@ animations = [{
 radius = 34.0
 height = 102.0
 
+[sub_resource type="Gradient" id="Gradient_2fcao"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_24vtk"]
+gradient = SubResource("Gradient_2fcao")
+fill = 1
+fill_from = Vector2(0.509434, 0.504717)
+fill_to = Vector2(0.666667, 0.17094)
+
 [node name="PocoAnimatronic" type="CharacterBody2D" node_paths=PackedStringArray("animation", "angrySound", "stepsSound", "attackArea", "angryTimer", "targetArea", "navAgent")]
 collision_layer = 2
 collision_mask = 0
@@ -147,4 +156,13 @@ stream = ExtResource("3_y4bro")
 max_distance = 1000.0
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_2fcao")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-35, -45)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 0.3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_24vtk")
+offset = Vector2(35, 0)
+texture_scale = 1.48
+

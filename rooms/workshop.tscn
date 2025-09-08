@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bbffvrpd50vhm"]
+[gd_scene load_steps=32 format=3 uid="uid://bbffvrpd50vhm"]
 
 [ext_resource type="Texture2D" uid="uid://b17q7b0sratq2" path="res://textures/rooms/spare_parts_room.png" id="1_ayeok"]
 [ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="2_dnpw0"]
@@ -10,6 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="6_8eyd2"]
 [ext_resource type="Texture2D" uid="uid://buoh8ahyev6pe" path="res://textures/rooms/storage_room/table_big-1.png" id="8_3irxn"]
 [ext_resource type="Texture2D" uid="uid://dey5grfkiq2hp" path="res://textures/rooms/reception/cardbox.png" id="9_fiex2"]
+[ext_resource type="Texture2D" uid="uid://5des3m5h0d7u" path="res://textures/animatronics/Mouse.png" id="11_fiex2"]
+[ext_resource type="Texture2D" uid="uid://bv5uptpbf45t5" path="res://textures/rooms/diding_room/cardbox.png" id="12_cgoey"]
+[ext_resource type="Texture2D" uid="uid://bwiu7ctp1wbaw" path="res://textures/rooms/diding_room/cardbpx_big.png" id="13_iewro"]
+[ext_resource type="Texture2D" uid="uid://bmqxit1b87alj" path="res://textures/rooms/diding_room/pizza_cycle.png" id="14_8rjct"]
+[ext_resource type="Texture2D" uid="uid://c81k13q56qrn3" path="res://textures/rooms/diding_room/pizza_cycle_cut.png" id="15_pbcxy"]
+[ext_resource type="Texture2D" uid="uid://nej4nuseyevb" path="res://textures/rooms/diding_room/pizza.png" id="16_ah1at"]
+[ext_resource type="Texture2D" uid="uid://cr0bu70ex4sbt" path="res://textures/rooms/diding_room/TableMini.png" id="17_sqkqd"]
+[ext_resource type="Texture2D" uid="uid://cyr6fh00kdv1r" path="res://textures/rooms/diding_room/Vase.png" id="18_pnnp0"]
+[ext_resource type="Texture2D" uid="uid://b73vuvevlp8he" path="res://textures/rooms/diding_room/Vase_with_flowers.png" id="19_7k8sp"]
+[ext_resource type="Texture2D" uid="uid://dttpcv6rnmbkh" path="res://textures/rooms/kichen/kastrula.png" id="20_ax4qo"]
+[ext_resource type="Texture2D" uid="uid://26drjq120q1l" path="res://textures/rooms/staff_room/Computer.png" id="21_83jxm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnpw0"]
 size = Vector2(12, 367)
@@ -30,7 +41,7 @@ size = Vector2(504, 16)
 size = Vector2(64, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq0bq"]
-size = Vector2(446.25, 23)
+size = Vector2(446.25, 39.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh5nx"]
 size = Vector2(64, 12)
@@ -86,6 +97,10 @@ shape = SubResource("RectangleShape2D_3irxn")
 position = Vector2(257, 337)
 shape = SubResource("RectangleShape2D_bq0bq")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(185, 131)
+shape = SubResource("RectangleShape2D_bq0bq")
+
 [node name="DiningRoomDoor" type="Area2D" parent="."]
 position = Vector2(546, 363)
 script = ExtResource("2_dnpw0")
@@ -131,6 +146,7 @@ position = Vector2(-0.999969, -27)
 scale = Vector2(0.5, 0.5)
 
 [node name="TableBig-2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(255, 313)
 texture = ExtResource("8_3irxn")
 
@@ -145,3 +161,93 @@ texture = ExtResource("9_fiex2")
 [node name="Cardbox12" type="Sprite2D" parent="TableBig-2"]
 position = Vector2(-57, -62)
 texture = ExtResource("9_fiex2")
+
+[node name="Mouse" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(40, 168)
+scale = Vector2(-1, 1)
+texture = ExtResource("11_fiex2")
+
+[node name="Cardbox" type="Sprite2D" parent="."]
+position = Vector2(85, 128)
+texture = ExtResource("12_cgoey")
+
+[node name="CardbpxBig" type="Sprite2D" parent="."]
+position = Vector2(133, 131)
+texture = ExtResource("13_iewro")
+
+[node name="Chair" type="Sprite2D" parent="."]
+position = Vector2(173, 128)
+texture = ExtResource("2_o4f84")
+
+[node name="Chair2" type="Sprite2D" parent="."]
+position = Vector2(209, 125)
+texture = ExtResource("2_o4f84")
+
+[node name="Chair3" type="Sprite2D" parent="."]
+position = Vector2(239, 125)
+texture = ExtResource("2_o4f84")
+
+[node name="Chair4" type="Sprite2D" parent="."]
+position = Vector2(266, 125)
+texture = ExtResource("2_o4f84")
+
+[node name="PizzaCycle" type="Sprite2D" parent="."]
+position = Vector2(430, 80)
+texture = ExtResource("14_8rjct")
+
+[node name="PizzaCycleCut" type="Sprite2D" parent="."]
+position = Vector2(255, 25)
+texture = ExtResource("15_pbcxy")
+
+[node name="PizzaCycle2" type="Sprite2D" parent="."]
+position = Vector2(164, 62)
+texture = ExtResource("14_8rjct")
+
+[node name="PizzaCycleCut2" type="Sprite2D" parent="."]
+position = Vector2(298, 83)
+texture = ExtResource("15_pbcxy")
+
+[node name="Pizza" type="Sprite2D" parent="."]
+position = Vector2(85, 36)
+texture = ExtResource("16_ah1at")
+
+[node name="Pizza2" type="Sprite2D" parent="."]
+position = Vector2(46, 74)
+texture = ExtResource("16_ah1at")
+
+[node name="PizzaCycle3" type="Sprite2D" parent="."]
+position = Vector2(398, 24)
+texture = ExtResource("14_8rjct")
+
+[node name="PizzaCycleCut3" type="Sprite2D" parent="."]
+position = Vector2(469, 33)
+texture = ExtResource("15_pbcxy")
+
+[node name="PizzaCycleCut4" type="Sprite2D" parent="."]
+position = Vector2(348, 57)
+texture = ExtResource("15_pbcxy")
+
+[node name="TableMini" type="Sprite2D" parent="."]
+position = Vector2(312, 124)
+texture = ExtResource("17_sqkqd")
+
+[node name="TableMini2" type="Sprite2D" parent="."]
+position = Vector2(377, 127)
+texture = ExtResource("17_sqkqd")
+
+[node name="Vase" type="Sprite2D" parent="."]
+position = Vector2(297, 108)
+texture = ExtResource("18_pnnp0")
+
+[node name="VaseWithFlowers" type="Sprite2D" parent="."]
+position = Vector2(364, 106)
+texture = ExtResource("19_7k8sp")
+
+[node name="Kastrula" type="Sprite2D" parent="."]
+position = Vector2(137, 112)
+texture = ExtResource("20_ax4qo")
+
+[node name="Computer" type="Sprite2D" parent="."]
+position = Vector2(325, 124)
+texture = ExtResource("21_83jxm")
