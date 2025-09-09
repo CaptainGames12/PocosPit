@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7agsflaafkw7"]
+[gd_scene load_steps=17 format=3 uid="uid://7agsflaafkw7"]
 
 [ext_resource type="Script" uid="uid://cyc25uuusvkch" path="res://scripts/ui/UiControl.cs" id="1_nb4k0"]
 [ext_resource type="Texture2D" uid="uid://bqdxximuddg0w" path="res://textures/ui/quest_bur.png" id="2_bo1jx"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://ct6y28xtoxp18" path="res://ui/NumpadButton.cs" id="4_obcwv"]
 [ext_resource type="FontFile" uid="uid://bwvkqwg5ylynm" path="res://fonts/digital_numbers/fonts/DigitalNumbers-Regular.ttf" id="5_bo1jx"]
 [ext_resource type="Resource" uid="uid://qn13g2bm8ll6" path="res://ui/notes.dialogue" id="5_gycre"]
+[ext_resource type="AudioStream" uid="uid://bbe16n4y2jhr7" path="res://audio/correct-156911.mp3" id="7_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://c7m8xnhguc86c" path="res://textures/ui/map_poco.png" id="7_bo1jx"]
+[ext_resource type="AudioStream" uid="uid://bu562ewlac4f3" path="res://audio/error-04-199275.mp3" id="8_bi8hs"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nb4k0"]
 light_mode = 1
@@ -66,12 +68,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="UI#Numpad" type="Sprite2D" parent="." node_paths=PackedStringArray("label")]
-visible = false
+[node name="UI#Numpad" type="Sprite2D" parent="." node_paths=PackedStringArray("correct", "incorrect", "label")]
 position = Vector2(560.5, 345.5)
 scale = Vector2(3.70312, 3.51562)
 texture = ExtResource("2_ks8t7")
 script = ExtResource("3_tf0e0")
+correct = NodePath("Correct")
+incorrect = NodePath("Incorrect")
 numpadDialogue = ExtResource("5_gycre")
 label = NodePath("Label")
 
@@ -84,6 +87,12 @@ offset_bottom = 289.0
 label_settings = SubResource("LabelSettings_tf0e0")
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="Correct" type="AudioStreamPlayer" parent="UI#Numpad"]
+stream = ExtResource("7_ay4pc")
+
+[node name="Incorrect" type="AudioStreamPlayer" parent="UI#Numpad"]
+stream = ExtResource("8_bi8hs")
 
 [node name="Numpad#VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 494.0

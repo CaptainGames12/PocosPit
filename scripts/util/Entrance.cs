@@ -9,12 +9,9 @@ public partial class Entrance : InteractionHandler
     private bool isNotFirstInteraction = false;
     public override void _PhysicsProcess(double delta)
     {
-        if (Globals.Instance.currentObjective != "Exit through the entrance door")
-        {
-            return;
-        }
+      
         base._PhysicsProcess(delta);
-        if (isPlayerNearInteractableItem && Input.IsActionJustPressed("interact") && !isNotFirstInteraction)
+        if (isPlayerNearInteractableItem && Globals.Instance.currentObjective == "Exit through the entrance door" && Input.IsActionJustPressed("interact") && !isNotFirstInteraction)
         {
             DialogueManager.ShowDialogueBalloon(dialogue, "door_seems_closed");
             isNotFirstInteraction = true;

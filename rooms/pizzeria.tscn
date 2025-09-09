@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=74 format=3 uid="uid://dx42ppxocjt0u"]
 
 [ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
 [ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
@@ -3987,6 +3987,18 @@ tracks/14/keys = {
 "update": 1,
 "values": [2, 3, 4, 5, 6, 7, 8, 9]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PlayerHeadScary:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0t50q"]
 resource_name = "with_light_left_run_scared"
@@ -6345,6 +6357,15 @@ size = Vector2(20, 108)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gunaf"]
 
+[sub_resource type="Gradient" id="Gradient_uouai"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5gil"]
+gradient = SubResource("Gradient_uouai")
+fill = 1
+fill_from = Vector2(0.509434, 0.504717)
+fill_to = Vector2(0.666667, 0.17094)
+
 [node name="Pizzeria" type="Node2D"]
 y_sort_enabled = true
 
@@ -6494,11 +6515,12 @@ autoplay = true
 stream = ExtResource("9_anepg")
 volume_db = -44.649
 
-[node name="CutScenesPlayer" type="AnimationPlayer" parent="." node_paths=PackedStringArray("keyNote", "rab", "parents", "nightAudio", "dayAudio", "playerAnimations", "poco", "player", "playerAnimTree", "canvasModulate")]
+[node name="CutScenesPlayer" type="AnimationPlayer" parent="." node_paths=PackedStringArray("children", "keyNote", "rab", "parents", "nightAudio", "dayAudio", "playerAnimations", "poco", "player", "playerAnimTree", "canvasModulate")]
 libraries = {
 &"": SubResource("AnimationLibrary_a6j83")
 }
 script = ExtResource("10_wn245")
+children = NodePath("../Children")
 keyNote = NodePath("../WhereIsTheKey")
 rab = NodePath("../RabPath/RabAnimatronic")
 finalDialogue = ExtResource("18_gunaf")
@@ -6641,6 +6663,15 @@ scale = Vector2(0.5, 0.5)
 [node name="WhereIsTheKeyMini" type="Sprite2D" parent="WhereIsTheKey"]
 position = Vector2(-1, 0)
 texture = ExtResource("28_h5gil")
+
+[node name="PointLight2D2" type="PointLight2D" parent="WhereIsTheKey"]
+position = Vector2(-35, 4)
+color = Color(0.714315, 0.453621, 0.17847, 1)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_h5gil")
+offset = Vector2(35, 0)
+texture_scale = 0.85
 
 [editable path="PocoPath/PocoAnimatronic"]
 [editable path="Player"]

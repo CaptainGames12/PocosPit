@@ -61,16 +61,19 @@ position = Vector2(354, 92)
 texture = ExtResource("2_x6u10")
 
 [node name="Table" type="Sprite2D" parent="Texture"]
-position = Vector2(141, 123)
+position = Vector2(140, 93)
 texture = ExtResource("3_53nl4")
+offset = Vector2(0, 30)
 
 [node name="Table2" type="Sprite2D" parent="Texture"]
-position = Vector2(141, 195)
+position = Vector2(141, 166)
 texture = ExtResource("3_53nl4")
+offset = Vector2(0, 30)
 
 [node name="Table3" type="Sprite2D" parent="Texture"]
-position = Vector2(141, 271)
+position = Vector2(143, 243)
 texture = ExtResource("3_53nl4")
+offset = Vector2(0, 30)
 
 [node name="Kastrula" type="Sprite2D" parent="Texture"]
 position = Vector2(97, 114)
@@ -97,20 +100,24 @@ position = Vector2(257, 119)
 texture = ExtResource("5_nkl03")
 
 [node name="Fire" type="Sprite2D" parent="Texture"]
-position = Vector2(158, 128)
+position = Vector2(154.5, 108.5)
 texture = ExtResource("6_twssc")
+offset = Vector2(0, 20)
 
 [node name="Fire2" type="Sprite2D" parent="Texture"]
-position = Vector2(134, 200)
+position = Vector2(130.5, 180.5)
 texture = ExtResource("6_twssc")
+offset = Vector2(0, 20)
 
 [node name="Fire3" type="Sprite2D" parent="Texture"]
-position = Vector2(178, 200)
+position = Vector2(174.5, 180.5)
 texture = ExtResource("6_twssc")
+offset = Vector2(0, 20)
 
 [node name="Fire4" type="Sprite2D" parent="Texture"]
-position = Vector2(156, 277)
+position = Vector2(152.5, 257.5)
 texture = ExtResource("6_twssc")
+offset = Vector2(0, 20)
 
 [node name="Doska" type="Sprite2D" parent="Texture"]
 position = Vector2(200, 265)
@@ -133,16 +140,19 @@ position = Vector2(202, 258)
 texture = ExtResource("8_abi6l")
 
 [node name="Doska6" type="Sprite2D" parent="Texture"]
-position = Vector2(197, 255)
+position = Vector2(195, 245)
 texture = ExtResource("8_abi6l")
+offset = Vector2(0, 15)
 
 [node name="Knif" type="Sprite2D" parent="Texture"]
-position = Vector2(191, 253)
+position = Vector2(190, 271)
 texture = ExtResource("9_xm6cg")
+offset = Vector2(0, -15)
 
 [node name="Knif2" type="Sprite2D" parent="Texture"]
-position = Vector2(107, 257)
+position = Vector2(107, 274)
 texture = ExtResource("9_xm6cg")
+offset = Vector2(0, -15)
 
 [node name="Kastrula7" type="Sprite2D" parent="Texture"]
 position = Vector2(261, 188)

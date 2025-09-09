@@ -3973,6 +3973,18 @@ tracks/14/keys = {
 "update": 1,
 "values": [2, 3, 4, 5, 6, 7, 8, 9]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PlayerHeadScary:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_0t50q"]
 resource_name = "with_light_left_run_scared"
@@ -4864,10 +4876,10 @@ tracks/15/path = NodePath("PlayerHeadScary:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0.626493),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.626493),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [false, false]
 }
 
 [sub_resource type="Animation" id="Animation_sn2x3"]
@@ -5465,6 +5477,9 @@ autoplay = "idle_left_beginning"
 speed_scale = 0.5
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i623q")
+}
 tree_root = ExtResource("6_x08pd")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
@@ -5472,11 +5487,11 @@ parameters/ChargeFlashlightIdle/blend_position = 0.00556588
 parameters/ChargeFlashlightOnRun/blend_position = 0.562511
 parameters/ChargeFlashlightOnWalk/blend_position = 0.0166667
 parameters/Idle/blend_position = -0.00378501
-parameters/IdleScared/blend_position = 0
-parameters/Run/blend_position = 0
-parameters/RunScared/blend_position = 0
+parameters/IdleScared/blend_position = 0.0
+parameters/Run/blend_position = 0.0
+parameters/RunScared/blend_position = 0.0
 parameters/Walk/blend_position = 0.012869
-parameters/WalkScared/blend_position = 0
+parameters/WalkScared/blend_position = 0.0
 
 [node name="Run" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_i623q")

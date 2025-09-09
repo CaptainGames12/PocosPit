@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 public partial class CutScenesController : AnimationPlayer
 {
 	[Export]
+	private Node2D children;
+	[Export]
 	private CollectableItems keyNote;
 	[Export]
 	private RabAnimatronic rab;
@@ -111,6 +113,7 @@ public partial class CutScenesController : AnimationPlayer
 	}
 	public void ShowFinalCutscene()
 	{
+		children.Visible = true;
 		Globals.Instance.isCutSceneGoing = true;
 	}
 	public void ShowFinalDialogue()
@@ -120,12 +123,16 @@ public partial class CutScenesController : AnimationPlayer
 	}
 	public void MovePlayerToPit()
 	{
+		
 		SignalBus.Instance.EmitSignal(SignalBus.SignalName.RoomChanged, "DiningRoom");
 	}
 	public void ShowTitles()
 	{
+		Globals.Instance.currentObjective = "";
+    	Globals.Instance.beginningCutsceneIsFinished = false;
+    	Globals.Instance.panelsActivated = 0;
+    	Globals.Instance.isFlashlightDeactivated = true;
 		Globals.Instance.isCutSceneGoing = false;
-		Globals.Instance.beginningCutsceneIsFinished = false;
 		GetTree().ChangeSceneToFile("uid://baooqrd1p5b44");
 	}
 }

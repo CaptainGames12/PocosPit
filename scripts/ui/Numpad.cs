@@ -5,6 +5,11 @@ using System;
 public partial class Numpad : Sprite2D
 {
     [Export]
+    private AudioStreamPlayer correct;
+    [Export]
+    private AudioStreamPlayer incorrect;
+    
+    [Export]
     private Resource numpadDialogue;
     [Export]
     private Label label;
@@ -42,7 +47,7 @@ public partial class Numpad : Sprite2D
         {
             return;
         }
-        if ((name != "Enter" || name != "Clear") && currentCode.Length <= 3)
+        if (name != "Enter" && name != "Clear" && currentCode.Length <= 3)
         {
             currentCode += name;
 
@@ -51,11 +56,12 @@ public partial class Numpad : Sprite2D
         {
             if (currentCode == correctCode)
             {
-                GD.Print("Correct");
+                correct.Play();
                 SignalBus.Instance.EmitSignal(SignalBus.SignalName.DoorUnlocked, "numpad");
             }
             else
             {
+                incorrect.Play();
                 GD.Print("Incorrect");
             }
         }
