@@ -156,7 +156,6 @@ stream = ExtResource("3_y4bro")
 max_distance = 1000.0
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
-
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(-35, -45)
 color = Color(0.714315, 0.453621, 0.17847, 1)
