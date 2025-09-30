@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://uwbav16ypuo3"]
+[gd_scene load_steps=19 format=3 uid="uid://uwbav16ypuo3"]
 
 [ext_resource type="Script" uid="uid://b3io7rkwbigxg" path="res://scripts/menu/Bals.cs" id="1_wd6lm"]
 [ext_resource type="Texture2D" uid="uid://bb11vx3yb75rf" path="res://textures/ui/animationTransition/balls/ball2.png" id="2_nuiae"]
@@ -9,12 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://bm56jjm1q4up7" path="res://textures/ui/animationTransition/balls/ball.png" id="7_dyuxe"]
 [ext_resource type="Texture2D" uid="uid://cwl6ieucd6wtj" path="res://textures/ui/logo/Logo.png" id="8_8of67"]
 [ext_resource type="Script" uid="uid://b8vqyrtvbgv70" path="res://scripts/ui/Button/ButtonPlay.cs" id="9_6fejx"]
-[ext_resource type="Texture2D" uid="uid://crxi1331g76xw" path="res://textures/ui/text/Play.png" id="9_pb5j1"]
 [ext_resource type="Texture2D" uid="uid://bic576thjvjpk" path="res://textures/ui/text/Exit.png" id="10_6fejx"]
+[ext_resource type="PackedScene" uid="uid://dx42ppxocjt0u" path="res://rooms/pizzeria.tscn" id="10_8of67"]
 [ext_resource type="Script" uid="uid://cgb41klagfyy" path="res://scripts/ui/Button/ButtonExit.cs" id="11_akoio"]
+[ext_resource type="Texture2D" uid="uid://j1qin6b1bs5e" path="res://textures/ui/text/Play_Demo.png" id="11_pgh6j"]
+[ext_resource type="PackedScene" uid="uid://btnf4weixig5x" path="res://rooms/pizzeria_full.tscn" id="12_wmmby"]
+[ext_resource type="Texture2D" uid="uid://bypjbod3vci4l" path="res://textures/ui/text/Play_Full.png" id="13_qp55b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbutu"]
+size = Vector2(45.85034, 10.068)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akoio"]
-size = Vector2(24.7619, 10.068)
+size = Vector2(45.85034, 10.068)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ho73k"]
 size = Vector2(24.7619, 10.068)
@@ -43,28 +49,42 @@ scale = Vector2(6.575, 6.575)
 texture = ExtResource("8_8of67")
 
 [node name="Button_Play" type="Area2D" parent="." node_paths=PackedStringArray("sprite2D")]
-position = Vector2(108, 418)
+position = Vector2(189, 389)
 scale = Vector2(7.35, 7.35)
 script = ExtResource("9_6fejx")
 sprite2D = NodePath("Play")
+pizzeria = ExtResource("10_8of67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Play"]
+position = Vector2(-0.61224365, 0.2721138)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_wbutu")
+
+[node name="Play" type="Sprite2D" parent="Button_Play"]
+texture = ExtResource("11_pgh6j")
+
+[node name="Button_Play_Full" type="Area2D" parent="." node_paths=PackedStringArray("sprite2D")]
+position = Vector2(189.00003, 486.99997)
+scale = Vector2(7.35, 7.35)
+script = ExtResource("9_6fejx")
+sprite2D = NodePath("Play")
+pizzeria = ExtResource("12_wmmby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Play_Full"]
 position = Vector2(0.136056, 0.272114)
 shape = SubResource("RectangleShape2D_akoio")
 
-[node name="Play" type="Sprite2D" parent="Button_Play"]
-texture = ExtResource("9_pb5j1")
+[node name="Play" type="Sprite2D" parent="Button_Play_Full"]
+texture = ExtResource("13_qp55b")
 
 [node name="Button_Exit" type="Area2D" parent="." node_paths=PackedStringArray("sprite2D")]
-position = Vector2(108, 418)
+position = Vector2(190, 589)
 scale = Vector2(7.35, 7.35)
 script = ExtResource("11_akoio")
 sprite2D = NodePath("Exit")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button_Exit"]
-position = Vector2(1.53482e-06, 11.7007)
 shape = SubResource("RectangleShape2D_ho73k")
 
 [node name="Exit" type="Sprite2D" parent="Button_Exit"]
-position = Vector2(-1.63265, 11.7007)
 texture = ExtResource("10_6fejx")

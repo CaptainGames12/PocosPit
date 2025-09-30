@@ -46,7 +46,7 @@ public partial class CameraController : Camera2D
             top: -862,
             right: -429,
             bottom: -612,
-            zoom: new Vector2(6, 6)
+            zoom: new Vector2(3, 3)
         ),
         ["PanelRoom2"] = new RoomScale(
             left: -130,
@@ -62,6 +62,12 @@ public partial class CameraController : Camera2D
             bottom: -66,
             zoom: new Vector2(3, 3)
             ),
+        ["Vents"] = new RoomScale(left: -4000,
+            top: -1300,
+            right: -1000,
+            bottom: 1100,
+            zoom: new Vector2(4, 4)
+            )
     };
     public override void _Ready()
     {

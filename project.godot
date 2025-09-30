@@ -28,7 +28,6 @@ runtime/warn_about_method_property_or_signal_name_conflicts=true
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -97,7 +96,9 @@ locale/translations_pot_files=PackedStringArray("res://cut-scenes/beginning/begi
 [layer_names]
 
 2d_physics/layer_1="player"
+2d_navigation/layer_1="main pizzeria"
 2d_physics/layer_2="animatronics"
+2d_navigation/layer_2="vents"
 2d_physics/layer_3="light"
 2d_physics/layer_4="hide_state"
 

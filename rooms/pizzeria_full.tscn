@@ -1,34 +1,35 @@
-[gd_scene load_steps=46 format=3 uid="uid://dx42ppxocjt0u"]
+[gd_scene load_steps=61 format=3 uid="uid://btnf4weixig5x"]
 
-[ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_j3ksj"]
-[ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="2_7sefv"]
-[ext_resource type="PackedScene" uid="uid://cbqcu1kavglsj" path="res://entities/player.tscn" id="3_7sefv"]
-[ext_resource type="PackedScene" uid="uid://7agsflaafkw7" path="res://ui/ui.tscn" id="4_4ptq7"]
-[ext_resource type="PackedScene" uid="uid://dbfxtxp2kw0r2" path="res://entities/rab_animatronic.tscn" id="4_gcwg4"]
-[ext_resource type="PackedScene" uid="uid://cwetc1prqf4o6" path="res://entities/poco_animatronic.tscn" id="5_7sefv"]
-[ext_resource type="PackedScene" uid="uid://dd3oqsul42mo3" path="res://rooms/reception.tscn" id="7_gcwg4"]
-[ext_resource type="PackedScene" uid="uid://v01rsxoyrpas" path="res://rooms/kitchen.tscn" id="8_a70r1"]
-[ext_resource type="Script" uid="uid://ch4fvmnj2i1qk" path="res://scripts/util/TransportingPlayerController.cs" id="8_wne6k"]
-[ext_resource type="AudioStream" uid="uid://c27t7w5p7idef" path="res://audio/poco_x3pro_main_theme.mp3" id="9_anepg"]
-[ext_resource type="Script" uid="uid://bbvj758s85npg" path="res://scripts/util/CutScenesController.cs" id="10_wn245"]
-[ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="11_a6j83"]
-[ext_resource type="Texture2D" uid="uid://bwtyg76vo6aqv" path="res://cut-scenes/beginning/dad.png" id="12_2icu4"]
-[ext_resource type="Texture2D" uid="uid://h2l5faxraftr" path="res://cut-scenes/beginning/mom.png" id="13_re8k1"]
-[ext_resource type="AudioStream" uid="uid://xloxoevagfsm" path="res://audio/poco_x3pro_deti_theme.mp3" id="14_12fcj"]
-[ext_resource type="PackedScene" uid="uid://bbffvrpd50vhm" path="res://rooms/workshop.tscn" id="14_re8k1"]
-[ext_resource type="PackedScene" uid="uid://bkpj2eqgxch7d" path="res://rooms/electrical_room_1.tscn" id="15_0wck2"]
-[ext_resource type="PackedScene" uid="uid://cfmuda1rqn0s7" path="res://scene/animationTransition/animation_balls.tscn" id="15_671hi"]
-[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="16_sl4l6"]
-[ext_resource type="Script" uid="uid://cmgjemjyfkusl" path="res://scripts/util/Entrance.cs" id="17_sl4l6"]
-[ext_resource type="Resource" uid="uid://cw7y7qa8mapm5" path="res://cut-scenes/final/final.dialogue" id="18_gunaf"]
-[ext_resource type="Texture2D" uid="uid://c26u30tivqpxr" path="res://cut-scenes/beginning/child.png" id="18_p8fa5"]
-[ext_resource type="PackedScene" uid="uid://wd3umfi0ts38" path="res://rooms/electrical_room_2.tscn" id="19_12fcj"]
-[ext_resource type="Resource" uid="uid://d3xpl2qvem4na" path="res://ui/doors.dialogue" id="20_ach0t"]
-[ext_resource type="PackedScene" uid="uid://dia8idkpq6tdv" path="res://textures/rooms/staff_room.tscn" id="20_hkn55"]
-[ext_resource type="PackedScene" uid="uid://c0yum45ub20jk" path="res://rooms/secure_room.tscn" id="23_12fcj"]
-[ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/CollectableItems.cs" id="25_a70r1"]
-[ext_resource type="Texture2D" uid="uid://bo2756ftx0xtc" path="res://textures/collectables/where_is_the_key_mini.png" id="28_h5gil"]
-[ext_resource type="Texture2D" uid="uid://dydlcerrahdn" path="res://textures/rooms/vents.png" id="29_w0kel"]
+[ext_resource type="PackedScene" uid="uid://h043obvnw2lu" path="res://rooms/dining_room.tscn" id="1_1nagh"]
+[ext_resource type="PackedScene" uid="uid://dd3oqsul42mo3" path="res://rooms/reception.tscn" id="2_hhekp"]
+[ext_resource type="PackedScene" uid="uid://bbffvrpd50vhm" path="res://rooms/workshop.tscn" id="3_5j1mt"]
+[ext_resource type="PackedScene" uid="uid://bkpj2eqgxch7d" path="res://rooms/electrical_room_1.tscn" id="4_mh555"]
+[ext_resource type="PackedScene" uid="uid://dia8idkpq6tdv" path="res://textures/rooms/staff_room.tscn" id="5_csmda"]
+[ext_resource type="PackedScene" uid="uid://wd3umfi0ts38" path="res://rooms/electrical_room_2.tscn" id="6_gdvor"]
+[ext_resource type="PackedScene" uid="uid://c0yum45ub20jk" path="res://rooms/secure_room.tscn" id="7_oaseh"]
+[ext_resource type="PackedScene" uid="uid://v01rsxoyrpas" path="res://rooms/kitchen.tscn" id="8_gnlyt"]
+[ext_resource type="Script" uid="uid://kdxt4ouhwrh1" path="res://scripts/animatronics/NotAngryAnimatronicMoving.cs" id="9_6ismn"]
+[ext_resource type="PackedScene" uid="uid://cwetc1prqf4o6" path="res://entities/poco_animatronic.tscn" id="10_bh68l"]
+[ext_resource type="PackedScene" uid="uid://dbfxtxp2kw0r2" path="res://entities/rab_animatronic.tscn" id="11_y6k0s"]
+[ext_resource type="PackedScene" uid="uid://cbqcu1kavglsj" path="res://entities/player.tscn" id="12_4kwvd"]
+[ext_resource type="PackedScene" uid="uid://7agsflaafkw7" path="res://ui/ui.tscn" id="13_uoerv"]
+[ext_resource type="Script" uid="uid://ch4fvmnj2i1qk" path="res://scripts/util/TransportingPlayerController.cs" id="14_0biiu"]
+[ext_resource type="AudioStream" uid="uid://xloxoevagfsm" path="res://audio/poco_x3pro_deti_theme.mp3" id="15_72fc1"]
+[ext_resource type="AudioStream" uid="uid://c27t7w5p7idef" path="res://audio/poco_x3pro_main_theme.mp3" id="16_tdh6w"]
+[ext_resource type="Script" uid="uid://bbvj758s85npg" path="res://scripts/util/CutScenesController.cs" id="17_xoeyf"]
+[ext_resource type="Resource" uid="uid://cw7y7qa8mapm5" path="res://cut-scenes/final/final.dialogue" id="18_blegv"]
+[ext_resource type="Resource" uid="uid://cjgd7yeiyepde" path="res://cut-scenes/beginning/beginning_dialogue.dialogue" id="19_ba6k4"]
+[ext_resource type="PackedScene" uid="uid://cfmuda1rqn0s7" path="res://scene/animationTransition/animation_balls.tscn" id="20_heqdg"]
+[ext_resource type="Script" uid="uid://cmgjemjyfkusl" path="res://scripts/util/Entrance.cs" id="21_j02l3"]
+[ext_resource type="Resource" uid="uid://d3xpl2qvem4na" path="res://ui/doors.dialogue" id="22_0jwaq"]
+[ext_resource type="PackedScene" uid="uid://drx8jti3cblx" path="res://ui/interact_indicator.tscn" id="23_etbqm"]
+[ext_resource type="Texture2D" uid="uid://c26u30tivqpxr" path="res://cut-scenes/beginning/child.png" id="24_5r6hr"]
+[ext_resource type="Texture2D" uid="uid://bwtyg76vo6aqv" path="res://cut-scenes/beginning/dad.png" id="25_1e16y"]
+[ext_resource type="Texture2D" uid="uid://h2l5faxraftr" path="res://cut-scenes/beginning/mom.png" id="26_txy41"]
+[ext_resource type="Script" uid="uid://drw3wovh0xc33" path="res://scripts/ui/CollectableItems.cs" id="27_n11vp"]
+[ext_resource type="Texture2D" uid="uid://bo2756ftx0xtc" path="res://textures/collectables/where_is_the_key_mini.png" id="28_oqary"]
+[ext_resource type="Texture2D" uid="uid://dydlcerrahdn" path="res://textures/rooms/vents.png" id="29_x24c5"]
+[ext_resource type="Script" uid="uid://cciaieu3iuggs" path="res://scripts/util/RoomChanger.cs" id="30_hhekp"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7sefv"]
 vertices = PackedVector2Array(-20, 1.75, -20, 161, -171.13281, 161, -150.25, 2.5625, -171.13281, 2.5625, -150.25, 1.75, 952.5, -259, 995, -259, 995, -45, 959, -45, 899, -44, 959, -19, 945, -19, 904, -20, 945, 79, 904, 79, 899, -20, 873.1328, -44, 873.1328, -74.5, 907, -260, 406.8828, -74.5, 406.8828, -44, 402.8828, -44, 402.8828, -260, 907, -264, 952.5, -264, 903, -421, 899, -519, 949, -521.5, 990.5, -521.5, 990.5, -514.5, 952.25, -420, 907, -410, 1015.3828, -514.5, 1015.3828, -435, 1040.3125, -435, 1040.3125, -420, 952.25, -407, 907, -407, 903, -410, 819, -421, 819, -523, 835, -519, 835, -523, 899, -540, 949, -540, -491.3125, -689.1328, -491.3125, -701.5, -439, -701.5, -439, -638.5, -465.3828, -638.5, -528.6875, -689.1328, -465.3828, -622.5, -613, -622.5, -580.6328, -684.3125, -613, -684.3125, -580.6328, -701.5, -528.6875, -701.5, 827, 429, -14, 429, 334, 416.75, 399, 416.75, 260, 416.75, -411, -593.5, -171.13281, -584, -682.6328, -584, -641, -593.5, -220.88281, 107, -220.88281, 141, -277, 141, -372, 134.5, -259.5, 107, 202, 416.5, 128, 416.5, 1080.9375, -389.75, 1080.9375, -604.25, 1404.3438, -1096.1563, 1465.6328, 650.77344, -366, -5.5, -259.5, -272, -372, 83.5, -366, -56.5, -355, -234, -324.1328, -395.5, 827, 144.1875, 743, 416.75, 743, 229.25, -488, -5.5, -494, 83.5, -501, 83.5, -499, -5.5, -488, -56.5, -501, 134.5, 260, 229.25, 202, 229, 247, 143.63281, 1077, -604.25, 1077, -689, -995.3594, -1137.8203, 789, -689, 789, -598.5, 778.3828, -598.5, 136, -649, -411, -878.5, 778.3828, -410, 363, -410, 139.9375, -564.25, 363, -365, 139.9375, -365, 136, -564.25, -152, -649, -152, -531.5, -158.38281, -531.5, -123.63281, -462.5, -123.63281, -483, -106, -483, -106, -479, -122, -422, -42, -479, -42, -500, 8, -500, 8, -481.5, 49.5, -481.5, 49.5, -474.5, -122, -380, 99.3125, -474.5, 99.3125, -380, -162.63281, -422, -158.38281, -462.5, -162.63281, -365.8125, -171.13281, -365.8125, -682.6328, 141, -683, 141, -683, 179, -558, 179, -558, 459, -1057.6406, 597.21094, -518, 419, -518, 296.5, -447, 296.5, -447, 318, -18, 419, -377, 318, -283, 330, -377, 296.5, -345, 296.5, -304, 161, -345, 161.5, -349, 161.5, -349, 141, -596, -122.75, -596, -219.5, -570.5, -219.5, -570.5, -216.5, -505, -216.5, -505, -234, -355, -395.5, -324.1328, -423.25, -220.88281, -423.25, -220.88281, -272, -499, -56.5, -621, -56.5, -494, 134.5, -621, -5.5, -623, 83.5, -277, 161, -304, 296, -145, 296, -145, 299, -283, 299, -107.13281, 330, -107.13281, 336, -77, 336, -77, 320, -63.9375, 320, -63.9375, 296, -38, 296, -38, 299, -20, 299, -20, 306, 11, 306, 11, 128, 48.5, 128, 48.5, 143.88281, 129.5, 143.88281, 129.5, 128, 219.5, 128, 219.5, 141.75, 247, 141.75, 128, 229, 328, 143.63281, 328, 128, 334, 128, 334, -20, 297, -20, 297, -35.75, 363, -23, -150.25, -35.75, -150.25, -45, 131.13281, -45, 131.13281, -89, -150.25, -89, -150.25, -120, 131.13281, -120, 131.13281, -164, -150.25, -164, -150.25, -193, 132.13281, -193, 132.13281, -226, 138.96875, -226, 138.96875, -195, 249.03125, -195, 249.03125, -226, 363, -226, 363.1328, -23, 363.1328, 2.3671875, 376, 2.3671875, 376, 128, 388.5, 128, 388.5, 143.75, 334, 229.25, 462, 143.75, 462, 158.14063, 611, 159.14063, 611, 151, 660, 151, 828.6328, 138.07813, 660, 128, 828, 128, 834.0781, 132.63281, 828, 120, 904, 120, 841.5, 130.64844, 904, 119, 945, 119, 945, 121, 986.1328, 121, 986.1328, 429, 856, 429, 856, 144.1875, 854.3672, 138.07813, 669, 229.25, 669, 416.75, 610, 416.75, 610, 229.25, 1027.8828, 461, 1027.8828, 121, 1041, 121, 1041, -19, 1027.8828, -19, 1027.8828, -20, 1057.75, -384, 1027, -20, 1027, -384, 1057.75, -389.75, -14, 461, -641, -878.5, -632.8828, -122.75, -632.8828, 141, -623, 134.5, 848.9219, 132.63281, -18, 459, 481.85938, 178, 399, 229.25, 592.1406, 178, 536, 229.25, 536, 416.75, 473, 416.75, 473, 229.25)
@@ -995,6 +996,47 @@ fill = 1
 fill_from = Vector2(0.509434, 0.504717)
 fill_to = Vector2(0.666667, 0.17094)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhekp"]
+size = Vector2(59.71346, 20.357304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh555"]
+size = Vector2(24.094582, 36.8703)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csmda"]
+size = Vector2(24.094582, 69.038605)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdvor"]
+size = Vector2(59.602085, 51.46093)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oaseh"]
+size = Vector2(58.461197, 50.23725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnlyt"]
+size = Vector2(77.655815, 50.23725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ismn"]
+size = Vector2(18.017086, 102.79698)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh68l"]
+size = Vector2(113.32956, 12.946079)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kwvd"]
+size = Vector2(37.96221, 3.6443415)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6k0s"]
+size = Vector2(15.309895, 12.946079)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hhekp"]
+polygon = PackedVector2Array(12.604492, -8.13941, -46.21631, -7.68722, -46.65857, -28.26184, 12.162231, -27.80965)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5j1mt"]
+polygon = PackedVector2Array(-22.77649, 7.913315, -46.87976, 7.913315, -46.65857, -28.26184, -23.66101, -28.940125)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mh555"]
+polygon = PackedVector2Array(12.604492, -8.13941, -46.21631, -7.68722, -46.785065, -52.84715, -61.042435, -53.19385, -60.589844, -44.540657, -135.59816, -44.74906, -135.55316, 57.654152, -120.5163, 57.428055, -120.5163, 4.5218945, -61.253235, 5.4262733, -61.032104, 54.262733, -22.334229, 54.71492, -22.334229, 59.689003, -11.49884, 60.141197, -10.835449, -8.13941, 10.835388, -8.13941, 6.1916504, 65.11528, -135.77429, 69.41108, -148.15765, 58.78463, -141.966, -70.76765, 10.614258, -71.44593, 12.162231, -27.80965)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j1mt"]
+
 [node name="Pizzeria" type="Node2D"]
 y_sort_enabled = true
 
@@ -1010,38 +1052,38 @@ color = Color(0, 0, 0, 1)
 y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_7sefv")
 
-[node name="DiningRoom" parent="NavigationRegion2D" instance=ExtResource("1_j3ksj")]
+[node name="DiningRoom" parent="NavigationRegion2D" instance=ExtResource("1_1nagh")]
 
-[node name="Reception" parent="NavigationRegion2D" instance=ExtResource("7_gcwg4")]
+[node name="Reception" parent="NavigationRegion2D" instance=ExtResource("2_hhekp")]
 position = Vector2(-530, 169)
 
-[node name="Workshop" parent="NavigationRegion2D" instance=ExtResource("14_re8k1")]
+[node name="Workshop" parent="NavigationRegion2D" instance=ExtResource("3_5j1mt")]
 position = Vector2(383, -390)
 
-[node name="ElectricalRoom1" parent="NavigationRegion2D" instance=ExtResource("15_0wck2")]
+[node name="ElectricalRoom1" parent="NavigationRegion2D" instance=ExtResource("4_mh555")]
 position = Vector2(809, -669)
 
-[node name="StaffRoom" parent="NavigationRegion2D" instance=ExtResource("20_hkn55")]
+[node name="StaffRoom" parent="NavigationRegion2D" instance=ExtResource("5_csmda")]
 position = Vector2(-643, -572)
 
-[node name="ElectricalRoom2" parent="NavigationRegion2D" instance=ExtResource("19_12fcj")]
+[node name="ElectricalRoom2" parent="NavigationRegion2D" instance=ExtResource("6_gdvor")]
 position = Vector2(-132, -629)
 
-[node name="SecureRoom" parent="NavigationRegion2D" instance=ExtResource("23_12fcj")]
+[node name="SecureRoom" parent="NavigationRegion2D" instance=ExtResource("7_oaseh")]
 position = Vector2(-622, -864)
 
-[node name="Kitchen" parent="NavigationRegion2D" instance=ExtResource("8_a70r1")]
+[node name="Kitchen" parent="NavigationRegion2D" instance=ExtResource("8_gnlyt")]
 position = Vector2(-160, -356)
 
 [node name="PocoPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
 y_sort_enabled = true
 curve = SubResource("Curve2D_a70r1")
-script = ExtResource("2_7sefv")
+script = ExtResource("9_6ismn")
 speed = 2
 pathFollow = NodePath("PathFollow2D")
 animatronic = NodePath("PocoAnimatronic")
 
-[node name="PocoAnimatronic" parent="PocoPath" node_paths=PackedStringArray("player", "pathFollow") instance=ExtResource("5_7sefv")]
+[node name="PocoAnimatronic" parent="PocoPath" node_paths=PackedStringArray("player", "pathFollow") instance=ExtResource("10_bh68l")]
 position = Vector2(768, -191)
 player = NodePath("../../Player")
 pathFollow = NodePath("../PathFollow2D")
@@ -1056,12 +1098,12 @@ cubic_interp = false
 [node name="RabPath" type="Path2D" parent="." node_paths=PackedStringArray("pathFollow", "animatronic")]
 y_sort_enabled = true
 curve = SubResource("Curve2D_h5gil")
-script = ExtResource("2_7sefv")
+script = ExtResource("9_6ismn")
 speed = 5
 pathFollow = NodePath("PathFollow2D")
 animatronic = NodePath("RabAnimatronic")
 
-[node name="RabAnimatronic" parent="RabPath" node_paths=PackedStringArray("player", "pathFollow") instance=ExtResource("4_gcwg4")]
+[node name="RabAnimatronic" parent="RabPath" node_paths=PackedStringArray("player", "pathFollow") instance=ExtResource("11_y6k0s")]
 position = Vector2(963, -120)
 player = NodePath("../../Player")
 pathFollow = NodePath("../PathFollow2D")
@@ -1072,17 +1114,17 @@ normalSpeed = 100
 position = Vector2(897, 322)
 rotates = false
 
-[node name="Player" parent="." instance=ExtResource("3_7sefv")]
+[node name="Player" parent="." instance=ExtResource("12_4kwvd")]
 position = Vector2(-444, 343)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 
-[node name="UI" parent="." instance=ExtResource("4_4ptq7")]
+[node name="UI" parent="." instance=ExtResource("13_uoerv")]
 
 [node name="Markers" type="Node2D" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("8_wne6k")
+script = ExtResource("14_0biiu")
 player = NodePath("../Player")
 
 [node name="ReceptionFromDiningRoom" type="Marker2D" parent="Markers"]
@@ -1127,13 +1169,16 @@ position = Vector2(345, -85)
 [node name="DiningRoomFromKitchen" type="Marker2D" parent="Markers"]
 position = Vector2(363, 160)
 
+[node name="VentsFromDiningRoom" type="Marker2D" parent="Markers"]
+position = Vector2(-2873, 63)
+
 [node name="DayTheme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_12fcj")
+stream = ExtResource("15_72fc1")
 autoplay = true
 bus = &"Music"
 
 [node name="NightTheme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_anepg")
+stream = ExtResource("16_tdh6w")
 volume_db = -44.649
 bus = &"Music"
 
@@ -1141,18 +1186,18 @@ bus = &"Music"
 libraries = {
 &"": SubResource("AnimationLibrary_a6j83")
 }
-script = ExtResource("10_wn245")
+script = ExtResource("17_xoeyf")
 children = NodePath("../Children")
 keyNote = NodePath("../WhereIsTheKey")
 rab = NodePath("../RabPath/RabAnimatronic")
-finalDialogue = ExtResource("18_gunaf")
+finalDialogue = ExtResource("18_blegv")
 parents = NodePath("../Parents")
 nightAudio = NodePath("../NightTheme")
 dayAudio = NodePath("../DayTheme")
 playerAnimations = NodePath("../Player/AnimationPlayer")
 poco = NodePath("../PocoPath/PocoAnimatronic")
 player = NodePath("../Player")
-dialogue = ExtResource("11_a6j83")
+dialogue = ExtResource("19_ba6k4")
 playerAnimTree = NodePath("../Player/AnimationTree")
 canvasModulate = NodePath("../CanvasModulate")
 
@@ -1171,7 +1216,7 @@ scale = Vector2(2.84375, 4.82812)
 energy = 3.0
 texture = SubResource("GradientTexture2D_re8k1")
 
-[node name="AnimationBalls" parent="CutScenesPlayer" instance=ExtResource("15_671hi")]
+[node name="AnimationBalls" parent="CutScenesPlayer" instance=ExtResource("20_heqdg")]
 visible = false
 z_index = 1
 position = Vector2(285, -14)
@@ -1179,8 +1224,8 @@ scale = Vector2(1.145, 1.145)
 
 [node name="Entrance" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
 position = Vector2(-515, 322)
-script = ExtResource("17_sl4l6")
-dialogue = ExtResource("20_ach0t")
+script = ExtResource("21_j02l3")
+dialogue = ExtResource("22_0jwaq")
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 
@@ -1188,7 +1233,7 @@ metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 position = Vector2(0, 44)
 shape = SubResource("RectangleShape2D_hkn55")
 
-[node name="InteractIndicator" parent="Entrance" instance=ExtResource("16_sl4l6")]
+[node name="InteractIndicator" parent="Entrance" instance=ExtResource("23_etbqm")]
 position = Vector2(32, 37)
 scale = Vector2(0.5, 0.5)
 
@@ -1197,63 +1242,63 @@ visible = false
 
 [node name="Child" type="Sprite2D" parent="Children"]
 position = Vector2(232, 326)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child2" type="Sprite2D" parent="Children"]
 position = Vector2(368, 377)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child3" type="Sprite2D" parent="Children"]
 position = Vector2(357, 269)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child4" type="Sprite2D" parent="Children"]
 position = Vector2(83, 309)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child5" type="Sprite2D" parent="Children"]
 position = Vector2(84, 375)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child6" type="Sprite2D" parent="Children"]
 position = Vector2(81, 230)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child7" type="Sprite2D" parent="Children"]
 position = Vector2(226, 204)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child8" type="Sprite2D" parent="Children"]
 position = Vector2(507, 287)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child9" type="Sprite2D" parent="Children"]
 position = Vector2(410, 182)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child10" type="Sprite2D" parent="Children"]
 position = Vector2(495, 373)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child11" type="Sprite2D" parent="Children"]
 position = Vector2(331, 183)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child12" type="Sprite2D" parent="Children"]
 position = Vector2(628, 267)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child13" type="Sprite2D" parent="Children"]
 position = Vector2(649, 326)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child14" type="Sprite2D" parent="Children"]
 position = Vector2(643, 382)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Child15" type="Sprite2D" parent="Children"]
 position = Vector2(763, 396)
-texture = ExtResource("18_p8fa5")
+texture = ExtResource("24_5r6hr")
 
 [node name="Parents" type="Node2D" parent="."]
 visible = false
@@ -1261,16 +1306,16 @@ y_sort_enabled = true
 
 [node name="Dad" type="Sprite2D" parent="Parents"]
 position = Vector2(-483, 322)
-texture = ExtResource("12_2icu4")
+texture = ExtResource("25_1e16y")
 
 [node name="Mom" type="Sprite2D" parent="Parents"]
 position = Vector2(-500, 343)
-texture = ExtResource("13_re8k1")
+texture = ExtResource("26_txy41")
 
 [node name="WhereIsTheKey" type="Area2D" parent="." node_paths=PackedStringArray("interactIndicator")]
 visible = false
 position = Vector2(948, 150)
-script = ExtResource("25_a70r1")
+script = ExtResource("27_n11vp")
 itemDescription = "key_from_workshop"
 interactIndicator = NodePath("InteractIndicator")
 metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
@@ -1278,13 +1323,13 @@ metadata/_custom_type_script = "uid://cc6ej2af2uxs6"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhereIsTheKey"]
 shape = SubResource("RectangleShape2D_gunaf")
 
-[node name="InteractIndicator" parent="WhereIsTheKey" instance=ExtResource("16_sl4l6")]
+[node name="InteractIndicator" parent="WhereIsTheKey" instance=ExtResource("23_etbqm")]
 position = Vector2(0, -25)
 scale = Vector2(0.5, 0.5)
 
 [node name="WhereIsTheKeyMini" type="Sprite2D" parent="WhereIsTheKey"]
 position = Vector2(-1, 0)
-texture = ExtResource("28_h5gil")
+texture = ExtResource("28_oqary")
 
 [node name="PointLight2D2" type="PointLight2D" parent="WhereIsTheKey"]
 position = Vector2(-35, 4)
@@ -1296,11 +1341,88 @@ offset = Vector2(35, 0)
 texture_scale = 0.85
 
 [node name="Vents" type="Sprite2D" parent="."]
-visible = false
-z_index = 1
-position = Vector2(206.49997, -371.32333)
-scale = Vector2(14.992187, 14.66303)
-texture = ExtResource("29_w0kel")
+z_index = -1
+position = Vector2(-2764, 51)
+scale = Vector2(4.522211, 4.422925)
+texture = ExtResource("29_x24c5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Vents"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(-16.865051, -17.950552)
+scale = Vector2(0.9999977, 1.0652512)
+shape = SubResource("RectangleShape2D_hhekp")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(39.179398, 24.461851)
+shape = SubResource("RectangleShape2D_mh555")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(74.98699, 27.848326)
+shape = SubResource("RectangleShape2D_csmda")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(-16.92337, 31.556467)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_gdvor")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(56.496094, -32.053402)
+shape = SubResource("RectangleShape2D_oaseh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(-26.354736, -68.539734)
+shape = SubResource("RectangleShape2D_gnlyt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(-71.23328, 7.1842217)
+shape = SubResource("RectangleShape2D_6ismn")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(-5.812051, 64.20262)
+shape = SubResource("RectangleShape2D_bh68l")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(31.845947, 56.97837)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_4kwvd")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(56.97872, 67.17575)
+shape = SubResource("RectangleShape2D_y6k0s")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Vents/StaticBody2D"]
+position = Vector2(19.829378, -58.493134)
+shape = SubResource("RectangleShape2D_y6k0s")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Vents"]
+occluder = SubResource("OccluderPolygon2D_hhekp")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Vents"]
+position = Vector2(74.078804, 35.04468)
+occluder = SubResource("OccluderPolygon2D_5j1mt")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Vents"]
+position = Vector2(73.85767, 0.9043789)
+occluder = SubResource("OccluderPolygon2D_mh555")
+
+[node name="VentEntrances" type="Node2D" parent="."]
+
+[node name="RoomChanger" type="Area2D" parent="VentEntrances"]
+position = Vector2(193, 119)
+script = ExtResource("30_hhekp")
+currentRoomName = "DiningRoom"
+newRoomName = "Vents"
+metadata/_custom_type_script = "uid://cciaieu3iuggs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VentEntrances/RoomChanger"]
+shape = SubResource("RectangleShape2D_5j1mt")
+
+[node name="ColorRect" type="ColorRect" parent="VentEntrances/RoomChanger"]
+offset_left = -20.0
+offset_top = -39.0
+offset_right = 20.0
+offset_bottom = 1.0
 
 [editable path="PocoPath/PocoAnimatronic"]
 [editable path="Player"]

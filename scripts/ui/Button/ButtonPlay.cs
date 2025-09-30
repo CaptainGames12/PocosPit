@@ -6,6 +6,8 @@ public partial class ButtonPlay : Area2D
 {
 	[Export]
 	public Sprite2D sprite2D;
+	[Export]
+	public PackedScene pizzeria;
 	private bool inArea = false;
 	public Vector2 fistPosition;
 	public override void _Ready()
@@ -33,7 +35,7 @@ public partial class ButtonPlay : Area2D
 		{
 			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
 			{
-				GetTree().ChangeSceneToFile("uid://dx42ppxocjt0u");
+				GetTree().ChangeSceneToPacked(pizzeria);
 			}
 		}
 	}

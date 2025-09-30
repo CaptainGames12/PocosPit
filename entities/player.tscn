@@ -934,6 +934,30 @@ tracks/13/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PlayerHeadScary:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PlayerHeadPokerface:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_slxql"]
 resource_name = "charge_left_run"
@@ -1101,6 +1125,30 @@ tracks/13/path = NodePath("PlayerBodyFlashlight:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PlayerHeadScary:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PlayerHeadPokerface:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1278,6 +1326,18 @@ tracks/13/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PlayerHeadScary:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fruft"]
 resource_name = "charge_right_run"
@@ -1445,6 +1505,18 @@ tracks/13/path = NodePath("PlayerBodyFlashlight:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PlayerHeadScary:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -3690,7 +3762,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.00229264),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, false]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -5455,6 +5527,7 @@ script = ExtResource("4_6nm46")
 
 [node name="FlashlightCharging" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qsoyl")
+bus = &"SFX"
 
 [node name="LightController" type="Node" parent="." node_paths=PackedStringArray("player", "lightArea", "light", "lightTimer", "chargingSound")]
 script = ExtResource("3_rfe5m")
@@ -5477,9 +5550,6 @@ autoplay = "idle_left_beginning"
 speed_scale = 0.5
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_i623q")
-}
 tree_root = ExtResource("6_x08pd")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
@@ -5495,9 +5565,11 @@ parameters/WalkScared/blend_position = 0.0
 
 [node name="Run" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_i623q")
+bus = &"SFX"
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_ef06p")
+bus = &"SFX"
 
 [node name="PlayerLegs" type="Sprite2D" parent="."]
 texture = ExtResource("9_dchgp")

@@ -69,6 +69,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="UI#Numpad" type="Sprite2D" parent="." node_paths=PackedStringArray("correct", "incorrect", "label")]
+visible = false
 position = Vector2(560.5, 345.5)
 scale = Vector2(3.70312, 3.51562)
 texture = ExtResource("2_ks8t7")
@@ -223,6 +224,6 @@ script = ExtResource("4_obcwv")
 
 [node name="Map" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(960, 539)
+position = Vector2(213, 128)
 scale = Vector2(2, 2)
 texture = ExtResource("7_bo1jx")

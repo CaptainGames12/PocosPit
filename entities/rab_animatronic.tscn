@@ -133,6 +133,7 @@ shape = SubResource("CircleShape2D_y4bro")
 shape = SubResource("CapsuleShape2D_i0sk7")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+radius = 36.55
 
 [node name="AngryTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -157,9 +158,11 @@ one_shot = true
 stream = ExtResource("3_gehp1")
 max_distance = 1000.0
 attenuation = 3.03144
+bus = &"SFX"
 
 [node name="AngrySound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_v5s46")
+bus = &"SFX"
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(-33, -44)

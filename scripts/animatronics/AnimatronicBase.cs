@@ -25,7 +25,7 @@ public partial class AnimatronicBase : CharacterBody2D
     [Export]
     private int normalSpeed;
     [Export]
-    private NavigationAgent2D navAgent;
+    public NavigationAgent2D navAgent;
     [Export]
     private string screamerScene;
     public override void _Ready()
