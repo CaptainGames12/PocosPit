@@ -89,6 +89,8 @@ public partial class AnimatronicBase : CharacterBody2D
     }
     public void OnTargetAreaEntered(Node2D body)
     {
+        if(DebugMode.getGodMode()) { return; }
+
         if (body.IsInGroup("player"))
         {
             targetArea.SetDeferred("monitoring", false);
@@ -98,7 +100,7 @@ public partial class AnimatronicBase : CharacterBody2D
     }
     public void OnAttackAreaEntered(Node2D body)
     {
-        if (body.IsInGroup("player") && !Globals.Instance.isCutSceneGoing)
+        if (body.IsInGroup("player") && !Globals.Instance.isCutSceneGoing && !DebugMode.getGodMode())
             CallDeferred("SpawnScreamer");
     }
     public void OnAngryTimerTimeout()

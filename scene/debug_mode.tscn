@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://1i4hrpbbnbc2"]
+
+[ext_resource type="Script" uid="uid://b8xrs6mfiehn3" path="res://scripts/DebugMode.cs" id="1_6y1i1"]
+
+[node name="DebugMode" type="CanvasLayer" node_paths=PackedStringArray("godModeExport")]
+layer = 5
+script = ExtResource("1_6y1i1")
+godModeExport = NodePath("UI/GodMode")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GodMode" type="CheckButton" parent="UI"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 43.0
+offset_bottom = 29.0
+
+[node name="Label" type="Label" parent="UI/GodMode"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1.0
+offset_right = 119.0
+offset_bottom = 24.0
+text = "GodMode"
+
+[node name="NightVision" type="CheckButton" parent="UI"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 30.0
+offset_right = 43.0
+offset_bottom = 54.0
+
+[node name="Label" type="Label" parent="UI/NightVision"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1.0
+offset_right = 119.0
+offset_bottom = 24.0
+text = "NightVision"

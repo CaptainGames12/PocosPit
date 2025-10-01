@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Globals="*res://scripts/util/Globals.cs"
 SignalBus="*res://scripts/util/SignalBus.cs"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+DebugMode="*res://scene/debug_mode.tscn"
 
 [dialogue_manager]
 
